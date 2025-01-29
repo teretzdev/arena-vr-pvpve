@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ArenaDeathMatch.Combat; // Add reference to the new weapon classes
+using ArenaDeathMatch.Combat;
+using ArenaDeathMatch.Combat.ArenaShield;
+using ArenaDeathMatch.Combat.ArenaRangedWeapon;
+using ArenaDeathMatch.Combat.ArenaMeleeWeapon;
 
 namespace ArenaDeathMatch.Combat
 {
@@ -72,6 +75,27 @@ namespace ArenaDeathMatch.Combat
                 // Initialize special weapon specific properties if needed
                 activeWeapons.Add(specialWeapon);
                 return specialWeapon;
+            }
+            else if (type == WeaponType.Shield)
+            {
+                Shield shield = weaponObj.GetComponent<Shield>();
+                // Initialize shield specific properties if needed
+                activeWeapons.Add(shield);
+                return shield;
+            }
+            else if (type == WeaponType.RangedWeapon)
+            {
+                RangedWeapon rangedWeapon = weaponObj.GetComponent<RangedWeapon>();
+                // Initialize ranged weapon specific properties if needed
+                activeWeapons.Add(rangedWeapon);
+                return rangedWeapon;
+            }
+            else if (type == WeaponType.MeleeWeapon)
+            {
+                MeleeWeapon meleeWeapon = weaponObj.GetComponent<MeleeWeapon>();
+                // Initialize melee weapon specific properties if needed
+                activeWeapons.Add(meleeWeapon);
+                return meleeWeapon;
             }
             else
             {
@@ -343,7 +367,10 @@ namespace ArenaDeathMatch.Combat
             Shotgun,
             SpecialWeapon,
             MagicWeapon, // Add MagicWeapon type
-            ThunderGrenade // Add ThunderGrenade type
+            ThunderGrenade, // Add ThunderGrenade type
+            Shield,
+            RangedWeapon,
+            MeleeWeapon
         }
 
         public struct DamageInfo
