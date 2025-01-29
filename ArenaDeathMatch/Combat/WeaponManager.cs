@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ArenaDeathMatch.Combat; // Add reference to the new weapon classes
 
 namespace ArenaDeathMatch.Combat
 {
@@ -58,11 +59,27 @@ namespace ArenaDeathMatch.Combat
 
             WeaponData data = weaponCache[type];
             GameObject weaponObj = Instantiate(data.prefab, position, rotation, weaponContainer);
-            VRWeapon weapon = weaponObj.GetComponent<VRWeapon>();
-            weapon.Initialize(data);
-            activeWeapons.Add(weapon);
-            
-            return weapon;
+            if (type == WeaponType.MagicWeapon)
+            {
+                MagicWeapon magicWeapon = weaponObj.GetComponent<MagicWeapon>();
+                // Initialize magic weapon specific properties if needed
+                activeWeapons.Add(magicWeapon);
+                return magicWeapon;
+            }
+            else if (type == WeaponType.ThunderGrenade)
+            {
+                ThunderGrenade specialWeapon = weaponObj.GetComponent<ThunderGrenade>();
+                // Initialize special weapon specific properties if needed
+                activeWeapons.Add(specialWeapon);
+                return specialWeapon;
+            }
+            else
+            {
+                VRWeapon weapon = weaponObj.GetComponent<VRWeapon>();
+                weapon.Initialize(data);
+                activeWeapons.Add(weapon);
+                return weapon;
+            }
         }
 
         public void DestroyWeapon(VRWeapon weapon)
@@ -324,7 +341,9 @@ namespace ArenaDeathMatch.Combat
             Pistol,
             Rifle,
             Shotgun,
-            SpecialWeapon
+            SpecialWeapon,
+            MagicWeapon, // Add MagicWeapon type
+            ThunderGrenade // Add ThunderGrenade type
         }
 
         public struct DamageInfo
