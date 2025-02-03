@@ -134,6 +134,20 @@ namespace ArenaDeathMatch.Documentation
         
         #endregion
         
+        #region Adventure Creator Integration
+
+        /// <summary>
+        /// Documentation for integrating the Adventure Creator plugin.
+        /// Adventure Creator is a powerful tool that fills gaps in narrative and interactive storytelling.
+        /// Use the manual at https://adventurecreator.org/files/Manual.pdf for setup instructions and configuration.
+        /// </summary>
+        public static class AdventureCreatorDocs
+        {
+            public const string Description = "Adventure Creator plugin bridges gaps in narrative content by providing robust dialogue management, cutscene creation, and interactive storytelling features. Follow the manual at https://adventurecreator.org/files/Manual.pdf to integrate and configure the plugin within the game.";
+        }
+
+        #endregion
+
         #region Documentation Attributes
 
         [System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method)]
