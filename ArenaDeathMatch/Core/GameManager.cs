@@ -48,6 +48,8 @@ namespace ArenaDeathMatch.Core
             scoreManager.Initialize();
             matchmaking.Initialize(gameSettings.maxPlayers);
             eventSystem.Initialize();
+            // Initialize Adventure Creator plugin
+            AdventureCreator.Initialize();
         }
 
         public void StartGame()

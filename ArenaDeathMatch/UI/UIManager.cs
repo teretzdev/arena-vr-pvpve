@@ -40,6 +40,9 @@ namespace ArenaDeathMatch.UI
             menuController.Initialize();
             hudController.Initialize();
             vrInteraction.Initialize();
+            // Initialize Adventure Creator UI components
+            AdventureCreatorUI.Initialize();
+            AdventureCreatorUI.SubscribeEvents();
         }
 
         private void RegisterScreens()
