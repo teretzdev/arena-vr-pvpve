@@ -36,11 +36,17 @@ namespace ArenaDeathMatch.Characters
             dialogueAction?.Enable();
             interactiveAction?.Enable();
             cutsceneAction?.Enable();
+            dialogueAction.performed += OnDialoguePerformed;
+            interactiveAction.performed += OnInteractivePerformed;
+            cutsceneAction.performed += OnCutscenePerformed;
         }
 
         private void OnDisable()
         {
             moveAction?.Disable();
+            dialogueAction.performed -= OnDialoguePerformed;
+            interactiveAction.performed -= OnInteractivePerformed;
+            cutsceneAction.performed -= OnCutscenePerformed;
             dialogueAction?.Disable();
             interactiveAction?.Disable();
             cutsceneAction?.Disable();
@@ -49,7 +55,6 @@ namespace ArenaDeathMatch.Characters
         private void Update()
         {
             ProcessMovement();
-            ProcessInteractions();
         }
 
         /// <summary>
@@ -72,52 +77,55 @@ namespace ArenaDeathMatch.Characters
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
         }
 
-        /// <summary>
-        /// Checks for interaction inputs and triggers Adventure Creator events accordingly.
-        /// Press 'E' to start a dialogue and press 'F' to trigger an interactive event.
-        /// </summary>
-        private void ProcessInteractions()
+        private void ProcessDialogue()
         {
-            // Trigger dialogue interaction when pressing the E key.
-            if (dialogueAction.triggered)
+            if (AdventureCreatorManager.Instance != null)
             {
-                if (AdventureCreatorManager.Instance != null)
-                {
-                    // Start a predefined dialogue sequence.
-                    AdventureCreatorManager.Instance.StartDialogue("PlayerInteractionDialogue");
-                }
-                else
-                {
-                    Debug.LogWarning("AdventureCreatorManager instance is not available to start dialogue.");
-                }
+                AdventureCreatorManager.Instance.StartDialogue("PlayerInteractionDialogue");
             }
-
-            // Trigger interactive event when pressing the F key.
-            if (interactiveAction.triggered)
+            else
             {
-                if (AdventureCreatorManager.Instance != null)
-                {
-                    // Start a predefined interactive event.
-                    AdventureCreatorManager.Instance.StartInteractiveEvent("PlayerInteractionEvent");
-                }
-                else
-                {
-                    Debug.LogWarning("AdventureCreatorManager instance is not available to trigger interactive event.");
-                }
+                Debug.LogWarning("AdventureCreatorManager instance is not available to start dialogue.");
             }
-
-            // Optionally, trigger a cutscene if needed using a separate key (for example, C key).
-            if (cutsceneAction.triggered)
+        }
+        
+        private void ProcessInteractive()
+        {
+            if (AdventureCreatorManager.Instance != null)
             {
-                if (AdventureCreatorManager.Instance != null)
-                {
-                    AdventureCreatorManager.Instance.TriggerCutscene("PlayerCutscene");
-                }
-                else
-                {
-                    Debug.LogWarning("AdventureCreatorManager instance is not available to trigger cutscene.");
-                }
+                AdventureCreatorManager.Instance.StartInteractiveEvent("PlayerInteractionEvent");
             }
+            else
+            {
+                Debug.LogWarning("AdventureCreatorManager instance is not available to trigger interactive event.");
+            }
+        }
+        
+        private void ProcessCutscene()
+        {
+            if (AdventureCreatorManager.Instance != null)
+            {
+                AdventureCreatorManager.Instance.TriggerCutscene("PlayerCutscene");
+            }
+            else
+            {
+                Debug.LogWarning("AdventureCreatorManager instance is not available to trigger cutscene.");
+            }
+        }
+        
+        private void OnDialoguePerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            ProcessDialogue();
+        }
+        
+        private void OnInteractivePerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            ProcessInteractive();
+        }
+        
+        private void OnCutscenePerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            ProcessCutscene();
         }
     }
 }

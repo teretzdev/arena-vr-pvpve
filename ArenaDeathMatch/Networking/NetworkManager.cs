@@ -41,14 +41,22 @@ namespace ArenaDeathMatch.Networking
         /// </summary>
         public void ConnectToServer()
         {
-            if (!PhotonNetwork.IsConnected)
+            if (!PhotonNetwork.IsConnected && !PhotonNetwork.IsConnecting)
             {
                 PhotonNetwork.GameVersion = gameVersion;
-                PhotonNetwork.ConnectUsingSettings();
-                Debug.Log("Connecting to Photon server...");
+                InitializePhotonConnection();
             }
         }
 
+        /// <summary>
+        /// Initializes the Photon connection with streamlined settings.
+        /// </summary>
+        private void InitializePhotonConnection()
+        {
+            PhotonNetwork.ConnectUsingSettings();
+            Debug.Log("Initializing Photon Connection: Connecting to Photon server with game version " + gameVersion);
+        }
+        
         /// <summary>
         /// Callback when successfully connected to the Photon Master Server.
         /// </summary>

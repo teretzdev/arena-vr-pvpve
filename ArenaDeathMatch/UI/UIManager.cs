@@ -40,16 +40,7 @@ namespace ArenaDeathMatch.UI
             menuController.Initialize();
             hudController.Initialize();
             vrInteraction.Initialize();
-            // Initialize Adventure Creator UI components with dialogue, menu, and interactive prompt support
-            if (AdventureCreatorUI != null)
-            {
-                AdventureCreatorUI.Initialize();
-                AdventureCreatorUI.SubscribeEvents();
-            }
-            else
-            {
-                Debug.LogWarning("AdventureCreatorUI is not available. Please ensure the Adventure Creator plugin is properly installed.");
-            }
+            InitializeAdventureCreatorUI();
         }
 
         private void RegisterScreens()
@@ -59,6 +50,19 @@ namespace ArenaDeathMatch.UI
             {
                 screens[screen.screenType] = screen;
                 screen.Initialize();
+            }
+        }
+        
+        private void InitializeAdventureCreatorUI()
+        {
+            if (AdventureCreatorUI != null)
+            {
+                AdventureCreatorUI.Initialize();
+                AdventureCreatorUI.SubscribeEvents();
+            }
+            else
+            {
+                Debug.LogWarning("AdventureCreatorUI is not available. Please ensure the Adventure Creator plugin is properly installed and compatible with Unity 6.");
             }
         }
         

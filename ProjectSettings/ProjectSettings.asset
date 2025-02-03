@@ -9,6 +9,8 @@ AdventureCreatorProjectSettings:
   dialogueManagement: true
   cutsceneCreation: true
   interactiveStorytelling: true
+  scriptingRuntimeVersion: "4.x Equivalent"
+  apiCompatibilityLevel: ".NET_4_6"
   localization:
     enabled: true
     defaultLanguage: "English"

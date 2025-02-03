@@ -45,19 +45,29 @@ namespace ArenaDeathMatch.Core
         }
 
         /// <summary>
-        /// Initializes game components including state managers, round manager, score manager, matchmaking, events, and network connection.
+        /// Initializes game components including managers, events, and network connection.
         /// </summary>
         private void InitializeGame()
+        {
+            InitializeManagers();
+            eventSystem.Initialize();
+            InitializeNetworking();
+        }
+
+        private void InitializeManagers()
         {
             stateManager.Initialize();
             roundManager.Initialize(gameSettings);
             scoreManager.Initialize();
             matchmaking.Initialize(gameSettings.maxPlayers);
-            eventSystem.Initialize();
-            if (ArenaDeathMatch.AdventureCreator.AdventureCreatorManager.Instance != null) { /* AdventureCreatorManager already initialized in its Awake */ }
-            if (ArenaDeathMatch.Physics.PhysicsManager.Instance != null) { ArenaDeathMatch.Physics.PhysicsManager.Instance.InitializePhysicsSettings(); }
-            if (ArenaDeathMatch.SaveSystem.SaveLoadManager.Instance != null) { /* SaveLoadManager is ready */ }
-            if (ArenaDeathMatch.Networking.NetworkManager.Instance != null) { ArenaDeathMatch.Networking.NetworkManager.Instance.ConnectToServer(); }
+        }
+
+        private void InitializeNetworking()
+        {
+            if (ArenaDeathMatch.Networking.NetworkManager.Instance != null)
+            {
+                ArenaDeathMatch.Networking.NetworkManager.Instance.ConnectToServer();
+            }
         }
 
         /// <summary>
