@@ -1,5 +1,6 @@
 using UnityEngine;
 using ArenaDeathMatch.AdventureCreator;
+using UnityEngine.InputSystem;
 
 namespace ArenaDeathMatch.Characters
 {
@@ -14,7 +15,10 @@ namespace ArenaDeathMatch.Characters
         [Header("Movement Settings")]
         [Tooltip("Movement speed of the player.")]
         public float moveSpeed = 5f;
-
+        public InputAction moveAction;
+        public InputAction dialogueAction;
+        public InputAction interactiveAction;
+        public InputAction cutsceneAction;
         private CharacterController characterController;
 
         private void Awake()
@@ -24,6 +28,22 @@ namespace ArenaDeathMatch.Characters
             {
                 characterController = gameObject.AddComponent<CharacterController>();
             }
+        }
+
+        private void OnEnable()
+        {
+            moveAction?.Enable();
+            dialogueAction?.Enable();
+            interactiveAction?.Enable();
+            cutsceneAction?.Enable();
+        }
+
+        private void OnDisable()
+        {
+            moveAction?.Disable();
+            dialogueAction?.Disable();
+            interactiveAction?.Disable();
+            cutsceneAction?.Disable();
         }
 
         private void Update()
@@ -37,8 +57,9 @@ namespace ArenaDeathMatch.Characters
         /// </summary>
         private void ProcessMovement()
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+            Vector2 movementInput = moveAction.ReadValue<Vector2>();
+            float horizontal = movementInput.x;
+            float vertical = movementInput.y;
 
             // Create move vector in local space
             Vector3 moveDirection = transform.right * horizontal + transform.forward * vertical;
@@ -58,7 +79,7 @@ namespace ArenaDeathMatch.Characters
         private void ProcessInteractions()
         {
             // Trigger dialogue interaction when pressing the E key.
-            if (Input.GetKeyDown(KeyCode.E))
+            if (dialogueAction.triggered)
             {
                 if (AdventureCreatorManager.Instance != null)
                 {
@@ -72,7 +93,7 @@ namespace ArenaDeathMatch.Characters
             }
 
             // Trigger interactive event when pressing the F key.
-            if (Input.GetKeyDown(KeyCode.F))
+            if (interactiveAction.triggered)
             {
                 if (AdventureCreatorManager.Instance != null)
                 {
@@ -86,7 +107,7 @@ namespace ArenaDeathMatch.Characters
             }
 
             // Optionally, trigger a cutscene if needed using a separate key (for example, C key).
-            if (Input.GetKeyDown(KeyCode.C))
+            if (cutsceneAction.triggered)
             {
                 if (AdventureCreatorManager.Instance != null)
                 {

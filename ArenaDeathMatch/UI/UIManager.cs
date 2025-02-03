@@ -104,7 +104,7 @@ namespace ArenaDeathMatch.UI
             public void Initialize()
             {
                 InitializeHUDElements();
-                SubscribeToEvents();
+                SubscribeCombatEvents();
             }
 
             private void InitializeHUDElements()
@@ -116,7 +116,13 @@ namespace ArenaDeathMatch.UI
                 objectiveMarker.Initialize();
                 damageIndicator.Initialize();
             }
-
+            
+            private void SubscribeCombatEvents()
+            {
+                // Subscribe to player damage event from the Combat System
+                CombatEvents.OnPlayerDamaged += OnPlayerDamaged;
+            }
+            
             public void UpdateHUD(HUDUpdateData data)
             {
                 switch (data.updateType)
@@ -136,6 +142,14 @@ namespace ArenaDeathMatch.UI
             public void ShowDamageIndicator(Vector3 damageDirection)
             {
                 damageIndicator.ShowDamageFrom(damageDirection);
+            }
+            
+            private void OnPlayerDamaged(WeaponManager.DamageInfo damageInfo)
+            {
+                // Update health display; assuming PlayerHealth.Instance.currentHealth holds the current health value.
+                healthDisplay.UpdateHealth(PlayerHealth.Instance.currentHealth);
+                // Show damage indicator using the damage direction (using the hit normal as an example)
+                ShowDamageIndicator(damageInfo.normal);
             }
         }
 

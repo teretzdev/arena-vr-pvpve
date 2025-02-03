@@ -1,0 +1,34 @@
+name: Unity CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-tests:
+    name: Run Unity PlayMode and EditMode Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Cache Unity Library
+        uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-${{ hashFiles('**/ProjectSettings/ProjectSettings.asset') }}
+
+      - name: Run Unity PlayMode Tests
+        uses: game-ci/unity-test-runner@v2
+        with:
+          unityVersion: 2020.3.18f1
+          testMode: playmode
+
+      - name: Run Unity EditMode Tests
+        uses: game-ci/unity-test-runner@v2
+        with:
+          unityVersion: 2020.3.18f1
+          testMode: editmode
