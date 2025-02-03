@@ -103,6 +103,10 @@ namespace ArenaDeathMatch.AI
                 if (distance <= agent.combatSettings.attackRange)
                 {
                     agent.TakeDamage(damage, attackType);
+                    if (attackType == "VRMelee" || attackType == "VRRanged")
+                    {
+                        agent.ReactToVRAttack();
+                    }
                 }
             }
         }
@@ -192,6 +196,11 @@ namespace ArenaDeathMatch.AI
         {
             Debug.Log("[EmeraldAIAgent] " + gameObject.name + " is attacking " + target.name);
             // Implement attack logic (e.g., melee or ranged attack) here.
+        }
+        public void ReactToVRAttack()
+        {
+            Debug.Log("[EmeraldAIAgent] " + gameObject.name + " reacting to VR attack. Engaging VR combat response!");
+            // Additional VR combat behavior (e.g., counter-attack, evasive maneuvers) can be implemented here.
         }
     }
 }

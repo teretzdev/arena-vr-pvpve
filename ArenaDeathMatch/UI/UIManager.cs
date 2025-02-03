@@ -37,6 +37,14 @@ namespace ArenaDeathMatch.UI
         {
             screenHistory = new Stack<UIScreen>();
             RegisterScreens();
+            // Adapt mainCanvas for VR: set canvas to World Space and adjust scale and position
+            if(mainCanvas != null)
+            {
+                mainCanvas.renderMode = RenderMode.WorldSpace;
+                mainCanvas.worldCamera = Camera.main;
+                mainCanvas.transform.position = new Vector3(0f, 1.5f, 2f);
+                mainCanvas.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+            }
             menuController.Initialize();
             hudController.Initialize();
             vrInteraction.Initialize();

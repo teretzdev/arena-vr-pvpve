@@ -35,6 +35,7 @@ namespace ArenaDeathMatch.AdventureCreator
         public void StartDialogue(string dialogueId)
         {
             Debug.Log($"[AdventureCreatorManager] Starting dialogue with ID: {dialogueId}");
+            AdjustDialogueForVR();
             // Call to Adventure Creator's dialogue API would go here, for example:
             // AdventureCreatorAPI.DialogueManager.StartDialogue(dialogueId);
         }
@@ -43,6 +44,7 @@ namespace ArenaDeathMatch.AdventureCreator
         public void TriggerCutscene(string cutsceneId)
         {
             Debug.Log($"[AdventureCreatorManager] Triggering cutscene with ID: {cutsceneId}");
+            AdjustCutsceneForVR();
             // Call to Adventure Creator's cutscene API would go here, for example:
             // AdventureCreatorAPI.CutsceneManager.PlayCutscene(cutsceneId);
         }
@@ -54,6 +56,18 @@ namespace ArenaDeathMatch.AdventureCreator
             Debug.Log($"[AdventureCreatorManager] Starting interactive event with ID: {eventId}");
             // Call to Adventure Creator's interactive event API would go here, for example:
             // AdventureCreatorAPI.InteractiveManager.TriggerEvent(eventId);
+        }
+        
+        private void AdjustDialogueForVR()
+        {
+            Debug.Log("[AdventureCreatorManager] Adjusting dialogue UI for VR.");
+            // TODO: Adapt dialogue UI positions, scales, and canvas settings for VR display.
+        }
+        
+        private void AdjustCutsceneForVR()
+        {
+            Debug.Log("[AdventureCreatorManager] Adjusting cutscene playback for VR.");
+            // TODO: Modify camera movements and UI elements to ensure cutscenes display correctly in VR.
         }
     }
 }

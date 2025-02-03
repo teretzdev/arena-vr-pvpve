@@ -6,6 +6,9 @@ namespace ArenaDeathMatch.Characters
 {
     /// <summary>
     /// PlayerController handles the player’s movement and interactions.
+            if (enableVRInput) {
+                ProcessVRCombat();
+            }
     ///         ProcessVRCombat();
     /// It has been updated to integrate with the Adventure Creator plugin so that
     /// players can trigger dialogues and interactive events during gameplay.
@@ -20,6 +23,10 @@ namespace ArenaDeathMatch.Characters
         public InputAction dialogueAction;
         public InputAction interactiveAction;
         public InputAction cutsceneAction;
+        [Header("VR & Combat Settings")]
+        public bool enableVRInput = true;
+        public InputAction meleeAction;
+        public InputAction rangedAction;
         private CharacterController characterController;
         
         [Header("VR & Combat Settings")]
@@ -35,6 +42,30 @@ namespace ArenaDeathMatch.Characters
                 characterController = gameObject.AddComponent<CharacterController>();
             }
         }
+        
+        private void ProcessVRCombat()
+        {
+            if (meleeAction != null && meleeAction.triggered)
+            {
+                ProcessMeleeAttack();
+            }
+            if (rangedAction != null && rangedAction.triggered)
+            {
+                ProcessRangedAttack();
+            }
+        }
+        
+        private void ProcessMeleeAttack()
+        {
+            Debug.Log("[PlayerController] VR Melee attack triggered using VR gestures.");
+            // TODO: Integrate VR melee combat interactions here.
+        }
+        
+        private void ProcessRangedAttack()
+        {
+            Debug.Log("[PlayerController] VR Ranged attack triggered using VR gestures.");
+            // TODO: Integrate VR ranged combat interactions here.
+        }
 
         private void OnEnable()
         {
@@ -42,24 +73,22 @@ namespace ArenaDeathMatch.Characters
             dialogueAction?.Enable();
             interactiveAction?.Enable();
             cutsceneAction?.Enable();
-            meleeAction?.Enable();
-            rangedAction?.Enable();
-            dialogueAction.performed += OnDialoguePerformed;
-            interactiveAction.performed += OnInteractivePerformed;
-            cutsceneAction.performed += OnCutscenePerformed;
+            if (enableVRInput) {
+                meleeAction?.Enable();
+                rangedAction?.Enable();
+            }
         }
 
         private void OnDisable()
         {
             moveAction?.Disable();
-            dialogueAction.performed -= OnDialoguePerformed;
-            interactiveAction.performed -= OnInteractivePerformed;
-            cutsceneAction.performed -= OnCutscenePerformed;
             dialogueAction?.Disable();
             interactiveAction?.Disable();
             cutsceneAction?.Disable();
-            meleeAction?.Disable();
-            rangedAction?.Disable();
+            if (enableVRInput) {
+                meleeAction?.Disable();
+                rangedAction?.Disable();
+            }
         }
 
         private void Update()

@@ -52,6 +52,16 @@ namespace ArenaDeathMatch.Build
             private void SetPlatformSpecificSettings()
             {
                 // Implementation for setting platform-specific build settings
+                if (BuildManager.Instance.buildSettings.enableVRSupport && currentTarget == BuildTarget.Android)
+                {
+                    if(BuildManager.Instance.buildSettings.buildConstants == null)
+                    {
+                        BuildManager.Instance.buildSettings.buildConstants = new Dictionary<string, string>();
+                    }
+                    BuildManager.Instance.buildSettings.buildConstants["VRSupport"] = "Enabled";
+                    BuildManager.Instance.buildSettings.buildConstants["VRSDK"] = BuildManager.Instance.buildSettings.vrSDK;
+                    Debug.Log("[BuildManager] VR support configured for Oculus Quest.");
+                }
             }
 
             private void ExecuteBuild()
@@ -244,6 +254,8 @@ namespace ArenaDeathMatch.Build
             public BuildTarget[] targetPlatforms;
             public string[] assetBundleNames;
             public Dictionary<string, string> buildConstants;
+            public bool enableVRSupport = true;
+            public string vrSDK = "OculusQuest";
         }
 
         #endregion

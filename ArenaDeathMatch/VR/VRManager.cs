@@ -71,6 +71,7 @@ namespace ArenaDeathMatch.VR
 
             // Setup VR Controllers
             SetupControllers();
+            InitializeVRInput();
 
             Debug.Log("[VRManager] VR initialization complete.");
         }
@@ -147,6 +148,11 @@ namespace ArenaDeathMatch.VR
             {
                 vrifManager.HandleVRInteractions();
             }
+        }
+        private void InitializeVRInput()
+        {
+            Debug.Log("[VRManager] Initializing VR input systems for Oculus and VRIF...");
+            // VR input initialization code (e.g., mapping VR controllers to input actions) goes here.
         }
     }
 

@@ -51,6 +51,19 @@ namespace ArenaDeathMatch.Effects
             public AudioSettings audioSettings;
             public PostProcessingSettings postProcessing;
         }
+        private void ConfigureVRAudioSources()
+        {
+            // Adjust audio sources for VR: position them relative to the VR camera and update spatial blend settings.
+            if (Camera.main != null && audioSourcePool != null)
+            {
+                // Iterate over available audio sources in the pool (assuming audioSourcePool.pool provides access).
+                foreach (var source in audioSourcePool.pool)
+                {
+                    source.spatialBlend = 1f;
+                    source.transform.position = Camera.main.transform.position;
+                }
+            }
+        }
     }
 
     #region Particle System Management
@@ -86,6 +99,12 @@ namespace ArenaDeathMatch.Effects
         private void ConfigurePresets(bool highQuality)
         {
             // Implementation for configuring presets based on quality settings
+            // Additional VR adjustments: realign particle systems relative to VR camera position and adjust scale for immersive display.
+            if (Camera.main != null && particleContainer != null)
+            {
+                particleContainer.position = Camera.main.transform.position + Camera.main.transform.forward * 2f;
+                particleContainer.localScale = Vector3.one * (highQuality ? 1.0f : 0.8f);
+            }
         }
     }
     #endregion
@@ -177,6 +196,7 @@ namespace ArenaDeathMatch.Effects
         public void Initialize(AudioSettings audioSettings)
         {
             // Implementation for initializing audio settings
+            ConfigureVRAudioSources();
         }
     }
     #endregion

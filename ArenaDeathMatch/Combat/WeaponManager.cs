@@ -145,6 +145,19 @@ namespace ArenaDeathMatch.Combat
                 SetupInteractions();
                 InitializeBulletPool();
             }
+            
+            private void SetupInteractions()
+            {
+                if(grabbable == null)
+                {
+                    grabbable = GetComponent<VRGrabbable>();
+                }
+                if(WeaponManager.Instance != null && WeaponManager.Instance.grabSystem != null)
+                {
+                    WeaponManager.Instance.grabSystem.RegisterGrabbable(this);
+                }
+                Debug.Log("[VRWeapon] VR interactions initialized.");
+            }
 
             public void Fire()
             {
@@ -225,10 +238,28 @@ namespace ArenaDeathMatch.Combat
 
                     yield return null;
                 }
-
+    
                 // Reset position and rotation
                 transform.localPosition = originalPosition;
                 transform.localRotation = originalRotation;
+                
+                private void OnCollisionEnter(Collision collision)
+                {
+                    if(type == WeaponType.MeleeWeapon)
+                    {
+                        if(collision.collider.TryGetComponent<IDamageable>(out IDamageable damageable))
+                        {
+                            damageable.TakeDamage(new DamageInfo 
+                            { 
+                                amount = data.damage, 
+                                point = collision.contacts[0].point, 
+                                normal = collision.contacts[0].normal, 
+                                source = transform.position 
+                            });
+                            Debug.Log("[VRWeapon] Melee weapon collision processed.");
+                        }
+                    }
+                }
             }
         }
 
