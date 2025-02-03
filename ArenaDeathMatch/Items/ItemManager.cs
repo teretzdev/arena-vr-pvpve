@@ -20,6 +20,7 @@ namespace ArenaDeathMatch.Items
             if (Instance == null)
             {
                 Instance = this;
+                PopulateItems();
                 // Uncomment the following line if the ItemManager should persist between scenes.
                 // DontDestroyOnLoad(gameObject);
             }
@@ -55,6 +56,50 @@ namespace ArenaDeathMatch.Items
         {
             if (itemDatabase != null && itemDatabase.items != null)
                 itemDatabase.items.Remove(item);
+        }
+        
+        // Populates the item database with all items in the game.
+        public void PopulateItems()
+        {
+            if (itemDatabase == null)
+                itemDatabase = new ItemDatabase();
+            if (itemDatabase.items == null)
+                itemDatabase.items = new List<ItemData>();
+            if (itemDatabase.items.Count == 0)
+            {
+                // Health Potion
+                ItemData healthPotion = new ItemData();
+                healthPotion.name = "Health Potion";
+                healthPotion.type = "Consumable";
+                healthPotion.value = 50;
+                healthPotion.weight = 0.5f;
+                healthPotion.stackable = true;
+                healthPotion.maxStack = 20;
+                healthPotion.description = "Restores 50 health points.";
+                itemDatabase.items.Add(healthPotion);
+                
+                // Mana Potion
+                ItemData manaPotion = new ItemData();
+                manaPotion.name = "Mana Potion";
+                manaPotion.type = "Consumable";
+                manaPotion.value = 45;
+                manaPotion.weight = 0.5f;
+                manaPotion.stackable = true;
+                manaPotion.maxStack = 20;
+                manaPotion.description = "Restores 50 mana points.";
+                itemDatabase.items.Add(manaPotion);
+                
+                // Bomb
+                ItemData bomb = new ItemData();
+                bomb.name = "Bomb";
+                bomb.type = "Explosive";
+                bomb.value = 100;
+                bomb.weight = 1.0f;
+                bomb.stackable = false;
+                bomb.maxStack = 1;
+                bomb.description = "Deals massive damage to enemies.";
+                itemDatabase.items.Add(bomb);
+            }
         }
     }
 

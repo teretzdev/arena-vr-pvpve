@@ -20,12 +20,55 @@ namespace ArenaDeathMatch.Combat
             if (Instance == null)
             {
                 Instance = this;
+                PopulateArmors();
                 // Optionally, if the ArmorManager should persist across scenes, uncomment the following line:
                 // DontDestroyOnLoad(gameObject);
             }
             else
             {
                 Destroy(gameObject);
+            }
+        }
+        
+        // Populates the armor database with all armor pieces in the game.
+        public void PopulateArmors()
+        {
+            if (armorDatabase == null)
+                armorDatabase = new ArmorDatabase();
+            if (armorDatabase.armors == null)
+                armorDatabase.armors = new List<ArmorData>();
+
+            if (armorDatabase.armors.Count == 0)
+            {
+                ArmorData steelPlate = new ArmorData();
+                steelPlate.name = "Steel Plate Armor";
+                steelPlate.defenseRating = 100f;
+                steelPlate.weight = 30f;
+                steelPlate.durability = 200f;
+                steelPlate.requiredLevel = 20;
+                steelPlate.rarity = "Rare";
+                steelPlate.description = "A sturdy set of steel plate armor.";
+                armorDatabase.armors.Add(steelPlate);
+
+                ArmorData leather = new ArmorData();
+                leather.name = "Leather Armor";
+                leather.defenseRating = 50f;
+                leather.weight = 15f;
+                leather.durability = 100f;
+                leather.requiredLevel = 5;
+                leather.rarity = "Common";
+                leather.description = "Lightweight leather armor for swift movement.";
+                armorDatabase.armors.Add(leather);
+
+                ArmorData chainmail = new ArmorData();
+                chainmail.name = "Chainmail Armor";
+                chainmail.defenseRating = 75f;
+                chainmail.weight = 25f;
+                chainmail.durability = 150f;
+                chainmail.requiredLevel = 10;
+                chainmail.rarity = "Uncommon";
+                chainmail.description = "A balanced chainmail armor offering moderate protection.";
+                armorDatabase.armors.Add(chainmail);
             }
         }
 

@@ -46,6 +46,112 @@ namespace ArenaDeathMatch.Combat
 
         private void InitializeWeapons()
         {
+            if(weaponDatabase.weapons == null)
+                weaponDatabase.weapons = new List<WeaponData>();
+
+            // Populate the weapon database with all weapons if not already populated.
+            if(weaponDatabase.weapons.Count == 0)
+            {
+                // Sword
+                WeaponData sword = new WeaponData();
+                sword.type = WeaponType.MeleeWeapon;
+                sword.prefab = Resources.Load<GameObject>("Prefabs/Weapons/Sword");
+                sword.damage = 25f;
+                sword.magazineSize = 0;
+                sword.fireRate = 1.2f;
+                sword.reloadTime = 0f;
+                sword.recoilDuration = 0.1f;
+                weaponDatabase.weapons.Add(sword);
+                
+                // Axe
+                WeaponData axe = new WeaponData();
+                axe.type = WeaponType.MeleeWeapon;
+                axe.prefab = Resources.Load<GameObject>("Prefabs/Weapons/Axe");
+                axe.damage = 35f;
+                axe.magazineSize = 0;
+                axe.fireRate = 0.8f;
+                axe.reloadTime = 0f;
+                axe.recoilDuration = 0.15f;
+                weaponDatabase.weapons.Add(axe);
+                
+                // Hammer
+                WeaponData hammer = new WeaponData();
+                hammer.type = WeaponType.MeleeWeapon;
+                hammer.prefab = Resources.Load<GameObject>("Prefabs/Weapons/Hammer");
+                hammer.damage = 40f;
+                hammer.magazineSize = 0;
+                hammer.fireRate = 0.6f;
+                hammer.reloadTime = 0f;
+                hammer.recoilDuration = 0.2f;
+                weaponDatabase.weapons.Add(hammer);
+                
+                // Bow
+                WeaponData bow = new WeaponData();
+                bow.type = WeaponType.RangedWeapon;
+                bow.prefab = Resources.Load<GameObject>("Prefabs/Weapons/Bow");
+                bow.damage = 15f;
+                bow.magazineSize = 1;
+                bow.fireRate = 1.0f;
+                bow.reloadTime = 0.5f;
+                bow.recoilDuration = 0.05f;
+                weaponDatabase.weapons.Add(bow);
+                
+                // Crossbow
+                WeaponData crossbow = new WeaponData();
+                crossbow.type = WeaponType.RangedWeapon;
+                crossbow.prefab = Resources.Load<GameObject>("Prefabs/Weapons/Crossbow");
+                crossbow.damage = 25f;
+                crossbow.magazineSize = 1;
+                crossbow.fireRate = 0.9f;
+                crossbow.reloadTime = 0.7f;
+                crossbow.recoilDuration = 0.05f;
+                weaponDatabase.weapons.Add(crossbow);
+                
+                // Gun
+                WeaponData gun = new WeaponData();
+                gun.type = WeaponType.RangedWeapon;
+                gun.prefab = Resources.Load<GameObject>("Prefabs/Weapons/Gun");
+                gun.damage = 20f;
+                gun.magazineSize = 30;
+                gun.fireRate = 0.1f;
+                gun.reloadTime = 1.5f;
+                gun.recoilDuration = 0.1f;
+                weaponDatabase.weapons.Add(gun);
+                
+                // NecromanticStaff
+                WeaponData necroStaff = new WeaponData();
+                necroStaff.type = WeaponType.MagicWeapon;
+                necroStaff.prefab = Resources.Load<GameObject>("Prefabs/Weapons/NecromanticStaff");
+                necroStaff.damage = 30f;
+                necroStaff.magazineSize = 0;
+                necroStaff.fireRate = 0.8f;
+                necroStaff.reloadTime = 1.0f;
+                necroStaff.recoilDuration = 0.1f;
+                weaponDatabase.weapons.Add(necroStaff);
+                
+                // HydraStaff
+                WeaponData hydraStaff = new WeaponData();
+                hydraStaff.type = WeaponType.MagicWeapon;
+                hydraStaff.prefab = Resources.Load<GameObject>("Prefabs/Weapons/HydraStaff");
+                hydraStaff.damage = 35f;
+                hydraStaff.magazineSize = 0;
+                hydraStaff.fireRate = 0.7f;
+                hydraStaff.reloadTime = 1.0f;
+                hydraStaff.recoilDuration = 0.1f;
+                weaponDatabase.weapons.Add(hydraStaff);
+                
+                // IdolStaff
+                WeaponData idolStaff = new WeaponData();
+                idolStaff.type = WeaponType.MagicWeapon;
+                idolStaff.prefab = Resources.Load<GameObject>("Prefabs/Weapons/IdolStaff");
+                idolStaff.damage = 28f;
+                idolStaff.magazineSize = 0;
+                idolStaff.fireRate = 0.9f;
+                idolStaff.reloadTime = 1.0f;
+                idolStaff.recoilDuration = 0.1f;
+                weaponDatabase.weapons.Add(idolStaff);
+            }
+            
             foreach (WeaponData weapon in weaponDatabase.weapons)
             {
                 weaponCache[weapon.type] = weapon;
