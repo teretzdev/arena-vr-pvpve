@@ -7,6 +7,7 @@ namespace ArenaDeathMatch.Audio
     public class AudioSystem : MonoBehaviour
     {
         public static AudioSystem Instance { get; private set; }
+        public static event System.Action<string, Vector3> AudioEventTriggered;
 
         [Header("Audio Configuration")]
         public AudioSettings audioSettings;
@@ -411,5 +412,11 @@ namespace ArenaDeathMatch.Audio
         }
 
         #endregion
+
+        public void TriggerAudioEvent(string eventID, Vector3 position)
+        {
+            eventManager.TriggerEvent(eventID, position);
+            AudioEventTriggered?.Invoke(eventID, position);
+        }
     }
 }

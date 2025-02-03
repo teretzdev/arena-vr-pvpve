@@ -154,9 +154,26 @@ namespace ArenaDeathMatch.Combat
                 ProcessShot();
                 UpdateAmmo();
                 PlayEffects();
+                if(AudioSystem.Instance != null) { AudioSystem.Instance.eventManager.TriggerEvent("weapon_fire", muzzle.position); }
                 ApplyRecoil();
             }
-
+            
+            public void Reload()
+            {
+                if (isReloading)
+                    return;
+                isReloading = true;
+                if(AudioSystem.Instance != null) { AudioSystem.Instance.eventManager.TriggerEvent("weapon_reload", transform.position); }
+                StartCoroutine(ReloadCoroutine());
+            }
+            
+            private IEnumerator ReloadCoroutine()
+            {
+                yield return new WaitForSeconds(data.reloadTime);
+                currentAmmo = data.magazineSize;
+                isReloading = false;
+            }
+            
             private bool CanFire()
             {
                 return currentAmmo > 0 && 

@@ -4,6 +4,9 @@ using Photon.Pun;
 
 namespace ArenaDeathMatch.Core
 {
+    /// <summary>
+    /// Core game manager responsible for managing game flow, state transitions, and integrating networking via NetworkManager.
+    /// </summary>
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
@@ -41,6 +44,9 @@ namespace ArenaDeathMatch.Core
             public DifficultyLevel difficulty = DifficultyLevel.Normal;
         }
 
+        /// <summary>
+        /// Initializes game components including state managers, round manager, score manager, matchmaking, events, and network connection.
+        /// </summary>
         private void InitializeGame()
         {
             stateManager.Initialize();
@@ -48,13 +54,17 @@ namespace ArenaDeathMatch.Core
             scoreManager.Initialize();
             matchmaking.Initialize(gameSettings.maxPlayers);
             eventSystem.Initialize();
+            if (ArenaDeathMatch.Networking.NetworkManager.Instance != null) { ArenaDeathMatch.Networking.NetworkManager.Instance.ConnectToServer(); }
         }
 
+        /// <summary>
+        /// Starts the game by transitioning state, starting the first round and triggering the game start event.
+        /// </summary>
         public void StartGame()
         {
             if (!CanStartGame())
                 return;
-
+            
             stateManager.TransitionTo(GameState.Starting);
             roundManager.StartFirstRound();
             eventSystem.TriggerEvent(GameEventType.GameStart);
@@ -67,6 +77,9 @@ namespace ArenaDeathMatch.Core
                    currentState == GameState.Lobby;
         }
 
+        /// <summary>
+        /// Ends the game by transitioning state, processing game results and triggering the game end event.
+        /// </summary>
         public void EndGame(EndGameReason reason)
         {
             stateManager.TransitionTo(GameState.Ending);
@@ -140,6 +153,11 @@ namespace ArenaDeathMatch.Core
                 isRoundActive = true;
                 SpawnPlayers();
                 GameManager.Instance.eventSystem.TriggerEvent(GameEventType.RoundStart, currentRound);
+            }
+            
+            public void StartFirstRound()
+            {
+                StartRound();
             }
 
             private void UpdateRound()
@@ -320,6 +338,11 @@ namespace ArenaDeathMatch.Core
             public int deaths;
             public int assists;
             public float accuracy;
+
+            public PlayerScore(int id)
+            {
+                playerId = id;
+            }
 
             public void AddPoints(int points)
             {

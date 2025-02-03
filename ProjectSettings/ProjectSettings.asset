@@ -4,7 +4,7 @@
 AdventureCreatorProjectSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 1
-  integrationEnabled: 1
+  integrationEnabled: true
   manualURL: "https://adventurecreator.org/files/Manual.pdf"
   dialogueManagement: true
   cutsceneCreation: true
