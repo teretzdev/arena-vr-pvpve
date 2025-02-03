@@ -47,7 +47,6 @@ namespace ArenaDeathMatch.Core
             roundManager.Initialize(gameSettings);
             scoreManager.Initialize();
             matchmaking.Initialize(gameSettings.maxPlayers);
-            eventSystem.Initialize();
             // Initialize Adventure Creator plugin
             AdventureCreator.Initialize();
         }
@@ -58,8 +57,6 @@ namespace ArenaDeathMatch.Core
                 return;
 
             stateManager.TransitionTo(GameState.Starting);
-            roundManager.StartFirstRound();
-            eventSystem.TriggerEvent(GameEventType.GameStart);
         }
 
         private bool CanStartGame()
@@ -72,8 +69,6 @@ namespace ArenaDeathMatch.Core
         public void EndGame(EndGameReason reason)
         {
             stateManager.TransitionTo(GameState.Ending);
-            ProcessGameResults();
-            eventSystem.TriggerEvent(GameEventType.GameEnd, reason);
         }
 
         #endregion
