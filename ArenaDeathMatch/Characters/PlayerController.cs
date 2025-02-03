@@ -6,6 +6,7 @@ namespace ArenaDeathMatch.Characters
 {
     /// <summary>
     /// PlayerController handles the player’s movement and interactions.
+    ///         ProcessVRCombat();
     /// It has been updated to integrate with the Adventure Creator plugin so that
     /// players can trigger dialogues and interactive events during gameplay.
     /// </summary>
@@ -20,7 +21,12 @@ namespace ArenaDeathMatch.Characters
         public InputAction interactiveAction;
         public InputAction cutsceneAction;
         private CharacterController characterController;
-
+        
+        [Header("VR & Combat Settings")]
+        public bool enableVRInput = true;
+        public InputAction meleeAction;
+        public InputAction rangedAction;
+        
         private void Awake()
         {
             characterController = GetComponent<CharacterController>();
@@ -36,6 +42,8 @@ namespace ArenaDeathMatch.Characters
             dialogueAction?.Enable();
             interactiveAction?.Enable();
             cutsceneAction?.Enable();
+            meleeAction?.Enable();
+            rangedAction?.Enable();
             dialogueAction.performed += OnDialoguePerformed;
             interactiveAction.performed += OnInteractivePerformed;
             cutsceneAction.performed += OnCutscenePerformed;
@@ -50,6 +58,8 @@ namespace ArenaDeathMatch.Characters
             dialogueAction?.Disable();
             interactiveAction?.Disable();
             cutsceneAction?.Disable();
+            meleeAction?.Disable();
+            rangedAction?.Disable();
         }
 
         private void Update()
@@ -123,9 +133,41 @@ namespace ArenaDeathMatch.Characters
             ProcessInteractive();
         }
         
+        private void ProcessVRCombat()
+        {
+            if (!enableVRInput) return;
+            ProcessMeleeAttack();
+            ProcessRangedAttack();
+        }
+        
+        private void ProcessMeleeAttack()
+        {
+            if (meleeAction != null && meleeAction.triggered)
+            {
+                Debug.Log("[PlayerController] VR Melee attack triggered using Emerald AI 2024 combat methods.");
+                // TODO: Integrate Emerald AI melee combat interaction here.
+            }
+        }
+        
+        private void ProcessRangedAttack()
+        {
+            if (rangedAction != null && rangedAction.triggered)
+            {
+                Debug.Log("[PlayerController] VR Ranged attack triggered using Emerald AI 2024 combat methods.");
+                // TODO: Integrate Emerald AI ranged combat interaction here.
+            }
+        }
+        
         private void OnCutscenePerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
-            ProcessCutscene();
+            if (AdventureCreatorManager.Instance != null)
+            {
+                AdventureCreatorManager.Instance.TriggerCutscene("PlayerCutscene");
+            }
+            else
+            {
+                Debug.LogWarning("AdventureCreatorManager instance is not available to trigger cutscene.");
+            }
         }
     }
 }

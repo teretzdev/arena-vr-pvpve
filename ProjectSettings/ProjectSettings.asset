@@ -14,3 +14,6 @@ AdventureCreatorProjectSettings:
   localization:
     enabled: true
     defaultLanguage: "English"
+  vrSupport:
+    enabled: true
+    sdk: "Oculus"
