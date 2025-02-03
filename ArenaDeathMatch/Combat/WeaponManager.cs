@@ -111,6 +111,13 @@ namespace ArenaDeathMatch.Combat
             activeWeapons.Remove(weapon);
             Destroy(weapon.gameObject);
         }
+        // Provides access to all weapon data for generating statistical tables.
+        public List<WeaponData> GetAllWeaponData()
+        {
+            if (weaponDatabase != null && weaponDatabase.weapons != null)
+                return weaponDatabase.weapons;
+            return new List<WeaponData>();
+        }
         #endregion
 
         #region Weapon Classes

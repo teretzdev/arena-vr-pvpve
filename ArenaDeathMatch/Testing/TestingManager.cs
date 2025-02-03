@@ -46,6 +46,7 @@ namespace ArenaDeathMatch.Testing
             public TestRunner()
             {
                 testCases = new List<TestCase>();
+                testCases.Add(new StatisticalTablesTestCase());
             }
 
             public void RunAllTests()
@@ -94,6 +95,16 @@ namespace ArenaDeathMatch.Testing
             {
                 public void AddSuccess(TestCase test) { /* Implementation */ }
                 public void AddFailure(TestCase test, Exception e) { /* Implementation */ }
+            }
+            
+            public class StatisticalTablesTestCase : TestCase
+            {
+                public override void Setup() { Debug.Log("Setting up StatisticalTablesTestCase."); }
+                public override void Execute() {
+                    string report = ArenaDeathMatch.Utilities.StatisticalTablesGenerator.GenerateStatisticsReport();
+                    Debug.Log("Statistical Tables Report:\\n" + report);
+                }
+                public override void Teardown() { Debug.Log("Tearing down StatisticalTablesTestCase."); }
             }
         }
 

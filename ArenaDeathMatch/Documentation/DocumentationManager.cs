@@ -110,7 +110,30 @@ namespace ArenaDeathMatch.Documentation
         }
 
         #endregion
-
+        
+        #region Statistical Tables Documentation
+        
+        /// <summary>
+        /// Documentation for the Statistical Tables feature.
+        /// This feature aggregates data from various game systems such as Weapons, Armors, Items, and Abilities.
+        /// It generates human-readable reports displaying key statistics like damage, defense, value, and other parameters.
+        /// 
+        /// How it works:
+        /// The StatisticalTablesGenerator collects data from WeaponManager, ArmorManager, ItemManager, and AbilityManager.
+        /// It formats these data into separate tables and combines them into a comprehensive report.
+        /// 
+        /// How to use:
+        /// - Call StatisticalTablesGenerator.GenerateStatisticsReport() to retrieve the aggregated report.
+        /// - The StatisticsScreen in the UI displays this report automatically.
+        /// - This report can be used for debugging, balancing, and gameplay analysis.
+        /// </summary>
+        public static class StatisticalTablesDocs
+        {
+            public const string Description = "Provides an aggregated report of game statistics from weapons, armors, items, and abilities. Generate the report using StatisticalTablesGenerator.GenerateStatisticsReport().";
+        }
+        
+        #endregion
+        
         #region Documentation Attributes
 
         [System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method)]
