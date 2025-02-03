@@ -51,7 +51,12 @@ namespace ArenaDeathMatch.UI
                 screen.Initialize();
             }
         }
-
+        
+        public void ShowStatisticsScreen(UITransitionData transitionData = null)
+        {
+            ShowScreen(UIScreenType.StatisticsScreen, transitionData);
+        }
+        
         #endregion
 
         #region Screen Management
