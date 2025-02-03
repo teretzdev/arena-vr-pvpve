@@ -130,6 +130,40 @@ Text:
   m_HorizontalOverflow: 1
   m_VerticalOverflow: 1
   m_UpdateBounds: 0
+%------- CHILD: AdventureNarrativePanel (Narrative Display) -------%
+--- !u!1 &100030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: AdventureNarrativePanel
+  m_Component:
+  - component: {fileID: 100031}  # RectTransform component
+  - component: {fileID: 100032}  # CanvasRenderer component
+  - component: {fileID: 100033}  # Text component (for narrative)
+  m_Layer: 5
+  m_TagString: UGUI
+  m_IsActive: 1
+  m_TransformParent: {fileID: 100000}
+--- !u!4 &100031
+RectTransform:
+  m_AnchorMin: {x: 0.05, y: 0.55}
+  m_AnchorMax: {x: 0.95, y: 0.70}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &100032
+CanvasRenderer:
+  m_IsMask: 0
+--- !u!137 &100033
+Text:
+  m_Text: "Narrative will appear here."
+  m_FontSize: 18
+  m_LineSpacing: 1.2
+  m_Font: {fileID: 2800000}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_AlignByGeometry: 0
+  m_HorizontalOverflow: 1
+  m_VerticalOverflow: 1
+  m_UpdateBounds: 0
 %------- CHILD: BackButton (Navigation Button) -------%
 --- !u!1 &100002
 GameObject:

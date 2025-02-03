@@ -418,5 +418,15 @@ namespace ArenaDeathMatch.Audio
             eventManager.TriggerEvent(eventID, position);
             AudioEventTriggered?.Invoke(eventID, position);
         }
+        
+        public static void RegisterAudioEventListener(System.Action<string, Vector3> listener)
+        {
+            AudioEventTriggered += listener;
+        }
+        
+        public static void UnregisterAudioEventListener(System.Action<string, Vector3> listener)
+        {
+            AudioEventTriggered -= listener;
+        }
     }
 }

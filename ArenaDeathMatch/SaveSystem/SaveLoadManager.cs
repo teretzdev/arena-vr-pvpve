@@ -33,6 +33,7 @@ namespace ArenaDeathMatch.SaveSystem
         /// <param name="data">The game data to be saved.</param>
         public void SaveGame(SaveData data)
         {
+            if(data == null) { Debug.LogWarning("SaveData is null. Nothing to save."); return; }
             try
             {
                 string jsonData = JsonUtility.ToJson(data, true);

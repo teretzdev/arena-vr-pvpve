@@ -154,7 +154,7 @@ namespace ArenaDeathMatch.Combat
                 ProcessShot();
                 UpdateAmmo();
                 PlayEffects();
-                if(AudioSystem.Instance != null) { AudioSystem.Instance.eventManager.TriggerEvent("weapon_fire", muzzle.position); }
+                if(AudioSystem.Instance != null) { AudioSystem.Instance.TriggerAudioEvent("weapon_fire", muzzle.position); }
                 ApplyRecoil();
             }
             
@@ -163,7 +163,7 @@ namespace ArenaDeathMatch.Combat
                 if (isReloading)
                     return;
                 isReloading = true;
-                if(AudioSystem.Instance != null) { AudioSystem.Instance.eventManager.TriggerEvent("weapon_reload", transform.position); }
+                if(AudioSystem.Instance != null) { AudioSystem.Instance.TriggerAudioEvent("weapon_reload", transform.position); }
                 StartCoroutine(ReloadCoroutine());
             }
             

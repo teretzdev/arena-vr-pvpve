@@ -10,9 +10,9 @@ Usage Instructions:
 - Open the project in Unity (version 2020.3.18f1 or compatible) and allow it to import all dependencies.
 - Refer to the Adventure Creator manual at https://adventurecreator.org/files/Manual.pdf for detailed setup and configuration.
 - Follow the manual steps to integrate and configure Adventure Creator within the project.
-- Ensure that any required project settings are adjusted to support the plugin’s functionalities.
+- Ensure that any required project settings are adjusted to support the plugin’s functionalities. Also, review the updated integration guides in the Documentation folder and AdventureCreatorIntegration.md for advanced configuration, testing, and integration instructions.
 
 ## How to Contribute
 
 Contributions are welcome! Please fork the repository, create a new branch for your changes, and submit a pull request. Make sure to follow our coding guidelines and include tests for any new features.
-- For additional setup instructions, refer to the documentation in the 'Documentation' folder.
+- For additional setup instructions and contribution guidelines—including requirements for test cases related to recent integrations—refer to the Documentation folder and the CONTRIBUTING.md file.
