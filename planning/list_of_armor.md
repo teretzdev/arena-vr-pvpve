@@ -15,7 +15,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 200
 - **Required Level**: 20
 - **Rarity**: Rare
-- **Description**: A heavy and durable armor offering excellent protection against physical attacks.
+- **VR Equipping Mechanics**: Use both hands to lift and align the armor onto the body, followed by a fastening gesture.
+- **Description**: A heavy and durable armor offering excellent protection against physical attacks. In VR, equipping this armor provides a sense of weight and tactile feedback during the fastening process.
 
 ---
 
@@ -26,7 +27,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 100
 - **Required Level**: 5
 - **Rarity**: Common
-- **Description**: Lightweight armor providing basic protection, ideal for beginners.
+- **VR Equipping Mechanics**: Slide arms through the sleeves and pull the armor over the torso.
+- **Description**: Lightweight armor providing basic protection, ideal for beginners. In VR, the equipping process emphasizes ease of use and quick mobility.
 
 ---
 
@@ -37,7 +39,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 50
 - **Required Level**: 10
 - **Rarity**: Uncommon
-- **Description**: Robes imbued with magical properties, enhancing mana regeneration but offering minimal physical protection.
+- **VR Equipping Mechanics**: Hold the robe and drape it over the shoulders, followed by a clasping gesture.
+- **Description**: Robes imbued with magical properties, enhancing mana regeneration but offering minimal physical protection. In VR, the flowing fabric and clasping motion add to the magical immersion.
 
 ---
 
@@ -48,7 +51,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 300
 - **Required Level**: 30
 - **Rarity**: Legendary
-- **Description**: Forged from the scales of a dragon, this armor provides unparalleled defense and resistance to fire damage.
+- **VR Equipping Mechanics**: Position the armor pieces over the body and perform a locking gesture to secure them.
+- **Description**: Forged from the scales of a dragon, this armor provides unparalleled defense and resistance to fire damage. In VR, the locking mechanism and fiery visual effects enhance the sense of power.
 
 ---
 
@@ -59,7 +63,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 150
 - **Required Level**: 15
 - **Rarity**: Uncommon
-- **Description**: A versatile armor offering balanced protection and mobility.
+- **VR Equipping Mechanics**: Drape the chainmail over the head and adjust it to fit snugly.
+- **Description**: A versatile armor offering balanced protection and mobility. In VR, the metallic clinking sound and adjustment process enhance realism.
 
 ---
 
@@ -70,7 +75,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 80
 - **Required Level**: 12
 - **Rarity**: Rare
-- **Description**: A lightweight cloak that enhances stealth and agility, favored by assassins and rogues.
+- **VR Equipping Mechanics**: Wrap the cloak around the shoulders and fasten it with a quick pinching gesture.
+- **Description**: A lightweight cloak that enhances stealth and agility, favored by assassins and rogues. In VR, the wrapping motion and subtle haptic feedback enhance the stealthy experience.
 
 ---
 
@@ -81,7 +87,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 180
 - **Required Level**: 18
 - **Rarity**: Common
-- **Description**: A sturdy and reliable armor made of iron, suitable for mid-level adventurers.
+- **VR Equipping Mechanics**: Lift and align the armor onto the body, followed by a tightening gesture.
+- **Description**: A sturdy and reliable armor made of iron, suitable for mid-level adventurers. In VR, the equipping process emphasizes the weight and durability of the armor.
 
 ---
 
@@ -92,7 +99,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 250
 - **Required Level**: 25
 - **Rarity**: Epic
-- **Description**: A shimmering armor infused with magical energy, providing excellent defense and resistance to magical attacks.
+- **VR Equipping Mechanics**: Channel magical energy through hand gestures to materialize the armor onto the body.
+- **Description**: A shimmering armor infused with magical energy, providing excellent defense and resistance to magical attacks. In VR, the equipping process involves dynamic visual effects and gesture-based interactions.
 
 ---
 
@@ -103,7 +111,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 90
 - **Required Level**: 8
 - **Rarity**: Common
-- **Description**: A lightweight vest designed for hunters, offering moderate protection and increased mobility.
+- **VR Equipping Mechanics**: Slip the vest over the head and adjust the straps for a secure fit.
+- **Description**: A lightweight vest designed for hunters, offering moderate protection and increased mobility. In VR, the equipping process highlights the vest's flexibility and ease of use.
 
 ---
 
@@ -114,7 +123,8 @@ This document contains a comprehensive list of all armor pieces available in the
 - **Durability**: 300
 - **Required Level**: 28
 - **Rarity**: Legendary
-- **Description**: A magnificent armor crafted from gold, providing exceptional defense and a regal appearance.
+- **VR Equipping Mechanics**: Carefully position the armor pieces and perform a ceremonial gesture to secure them.
+- **Description**: A magnificent armor crafted from gold, providing exceptional defense and a regal appearance. In VR, the ceremonial equipping process enhances the sense of grandeur and prestige.
 
 ---
 

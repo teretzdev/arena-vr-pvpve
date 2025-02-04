@@ -13,7 +13,10 @@ This document contains a comprehensive list of all weapons available in the game
 - **Fire Rate**: 0.5 seconds
 - **Reload Time**: 1.0 seconds
 - **Recoil Duration**: 0.5 seconds
-- **Description**: A standard semi-automatic pistol with moderate damage and a quick reload time.
+- **VR Interaction Type**: One-handed grip
+- **Haptic Feedback**: Vibration on trigger pull and reload
+- **Motion Controls**: Trigger pull to fire, swipe down to reload
+- **Description**: A standard semi-automatic pistol with moderate damage and a quick reload time. In VR, it offers precise aiming and tactile feedback for an immersive shooting experience.
 
 ---
 
@@ -24,7 +27,10 @@ This document contains a comprehensive list of all weapons available in the game
 - **Fire Rate**: 0.2 seconds
 - **Reload Time**: 2.5 seconds
 - **Recoil Duration**: 0.7 seconds
-- **Description**: A high-powered automatic rifle with a large magazine and rapid fire rate.
+- **VR Interaction Type**: Two-handed grip
+- **Haptic Feedback**: Continuous vibration during sustained fire, reload feedback
+- **Motion Controls**: Trigger pull to fire, two-hand gesture to stabilize
+- **Description**: A high-powered automatic rifle with a large magazine and rapid fire rate. In VR, it requires two-handed control for stability and provides immersive recoil feedback.
 
 ---
 
@@ -35,7 +41,10 @@ This document contains a comprehensive list of all weapons available in the game
 - **Fire Rate**: 1.0 seconds
 - **Reload Time**: 3.0 seconds
 - **Recoil Duration**: 1.0 seconds
-- **Description**: A close-range weapon with high damage and a wide spread.
+- **VR Interaction Type**: Two-handed grip
+- **Haptic Feedback**: Strong vibration on fire, reload feedback
+- **Motion Controls**: Trigger pull to fire, pump action to reload
+- **Description**: A close-range weapon with high damage and a wide spread. In VR, the pump-action reload adds a layer of physicality and immersion.
 
 ---
 
@@ -45,7 +54,10 @@ This document contains a comprehensive list of all weapons available in the game
 - **Mana Cost**: 20
 - **Cooldown Time**: 2.0 seconds
 - **Special Effect**: Summons a fireball that explodes on impact.
-- **Description**: A mystical staff that channels magical energy to cast powerful spells.
+- **VR Interaction Type**: Two-handed grip
+- **Haptic Feedback**: Vibration on spell cast and impact
+- **Motion Controls**: Swipe forward to cast, hold trigger to charge
+- **Description**: A mystical staff that channels magical energy to cast powerful spells. In VR, casting spells involves intuitive gestures and tactile feedback for enhanced immersion.
 
 ---
 
@@ -56,7 +68,10 @@ This document contains a comprehensive list of all weapons available in the game
 - **Fire Rate**: 1.5 seconds
 - **Reload Time**: 2.0 seconds
 - **Recoil Duration**: 0.3 seconds
-- **Description**: A precision weapon that fires bolts with high accuracy and damage.
+- **VR Interaction Type**: Two-handed grip
+- **Haptic Feedback**: Vibration on bolt release and reload
+- **Motion Controls**: Pull string to load, release to fire
+- **Description**: A precision weapon that fires bolts with high accuracy and damage. In VR, the act of pulling and releasing the string enhances the sense of realism.
 
 ---
 
@@ -66,7 +81,10 @@ This document contains a comprehensive list of all weapons available in the game
 - **Explosion Radius**: 5 meters
 - **Cooldown Time**: 5.0 seconds
 - **Special Effect**: Creates a thunderous explosion that damages all enemies within the radius.
-- **Description**: A throwable explosive device that deals massive area damage.
+- **VR Interaction Type**: Throwing
+- **Haptic Feedback**: Vibration on throw and explosion
+- **Motion Controls**: Hold trigger to aim, release to throw
+- **Description**: A throwable explosive device that deals massive area damage. In VR, the throwing motion adds a layer of physical engagement.
 
 ---
 

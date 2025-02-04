@@ -7,43 +7,73 @@ Arena events are special occurrences within the game that captivate the audience
 ## List of Arena Events
 
 1. **Last Man Standing**
-   - Description: The player who survives until the end of the round without being eliminated earns the crowd's admiration.
+   - Description: The player who survives until the end of the round without being eliminated earns the crowd's admiration. In VR, players must physically dodge attacks and maintain spatial awareness to stay alive.
+   - Player Movement Requirements: Full-body movement to evade attacks.
+   - Immersive VR Effects: Slow-motion effects during critical moments.
+   - Spatial Audio Considerations: Enhanced directional audio for incoming threats.
    - Rewards: Bonus points, increased crowd favor.
 
 2. **Flawless Victory**
-   - Description: A player who wins a round without taking any damage.
+   - Description: A player who wins a round without taking any damage. In VR, precise hand-eye coordination and quick reflexes are essential to avoid all damage.
+   - Player Movement Requirements: Quick reflex-based dodging and blocking.
+   - Immersive VR Effects: Visual indicators for incoming attacks.
+   - Spatial Audio Considerations: Subtle audio cues for enemy movements.
    - Rewards: Extra experience points, rare loot drops.
 
 3. **Finishing Move Showcase**
-   - Description: Performing a spectacular finishing move on an opponent.
+   - Description: Performing a spectacular finishing move on an opponent. In VR, players execute finishing moves using specific gestures or full-body actions.
+   - Player Movement Requirements: Gesture-based finishing move execution.
+   - Immersive VR Effects: Cinematic slow-motion and particle effects during the move.
+   - Spatial Audio Considerations: Amplified sound effects for dramatic impact.
    - Rewards: Increased crowd favor, visual effects enhancements.
 
 4. **Multi-Kill Streak**
-   - Description: Achieving multiple eliminations in quick succession.
+   - Description: Achieving multiple eliminations in quick succession. In VR, players must rapidly switch targets and maintain precise aim.
+   - Player Movement Requirements: Quick target switching and precise aiming.
+   - Immersive VR Effects: Dynamic camera shake and visual streak indicators.
+   - Spatial Audio Considerations: Layered audio feedback for each elimination.
    - Rewards: Score multipliers, temporary buffs.
 
 5. **Environmental Kill**
-   - Description: Using the environment to eliminate an opponent (e.g., traps, hazards).
+   - Description: Using the environment to eliminate an opponent (e.g., traps, hazards). In VR, players interact with environmental elements using hand gestures or physical actions.
+   - Player Movement Requirements: Hand gestures to activate traps or manipulate objects.
+   - Immersive VR Effects: Enhanced environmental animations and effects.
+   - Spatial Audio Considerations: Realistic environmental sound effects.
    - Rewards: Bonus points, unique crowd reactions.
 
 6. **Weapon Mastery**
-   - Description: Demonstrating exceptional skill with a specific weapon type during the round.
+   - Description: Demonstrating exceptional skill with a specific weapon type during the round. In VR, players must master weapon-specific gestures and techniques.
+   - Player Movement Requirements: Weapon-specific gestures (e.g., reloading, aiming).
+   - Immersive VR Effects: Detailed weapon animations and tactile feedback.
+   - Spatial Audio Considerations: Weapon-specific sound enhancements.
    - Rewards: Weapon-specific bonuses, crowd favor.
 
 7. **Comeback Victory**
-   - Description: Winning a round after being at a significant disadvantage.
+   - Description: Winning a round after being at a significant disadvantage. In VR, players must rely on strategic positioning and precise movements to turn the tide.
+   - Player Movement Requirements: Strategic repositioning and defensive maneuvers.
+   - Immersive VR Effects: Visual effects highlighting the comeback moment.
+   - Spatial Audio Considerations: Dynamic audio shifts to emphasize the tension.
    - Rewards: Increased experience points, crowd admiration.
 
 8. **Team Play Excellence**
-   - Description: Coordinating effectively with teammates to achieve objectives or eliminate opponents.
+   - Description: Coordinating effectively with teammates to achieve objectives or eliminate opponents. In VR, players use voice commands and hand signals for effective communication.
+   - Player Movement Requirements: Coordinated team movements and gestures.
+   - Immersive VR Effects: Highlighted teammate actions and shared visual cues.
+   - Spatial Audio Considerations: Positional audio for teammate communication.
    - Rewards: Team-wide bonuses, crowd favor.
 
 9. **Special Ability Showcase**
-   - Description: Using a special ability in a creative or impactful way to turn the tide of the match.
+   - Description: Using a special ability in a creative or impactful way to turn the tide of the match. In VR, players perform unique gestures to activate abilities.
+   - Player Movement Requirements: Gesture-based ability activation.
+   - Immersive VR Effects: Enhanced visual and audio effects for abilities.
+   - Spatial Audio Considerations: Ability-specific sound effects with spatial depth.
    - Rewards: Ability cooldown reduction, crowd favor.
 
 10. **Perfect Round**
-    - Description: Achieving all objectives or eliminating all opponents in a round without any mistakes.
+    - Description: Achieving all objectives or eliminating all opponents in a round without any mistakes. In VR, players must maintain flawless execution of movements and actions.
+    - Player Movement Requirements: Precise and error-free movements.
+    - Immersive VR Effects: Visual perfection indicators and celebratory effects.
+    - Spatial Audio Considerations: Subtle audio cues for flawless execution.
     - Rewards: Maximum crowd favor, rare rewards.
 
 ## Notes
