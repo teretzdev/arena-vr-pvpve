@@ -65,6 +65,12 @@ namespace ArenaDeathMatch.Combat
             if (type == WeaponType.MagicWeapon)
             {
                 MagicWeapon magicWeapon = weaponObj.GetComponent<MagicWeapon>();
+                if (magicWeapon == null)
+                {
+                    Debug.LogError($"MagicWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize magic weapon specific properties if needed
                 activeWeapons.Add(magicWeapon);
                 return magicWeapon;
@@ -72,6 +78,12 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.ThunderGrenade)
             {
                 ThunderGrenade specialWeapon = weaponObj.GetComponent<ThunderGrenade>();
+                if (specialWeapon == null)
+                {
+                    Debug.LogError($"ThunderGrenade component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize special weapon specific properties if needed
                 activeWeapons.Add(specialWeapon);
                 return specialWeapon;
@@ -79,6 +91,12 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.Shield)
             {
                 Shield shield = weaponObj.GetComponent<Shield>();
+                if (shield == null)
+                {
+                    Debug.LogError($"Shield component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize shield specific properties if needed
                 activeWeapons.Add(shield);
                 return shield;
@@ -86,6 +104,12 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.RangedWeapon)
             {
                 RangedWeapon rangedWeapon = weaponObj.GetComponent<RangedWeapon>();
+                if (rangedWeapon == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize ranged weapon specific properties if needed
                 activeWeapons.Add(rangedWeapon);
                 return rangedWeapon;
@@ -93,6 +117,12 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.MeleeWeapon)
             {
                 MeleeWeapon meleeWeapon = weaponObj.GetComponent<MeleeWeapon>();
+                if (meleeWeapon == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize melee weapon specific properties if needed
                 activeWeapons.Add(meleeWeapon);
                 return meleeWeapon;
@@ -100,6 +130,12 @@ namespace ArenaDeathMatch.Combat
             else
             {
                 VRWeapon weapon = weaponObj.GetComponent<VRWeapon>();
+                if (weapon == null)
+                {
+                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 weapon.Initialize(data);
                 activeWeapons.Add(weapon);
                 return weapon;

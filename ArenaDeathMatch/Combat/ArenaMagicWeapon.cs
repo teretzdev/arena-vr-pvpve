@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ArenaDeathMatch.Combat
 {
-    public abstract class MagicWeapon : MonoBehaviour
+    public abstract class MagicWeapon : VRWeapon
     {
         public string weaponName;
         public float manaCost;

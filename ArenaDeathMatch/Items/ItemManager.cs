@@ -17,16 +17,16 @@ namespace ArenaDeathMatch.Items
 
         private void Awake()
         {
-            if (Instance == null)
+            if (Instance != null && Instance != this)
             {
-                Instance = this;
-                // Uncomment the following line if the ItemManager should persist between scenes.
-                // DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
+                Debug.LogError("Multiple instances of ItemManager detected. Destroying duplicate instance.");
                 Destroy(gameObject);
+                return;
             }
+
+            Instance = this;
+            // Uncomment the following line if the ItemManager should persist between scenes.
+            // DontDestroyOnLoad(gameObject);
         }
 
         // Returns a list of all item data for generating statistical reports.
