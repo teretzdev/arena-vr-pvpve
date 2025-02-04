@@ -9,8 +9,8 @@ In the arena, players can perform specific actions during events to gain the fav
 ## List of Crowd Favor Actions
 
 1. **Performing Finishing Moves**
-   - Description: Execute a spectacular finishing move on an opponent to end the fight in style. In VR, players perform specific gestures or full-body movements to execute the move.
-   - VR Execution Mechanics: Gesture-based finishing move execution or full-body actions.
+   - Description: Execute a spectacular finishing move on an opponent to end the fight in style. In VR, players can use voice commands or full-body movements to execute the move, reducing reliance on gestures.
+   - VR Execution Mechanics: Voice commands or full-body actions for finishing move execution.
    - Haptic Feedback Integration: Strong vibration during the execution and impact of the move.
    - Benefits: Significant increase in crowd favor, visual effects enhancements, and potential bonus rewards.
 
@@ -27,8 +27,8 @@ In the arena, players can perform specific actions during events to gain the fav
    - Benefits: Score multipliers, temporary buffs, and increased crowd admiration.
 
 4. **Executing Environmental Kills**
-   - Description: Use the environment creatively to eliminate opponents (e.g., traps, hazards, or falling objects). In VR, players interact with environmental elements using hand gestures or physical actions.
-   - VR Execution Mechanics: Hand gestures to activate traps or manipulate objects.
+   - Description: Use the environment creatively to eliminate opponents (e.g., traps, hazards, or falling objects). In VR, players interact with environmental elements using voice commands or physical actions, minimizing hand gestures.
+   - VR Execution Mechanics: Voice commands or physical actions to activate traps or manipulate objects.
    - Haptic Feedback Integration: Vibration when interacting with environmental elements and during the kill.
    - Benefits: Unique crowd reactions, bonus points, and potential special rewards.
 
@@ -39,8 +39,8 @@ In the arena, players can perform specific actions during events to gain the fav
    - Benefits: Extra experience points, rare loot, and a significant boost in crowd favor.
 
 6. **Showcasing Weapon Mastery**
-   - Description: Demonstrate exceptional skill with a specific weapon type during the round. In VR, players must master weapon-specific gestures and techniques.
-   - VR Execution Mechanics: Weapon-specific gestures (e.g., reloading, aiming, or melee strikes).
+   - Description: Demonstrate exceptional skill with a specific weapon type during the round. In VR, players can use voice commands or simplified gestures to master weapon-specific techniques.
+   - VR Execution Mechanics: Voice commands or simplified gestures (e.g., reloading, aiming, or melee strikes).
    - Haptic Feedback Integration: Tactile feedback for weapon interactions and successful hits.
    - Benefits: Weapon-specific bonuses, increased crowd favor, and recognition as a master of the weapon.
 
@@ -51,14 +51,14 @@ In the arena, players can perform specific actions during events to gain the fav
    - Benefits: Increased experience points, crowd admiration, and potential special rewards.
 
 8. **Coordinating Effective Team Play**
-   - Description: Work seamlessly with teammates to achieve objectives or eliminate opponents. In VR, players use voice commands and hand signals for effective communication.
-   - VR Execution Mechanics: Hand signals and coordinated team movements.
+   - Description: Work seamlessly with teammates to achieve objectives or eliminate opponents. In VR, players primarily use voice commands for communication, with optional hand signals for emphasis.
+   - VR Execution Mechanics: Voice commands and coordinated team movements.
    - Haptic Feedback Integration: Subtle vibrations for successful team actions and synchronized movements.
    - Benefits: Team-wide bonuses, increased crowd favor, and recognition for teamwork.
 
 9. **Using Special Abilities Creatively**
-   - Description: Employ special abilities in innovative or impactful ways to influence the match. In VR, players perform unique gestures to activate abilities.
-   - VR Execution Mechanics: Gesture-based ability activation.
+   - Description: Employ special abilities in innovative or impactful ways to influence the match. In VR, players can activate abilities using voice commands or unique gestures, offering flexibility.
+   - VR Execution Mechanics: Voice commands or gesture-based ability activation.
    - Haptic Feedback Integration: Enhanced feedback during ability activation and impact.
    - Benefits: Ability cooldown reduction, increased crowd favor, and potential buffs.
 

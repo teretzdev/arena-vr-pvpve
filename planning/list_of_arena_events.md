@@ -21,8 +21,8 @@ Arena events are special occurrences within the game that captivate the audience
    - Rewards: Extra experience points, rare loot drops.
 
 3. **Finishing Move Showcase**
-   - Description: Performing a spectacular finishing move on an opponent. In VR, players execute finishing moves using specific gestures or full-body actions.
-   - Player Movement Requirements: Gesture-based finishing move execution.
+   - Description: Performing a spectacular finishing move on an opponent. In VR, players can execute finishing moves using voice commands or full-body actions, reducing reliance on gestures.
+   - Player Movement Requirements: Voice commands or full-body actions for finishing move execution.
    - Immersive VR Effects: Cinematic slow-motion and particle effects during the move.
    - Spatial Audio Considerations: Amplified sound effects for dramatic impact.
    - Rewards: Increased crowd favor, visual effects enhancements.
@@ -35,15 +35,15 @@ Arena events are special occurrences within the game that captivate the audience
    - Rewards: Score multipliers, temporary buffs.
 
 5. **Environmental Kill**
-   - Description: Using the environment to eliminate an opponent (e.g., traps, hazards). In VR, players interact with environmental elements using hand gestures or physical actions.
-   - Player Movement Requirements: Hand gestures to activate traps or manipulate objects.
+   - Description: Using the environment to eliminate an opponent (e.g., traps, hazards). In VR, players interact with environmental elements using voice commands or physical actions, minimizing hand gestures.
+   - Player Movement Requirements: Voice commands or physical actions to activate traps or manipulate objects.
    - Immersive VR Effects: Enhanced environmental animations and effects.
    - Spatial Audio Considerations: Realistic environmental sound effects.
    - Rewards: Bonus points, unique crowd reactions.
 
 6. **Weapon Mastery**
-   - Description: Demonstrating exceptional skill with a specific weapon type during the round. In VR, players must master weapon-specific gestures and techniques.
-   - Player Movement Requirements: Weapon-specific gestures (e.g., reloading, aiming).
+   - Description: Demonstrating exceptional skill with a specific weapon type during the round. In VR, players can use voice commands or simplified gestures to master weapon-specific techniques.
+   - Player Movement Requirements: Voice commands or simplified gestures (e.g., reloading, aiming).
    - Immersive VR Effects: Detailed weapon animations and tactile feedback.
    - Spatial Audio Considerations: Weapon-specific sound enhancements.
    - Rewards: Weapon-specific bonuses, crowd favor.
@@ -56,15 +56,15 @@ Arena events are special occurrences within the game that captivate the audience
    - Rewards: Increased experience points, crowd admiration.
 
 8. **Team Play Excellence**
-   - Description: Coordinating effectively with teammates to achieve objectives or eliminate opponents. In VR, players use voice commands and hand signals for effective communication.
-   - Player Movement Requirements: Coordinated team movements and gestures.
+   - Description: Coordinating effectively with teammates to achieve objectives or eliminate opponents. In VR, players primarily use voice commands for communication, with optional hand signals for emphasis.
+   - Player Movement Requirements: Coordinated team movements and voice commands.
    - Immersive VR Effects: Highlighted teammate actions and shared visual cues.
    - Spatial Audio Considerations: Positional audio for teammate communication.
    - Rewards: Team-wide bonuses, crowd favor.
 
 9. **Special Ability Showcase**
-   - Description: Using a special ability in a creative or impactful way to turn the tide of the match. In VR, players perform unique gestures to activate abilities.
-   - Player Movement Requirements: Gesture-based ability activation.
+   - Description: Using a special ability in a creative or impactful way to turn the tide of the match. In VR, players can activate abilities using voice commands or unique gestures, offering flexibility.
+   - Player Movement Requirements: Voice commands or gesture-based ability activation.
    - Immersive VR Effects: Enhanced visual and audio effects for abilities.
    - Spatial Audio Considerations: Ability-specific sound effects with spatial depth.
    - Rewards: Ability cooldown reduction, crowd favor.

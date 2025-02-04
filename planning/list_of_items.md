@@ -14,10 +14,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Weight**: 0.5 kg
 - **Stackable**: Yes
 - **Max Stack**: 20
-- **VR Pickup Mechanism**: Grab with one hand
-- **Interaction Gestures**: Bring to mouth to consume
+- **VR Pickup Mechanism**: Grab with one hand or use voice command
+- **Interaction Gestures**: Use voice command to consume
 - **Haptic Feedback**: Light vibration when picked up, stronger vibration when consumed
-- **Description**: Restores 50 health points when consumed. In VR, the act of bringing the potion to your mouth enhances immersion.
+- **Description**: Restores 50 health points when consumed. In VR, players can use a voice command to consume the potion, enhancing accessibility.
 
 ---
 
@@ -27,10 +27,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Weight**: 0.4 kg
 - **Stackable**: Yes
 - **Max Stack**: 20
-- **VR Pickup Mechanism**: Grab with one hand
-- **Interaction Gestures**: Tilt bottle to pour into hand
+- **VR Pickup Mechanism**: Grab with one hand or use voice command
+- **Interaction Gestures**: Use voice command to consume
 - **Haptic Feedback**: Light vibration when picked up, subtle pulse when consumed
-- **Description**: Restores 50 mana points when consumed. In VR, pouring the potion into your hand adds a tactile element.
+- **Description**: Restores 50 mana points when consumed. In VR, players can use a voice command to consume the potion, enhancing accessibility.
 
 ---
 
@@ -40,10 +40,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Weight**: 2.0 kg
 - **Stackable**: Yes
 - **Max Stack**: 50
-- **VR Pickup Mechanism**: Grab with both hands
-- **Interaction Gestures**: Place into crafting station
+- **VR Pickup Mechanism**: Grab with both hands or use voice command
+- **Interaction Gestures**: Use voice command to place into crafting station
 - **Haptic Feedback**: Heavy vibration when picked up
-- **Description**: A raw material used for crafting weapons and armor. In VR, the weight and placement mechanics simulate realism.
+- **Description**: A raw material used for crafting weapons and armor. In VR, players can use a voice command to place the material, enhancing accessibility.
 
 ---
 
@@ -53,10 +53,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Weight**: 1.5 kg
 - **Stackable**: Yes
 - **Max Stack**: 50
-- **VR Pickup Mechanism**: Grab with one hand
-- **Interaction Gestures**: Drag and drop into crafting station
+- **VR Pickup Mechanism**: Grab with one hand or use voice command
+- **Interaction Gestures**: Use voice command to place into crafting station
 - **Haptic Feedback**: Light vibration when picked up
-- **Description**: A basic material used for crafting and building. In VR, dragging and dropping enhances the crafting experience.
+- **Description**: A basic material used for crafting and building. In VR, players can use a voice command to place the material, enhancing accessibility.
 
 ---
 
@@ -65,10 +65,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Value**: 15 gold
 - **Weight**: 1.0 kg
 - **Stackable**: No
-- **VR Pickup Mechanism**: Grab with one hand
-- **Interaction Gestures**: Swipe to ignite, point to illuminate
+- **VR Pickup Mechanism**: Grab with one hand or use voice command
+- **Interaction Gestures**: Use voice command to ignite or illuminate
 - **Haptic Feedback**: Subtle vibration when lit, continuous pulse when held
-- **Description**: Provides light in dark areas. Can also be used to ignite flammable objects. In VR, swiping to ignite adds a dynamic interaction.
+- **Description**: Provides light in dark areas. Can also be used to ignite flammable objects. In VR, players can use a voice command to ignite or illuminate, enhancing accessibility.
 
 ---
 
@@ -78,10 +78,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Weight**: 0.2 kg
 - **Stackable**: Yes
 - **Max Stack**: 10
-- **VR Pickup Mechanism**: Pinch with fingers
-- **Interaction Gestures**: Insert into lock and twist
+- **VR Pickup Mechanism**: Pinch with fingers or use voice command
+- **Interaction Gestures**: Use voice command to unlock
 - **Haptic Feedback**: Subtle vibration when inserted, sharp pulse if it breaks
-- **Description**: Used to unlock doors and chests with a chance of breaking. In VR, the tactile feedback enhances the tension of lockpicking.
+- **Description**: Used to unlock doors and chests with a chance of breaking. In VR, players can use a voice command to unlock, enhancing accessibility.
 
 ---
 
@@ -91,10 +91,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Weight**: 0.3 kg
 - **Stackable**: Yes
 - **Max Stack**: 15
-- **VR Pickup Mechanism**: Grab with one hand
-- **Interaction Gestures**: Wrap around injured area
+- **VR Pickup Mechanism**: Grab with one hand or use voice command
+- **Interaction Gestures**: Use voice command to apply
 - **Haptic Feedback**: Light vibration when picked up, subtle pulse during application
-- **Description**: Stops bleeding and restores a small amount of health over time. In VR, wrapping the bandage adds a layer of realism.
+- **Description**: Stops bleeding and restores a small amount of health over time. In VR, players can use a voice command to apply the bandage, enhancing accessibility.
 
 ---
 
@@ -104,10 +104,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Weight**: 0.1 kg
 - **Stackable**: Yes
 - **Max Stack**: 10
-- **VR Pickup Mechanism**: Grab with one hand
-- **Interaction Gestures**: Place into crafting station
+- **VR Pickup Mechanism**: Grab with one hand or use voice command
+- **Interaction Gestures**: Use voice command to place into crafting station
 - **Haptic Feedback**: Subtle vibration when picked up
-- **Description**: A rare material used for crafting high-tier equipment. In VR, the rarity is emphasized through precise placement mechanics.
+- **Description**: A rare material used for crafting high-tier equipment. In VR, players can use a voice command to place the material, enhancing accessibility.
 
 ---
 
@@ -116,10 +116,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Value**: 50 gold
 - **Weight**: 2.5 kg
 - **Stackable**: No
-- **VR Pickup Mechanism**: Grab with both hands
-- **Interaction Gestures**: Cast line with a throwing motion
+- **VR Pickup Mechanism**: Grab with both hands or use voice command
+- **Interaction Gestures**: Use voice command to cast line
 - **Haptic Feedback**: Light vibration when casting, stronger pulse when a fish bites
-- **Description**: Used to catch fish in water bodies. In VR, the casting motion and haptic feedback simulate real fishing.
+- **Description**: Used to catch fish in water bodies. In VR, players can use a voice command to cast the line, enhancing accessibility.
 
 ---
 
@@ -128,10 +128,10 @@ This document contains a comprehensive list of all items available in the game, 
 - **Value**: 0 gold
 - **Weight**: 0.1 kg
 - **Stackable**: No
-- **VR Pickup Mechanism**: Grab with one hand
-- **Interaction Gestures**: Hold up to examine
+- **VR Pickup Mechanism**: Grab with one hand or use voice command
+- **Interaction Gestures**: Use voice command to examine
 - **Haptic Feedback**: Subtle vibration when picked up
-- **Description**: A map leading to hidden treasures. Cannot be sold. In VR, holding the map up to examine adds a sense of discovery.
+- **Description**: A map leading to hidden treasures. Cannot be sold. In VR, players can use a voice command to examine the map, enhancing accessibility.
 
 ---
 
