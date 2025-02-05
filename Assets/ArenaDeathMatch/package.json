@@ -10,6 +10,7 @@
     "email": "support@teretzdev.com",
     "url": "https://github.com/teretzdev/arena-vr-pvpve"
   },
+  "type": "tool",
   "dependencies": {
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.4.8",
