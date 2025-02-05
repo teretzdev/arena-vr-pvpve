@@ -7,140 +7,81 @@ This document contains a comprehensive list of all weapons available in the game
 ## Weapons
 
 ### Misc Weapons
-- **SM_Wep_Bomb_GasCan_01**: Placeholder details.
-- **SM_Wep_Bomb_Propane_01**: Placeholder details.
-- **SM_Wep_ChainSaw_01**: Placeholder details.
-- **SM_Wep_CrossBow_01**: Placeholder details.
-- **SM_Wep_CrossBow_Clean_01**: Placeholder details.
+- **SM_Wep_Bomb_GasCan_01**: A throwable gas canister that explodes on impact, dealing area damage.
+- **SM_Wep_Bomb_Propane_01**: A propane tank that creates a fiery explosion upon detonation.
+- **SM_Wep_ChainSaw_01**: A melee weapon with high damage and a unique spinning blade effect.
+- **SM_Wep_CrossBow_01**: A ranged weapon that fires bolts with precision and moderate damage.
+- **SM_Wep_CrossBow_Clean_01**: A cleaner version of the CrossBow with identical functionality.
+- **SM_Wep_FlameThrower_01**: A weapon that emits a stream of fire, dealing continuous damage over time.
+- **SM_Wep_FlareGun_01**: A gun that shoots flares, useful for signaling or igniting flammable objects.
+- **SM_Wep_Flashbang_01**: A throwable device that temporarily blinds and disorients enemies.
+- **SM_Wep_Grenade_01**: A standard explosive grenade with a timed fuse.
+- **SM_Wep_Molotov_01**: A throwable incendiary weapon that creates a pool of fire on impact.
+- **SM_Wep_NailBomb_01**: A bomb that releases shrapnel, causing damage over a wide area.
+- **SM_Wep_PipeBomb_01**: A makeshift explosive device with high damage potential.
+- **SM_Wep_Rocket_Fireworks_01**: A rocket launcher that fires colorful, explosive fireworks.
+- **SM_Wep_Rocket_IED_01**: An improvised explosive device with a powerful blast radius.
+- **SM_Wep_Sign_Shield_01**: A makeshift shield crafted from a road sign, offering moderate protection.
+- **SM_Wep_SpearGun_Spear_01**: A spear gun that fires projectiles with high accuracy.
+- **SM_Wep_Trimmer_01**: A melee weapon with spinning blades, effective against close-range enemies.
+- **SM_Wep_Trimmer_Clean_01**: A cleaner version of the Trimmer with identical functionality.
 
 ### Melee Weapons
-- **SM_Wep_Bat_Metal_01**: Placeholder details.
-- **SM_Wep_Bat_Wood_01**: Placeholder details.
+- **SM_Wep_Bat_Metal_01**: A sturdy metal bat with high durability and moderate damage.
+- **SM_Wep_Bat_Wood_01**: A wooden bat with balanced damage and speed.
+- **SM_Wep_Bat_Wood_02**: A slightly heavier wooden bat with increased damage.
+- **SM_Wep_Baton_01**: A lightweight baton ideal for quick strikes.
+- **SM_Wep_Baton_02**: A reinforced baton with improved durability.
+- **SM_Wep_Butcher_01**: A cleaver-style weapon with high damage and a gruesome appearance.
+- **SM_Wep_Cross_01**: A cross-shaped melee weapon with unique attack animations.
+- **SM_Wep_Crowbar_01**: A versatile tool that doubles as a melee weapon.
+- **SM_Wep_Crutch_01**: A makeshift weapon crafted from a crutch, offering moderate damage.
+- **SM_Wep_FireAxe_01**: A heavy axe designed for chopping through obstacles and enemies.
+- **SM_Wep_Hammer_01**: A basic hammer with balanced damage and speed.
+- **SM_Wep_Katana_01**: A sleek sword with high damage and fast attack speed.
+- **SM_Wep_Melee_GolfClub_01**: A golf club repurposed as a melee weapon.
+- **SM_Wep_Melee_HuntingKnife_01**: A sharp knife ideal for quick, precise attacks.
+- **SM_Wep_Melee_Machete_01**: A large blade with high damage and moderate speed.
+- **SM_Wep_Melee_Spear_Wood_01**: A wooden spear with long reach and moderate damage.
+- **SM_Wep_Pipe_01**: A metal pipe repurposed as a blunt weapon.
+- **SM_Wep_PipeWrench_01**: A heavy wrench with high damage and slow attack speed.
+- **SM_Wep_Plank_01**: A wooden plank with nails for added damage.
+- **SM_Wep_RebarClub_01**: A club reinforced with rebar for increased damage.
+- **SM_Wep_Spade_01**: A shovel that doubles as a melee weapon.
+- **SM_Wep_WoodAxe_01**: A lightweight axe with balanced damage and speed.
+- **SM_Wep_Wrench_01**: A standard wrench with moderate damage and durability.
 
-... (Continue adding all weapons from the task list in this format)
-
----
-
-This list will be updated as new weapons are added to the game.
-```
-
-### Step 4: Review
-- The file is named `list_of_weapons.md` and is located in the `planning` directory as requested.
-- The content includes a detailed list of weapons, their attributes, and descriptions.
-- The data is consistent with the provided context and follows the markdown format for readability.
-
-### Final Output
-```
-# List of Weapons
-
-This document contains a comprehensive list of all weapons available in the game, along with their relevant details.
-
----
-
-## Weapons
-
-### 1. **Pistol**
-- **Type**: Ranged Weapon
-- **Damage**: 25
-- **Magazine Size**: 10
-- **Fire Rate**: 0.5 seconds
-- **Reload Time**: 1.0 seconds
-- **Recoil Duration**: 0.5 seconds
-- **Description**: A standard semi-automatic pistol with moderate damage and a quick reload time.
-
----
-
-### 2. **Rifle**
-- **Type**: Ranged Weapon
-- **Damage**: 35
-- **Magazine Size**: 30
-- **Fire Rate**: 0.2 seconds
-- **Reload Time**: 2.5 seconds
-- **Recoil Duration**: 0.7 seconds
-- **Description**: A high-powered automatic rifle with a large magazine and rapid fire rate.
-
----
-
-### 3. **Shotgun**
-- **Type**: Ranged Weapon
-- **Damage**: 50
-- **Magazine Size**: 8
-- **Fire Rate**: 1.0 seconds
-- **Reload Time**: 3.0 seconds
-- **Recoil Duration**: 1.0 seconds
-- **Description**: A close-range weapon with high damage and a wide spread.
-
----
-
-### 4. **Magic Staff**
-- **Type**: Magic Weapon
-- **Damage**: 40
-- **Mana Cost**: 20
-- **Cooldown Time**: 2.0 seconds
-- **Special Effect**: Summons a fireball that explodes on impact.
-- **Description**: A mystical staff that channels magical energy to cast powerful spells.
-
----
-
-### 5. **Crossbow**
-- **Type**: Ranged Weapon
-- **Damage**: 30
-- **Magazine Size**: 1
-- **Fire Rate**: 1.5 seconds
-- **Reload Time**: 2.0 seconds
-- **Recoil Duration**: 0.3 seconds
-- **Description**: A precision weapon that fires bolts with high accuracy and damage.
-
----
-
-### 6. **Thunder Grenade**
-- **Type**: Special Weapon
-- **Damage**: 100
-- **Explosion Radius**: 5 meters
-- **Cooldown Time**: 5.0 seconds
-- **Special Effect**: Creates a thunderous explosion that damages all enemies within the radius.
-- **Description**: A throwable explosive device that deals massive area damage.
-
----
-
-### 7. **Sword**
-- **Type**: Melee Weapon
-- **Damage**: 25
-- **Attack Speed**: 1.2 seconds
-- **Block Strength**: 15
-- **Special Effect**: Can perform a spinning slash as a special attack.
-- **Description**: A balanced melee weapon suitable for close combat.
-
----
-
-### 8. **Axe**
-- **Type**: Melee Weapon
-- **Damage**: 35
-- **Attack Speed**: 0.8 seconds
-- **Block Strength**: 10
-- **Special Effect**: Can perform a heavy overhead strike as a special attack.
-- **Description**: A heavy melee weapon with high damage but slower attack speed.
-
----
-
-### 9. **Hammer**
-- **Type**: Melee Weapon
-- **Damage**: 40
-- **Attack Speed**: 0.6 seconds
-- **Block Strength**: 20
-- **Special Effect**: Can perform a ground slam that stuns nearby enemies.
-- **Description**: A powerful melee weapon with high damage and strong defensive capabilities.
-
----
-
-### 10. **Bow**
-- **Type**: Ranged Weapon
-- **Damage**: 15
-- **Magazine Size**: 10
-- **Fire Rate**: 0.8 seconds
-- **Reload Time**: 1.5 seconds
-- **Recoil Duration**: 0.2 seconds
-- **Description**: A traditional ranged weapon that fires arrows with precision.
+### Guns
+- **SM_Wep_AssaultRifle_01**: A fully automatic rifle with high fire rate and moderate damage.
+- **SM_Wep_AssaultRifle_02**: A variant of the Assault Rifle with improved accuracy.
+- **SM_Wep_AssaultRifle_03**: A high-damage Assault Rifle with a slower fire rate.
+- **SM_Wep_HuntingRifle_01**: A bolt-action rifle with high precision and damage.
+- **SM_Wep_HuntingRifle_Clean_01**: A cleaner version of the Hunting Rifle with identical functionality.
+- **SM_Wep_Hybrid_01**: A hybrid weapon combining features of rifles and shotguns.
+- **SM_Wep_Hybrid_02**: An upgraded hybrid weapon with improved stats.
+- **SM_Wep_Hybrid_03**: A high-end hybrid weapon with exceptional performance.
+- **SM_Wep_MachineGun_01**: A heavy machine gun with a large magazine and high fire rate.
+- **SM_Wep_MachineGun_02**: A lighter machine gun with improved mobility.
+- **SM_Wep_Minigun_01**: A powerful minigun with an extremely high fire rate.
+- **SM_Wep_Minigun_Clean_01**: A cleaner version of the Minigun with identical functionality.
+- **SM_Wep_Nailgun_01**: A construction tool repurposed as a weapon, firing nails at high speed.
+- **SM_Wep_Nailgun_Clean_01**: A cleaner version of the Nailgun with identical functionality.
+- **SM_Wep_Pistol_01**: A standard semi-automatic pistol with moderate damage.
+- **SM_Wep_Revolver_01**: A high-damage revolver with a slow reload time.
+- **SM_Wep_Revolver_02**: An upgraded revolver with improved accuracy.
+- **SM_Wep_Rifle_01**: A semi-automatic rifle with balanced stats.
+- **SM_Wep_Rifle_02**: A high-damage rifle with a slower fire rate.
+- **SM_Wep_Rifle_03**: A precision rifle with exceptional accuracy.
+- **SM_Wep_RocketLauncher_01**: A launcher that fires explosive rockets.
+- **SM_Wep_Shotgun_01**: A pump-action shotgun with high close-range damage.
+- **SM_Wep_SniperRifle_01**: A long-range rifle with high damage and precision.
+- **SM_Wep_SniperRifle_02**: An upgraded sniper rifle with improved stats.
+- **SM_Wep_SniperRifle_Pneumatic_01**: A pneumatic sniper rifle with unique mechanics.
+- **SM_Wep_SpearGun_01**: A gun that fires spears with high accuracy.
+- **SM_Wep_SubMGun_01**: A compact submachine gun with a high fire rate.
+- **SM_Wep_SubMGun_02**: An upgraded submachine gun with improved stats.
+- **SM_Wep_SubMGun_03**: A high-end submachine gun with exceptional performance.
+- **SM_Wep_SubMGun_Clean_03**: A cleaner version of the SubMGun with identical functionality.
 
 ---
 
