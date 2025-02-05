@@ -14,6 +14,13 @@ namespace ArenaDeathMatch.Combat
 
         protected bool isOnCooldown;
 
+        public override void Initialize(WeaponManager.WeaponData weaponData)
+        {
+            weaponName = weaponData.prefab.name;
+            manaCost = weaponData.damage; // Example mapping, adjust as needed.
+            cooldownTime = weaponData.reloadTime; // Example mapping, adjust as needed.
+        }
+
         public virtual void CastSpell(Vector3 targetPosition)
         {
             if (isOnCooldown)
@@ -59,7 +66,14 @@ namespace ArenaDeathMatch.Combat
             for (int i = 0; i < summonCount; i++)
             {
                 Vector3 summonPosition = position + Random.insideUnitSphere * 2f;
-                Instantiate(summonPrefab, summonPosition, Quaternion.identity);
+                if (summonPrefab != null)
+                {
+                    Instantiate(summonPrefab, summonPosition, Quaternion.identity);
+                }
+                else
+                {
+                    Debug.LogError("SummonPrefab is null in NecromanticStaff.");
+                }
             }
         }
     }
@@ -84,6 +98,10 @@ namespace ArenaDeathMatch.Combat
                 if (damageable != null)
                 {
                     StartCoroutine(ApplyPoison(damageable));
+                }
+                else
+                {
+                    Debug.LogWarning("No IDamageable component found in HydraStaff poison effect.");
                 }
             }
         }
@@ -113,7 +131,15 @@ namespace ArenaDeathMatch.Combat
 
         private void ActivateShield(Vector3 position)
         {
-            GameObject shield = Instantiate(shieldPrefab, position, Quaternion.identity);
+            if (shieldPrefab != null)
+            {
+                GameObject shield = Instantiate(shieldPrefab, position, Quaternion.identity);
+                Destroy(shield, shieldDuration);
+            }
+            else
+            {
+                Debug.LogError("ShieldPrefab is null in IdolStaff.");
+            }
             Destroy(shield, shieldDuration);
         }
     }

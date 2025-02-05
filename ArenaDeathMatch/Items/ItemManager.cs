@@ -1,4 +1,3 @@
-<code>
 using System.Collections.Generic;
 using UnityEngine;
 using ArenaDeathMatch.Utilities;
@@ -65,4 +64,3 @@ namespace ArenaDeathMatch.Items
         public List<ItemData> items;
     }
 }
-</code>

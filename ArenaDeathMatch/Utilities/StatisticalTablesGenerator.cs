@@ -1,4 +1,3 @@
-<code>
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -65,7 +64,6 @@ namespace ArenaDeathMatch.Utilities
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Name\tDefense\tWeight\tDurability\tRequired Level\tRarity");
             
-            // Assuming ArmorManager follows a similar singleton pattern as WeaponManager.
             if (ArmorManager.Instance == null)
             {
                 Debug.LogError("ArmorManager.Instance is null. Unable to generate armor statistics.");
@@ -98,7 +96,6 @@ namespace ArenaDeathMatch.Utilities
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Name\tType\tValue\tWeight\tStackable\tMax Stack");
             
-            // Assuming ItemManager follows a similar singleton pattern and provides access to item data.
             if (ItemManager.Instance == null)
             {
                 Debug.LogError("ItemManager.Instance is null. Unable to generate item statistics.");
@@ -199,4 +196,3 @@ namespace ArenaDeathMatch.Utilities
         public float duration;
     }
 }
-</code>

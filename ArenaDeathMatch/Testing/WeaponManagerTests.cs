@@ -142,6 +142,39 @@ namespace ArenaDeathMatch.Testing
         }
 
         [Test]
+        public void TestMagicWeapon_SpawnAndCastSpell()
+        {
+            // Spawn a MagicWeapon using the WeaponManager.
+            Vector3 spawnPos = Vector3.zero;
+            Quaternion spawnRot = Quaternion.identity;
+            MagicWeapon magicWeapon = weaponManager.SpawnWeapon(WeaponManager.WeaponType.MagicWeapon, spawnPos, spawnRot) as MagicWeapon;
+            Assert.IsNotNull(magicWeapon, "Spawned MagicWeapon should not be null");
+
+            // Simulate casting a spell.
+            Vector3 targetPosition = new Vector3(1, 0, 0);
+            magicWeapon.CastSpell(targetPosition);
+
+            // Verify that the spell casting logic works (e.g., cooldown is triggered).
+            Assert.IsTrue(magicWeapon.isOnCooldown, "MagicWeapon should be on cooldown after casting a spell");
+        }
+
+        [Test]
+        public void TestThunderGrenade_SpawnAndExplode()
+        {
+            // Spawn a ThunderGrenade using the WeaponManager.
+            Vector3 spawnPos = Vector3.zero;
+            Quaternion spawnRot = Quaternion.identity;
+            ThunderGrenade thunderGrenade = weaponManager.SpawnWeapon(WeaponManager.WeaponType.ThunderGrenade, spawnPos, spawnRot) as ThunderGrenade;
+            Assert.IsNotNull(thunderGrenade, "Spawned ThunderGrenade should not be null");
+
+            // Simulate grenade explosion.
+            thunderGrenade.Explode();
+
+            // Verify that the explosion logic works (e.g., damage is applied).
+            Assert.IsTrue(thunderGrenade.HasExploded, "ThunderGrenade should have exploded");
+        }
+
+        [Test]
         public void TestWeaponSwitching_ActiveWeaponsListUpdates()
         {
             // Spawn first weapon.
