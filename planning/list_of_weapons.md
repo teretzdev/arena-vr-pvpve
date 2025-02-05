@@ -87,12 +87,82 @@ This document contains a comprehensive list of all weapons available in the game
   - Reload Time: N/A  
   - Recoil Duration: N/A  
   - Description: A throwable incendiary weapon that creates a pool of fire on impact.
-- **SM_Wep_NailBomb_01**: A bomb that releases shrapnel, causing damage over a wide area.
-- **SM_Wep_PipeBomb_01**: A makeshift explosive device with high damage potential.
-- **SM_Wep_Rocket_Fireworks_01**: A rocket launcher that fires colorful, explosive fireworks.
-- **SM_Wep_Rocket_IED_01**: An improvised explosive device with a powerful blast radius.
-- **SM_Wep_Sign_Shield_01**: A makeshift shield crafted from a road sign, offering moderate protection.
-- **SM_Wep_SpearGun_Spear_01**: A spear gun that fires projectiles with high accuracy.
+### SM_Wep_NailBomb_01
+- **Type**: Throwable  
+- **Damage**: 120  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: Explosion_Sound_01  
+- **Reload Sound**: None  
+
+### SM_Wep_PipeBomb_01
+- **Type**: Throwable  
+- **Damage**: 150  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: Explosion_Sound_02  
+- **Reload Sound**: None  
+
+### SM_Wep_Rocket_Fireworks_01
+- **Type**: Ranged  
+- **Damage**: 200  
+- **Magazine Size**: 1  
+- **Fire Rate**: 0.5  
+- **Reload Time**: 3.0  
+- **Recoil Duration**: 0.8  
+- **Recoil Curve**: Linear  
+- **Recoil Rotation Curve**: Exponential  
+- **Muzzle Flash**: Fireworks_Flash_01  
+- **Fire Sound**: Fireworks_Sound_01  
+- **Reload Sound**: Reload_Sound_01  
+### SM_Wep_Rocket_IED_01
+- **Type**: Throwable  
+- **Damage**: 250  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: Explosion_Sound_03  
+- **Reload Sound**: None  
+
+### SM_Wep_Sign_Shield_01
+- **Type**: Shield  
+- **Damage**: N/A  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: None  
+- **Reload Sound**: None  
+
+### SM_Wep_SpearGun_Spear_01
+- **Type**: Ranged  
+- **Damage**: 180  
+- **Magazine Size**: 1  
+- **Fire Rate**: 0.6  
+- **Reload Time**: 2.5  
+- **Recoil Duration**: 0.4  
+- **Recoil Curve**: Linear  
+- **Recoil Rotation Curve**: Linear  
+- **Muzzle Flash**: Spear_Flash_01  
+- **Fire Sound**: Spear_Sound_01  
+- **Reload Sound**: Reload_Sound_02  
 - **SM_Wep_Trimmer_01**: A melee weapon with spinning blades, effective against close-range enemies.
 - **SM_Wep_Trimmer_Clean_01**: A cleaner version of the Trimmer with identical functionality.
 
