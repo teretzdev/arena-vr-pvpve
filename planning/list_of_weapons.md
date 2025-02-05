@@ -14,6 +14,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: N/A  
   - Reload Time: N/A  
   - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Explosion_Sound_01  
+  - Reload Sound: None  
   - Description: A throwable gas canister that explodes on impact, dealing area damage.
 - **SM_Wep_Bomb_Propane_01**  
   - Type: Throwable  
@@ -163,11 +168,47 @@ This document contains a comprehensive list of all weapons available in the game
 - **Muzzle Flash**: Spear_Flash_01  
 - **Fire Sound**: Spear_Sound_01  
 - **Reload Sound**: Reload_Sound_02  
-- **SM_Wep_Trimmer_01**: A melee weapon with spinning blades, effective against close-range enemies.
-- **SM_Wep_Trimmer_Clean_01**: A cleaner version of the Trimmer with identical functionality.
+- **SM_Wep_Trimmer_01**  
+  - Type: Melee  
+  - Damage: 75  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Trimmer_Sound_01  
+  - Reload Sound: None  
+  - Description: A melee weapon with spinning blades, effective against close-range enemies.
+- **SM_Wep_Trimmer_Clean_01**  
+  - Type: Melee  
+  - Damage: 75  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Trimmer_Sound_01  
+  - Reload Sound: None  
+  - Description: A cleaner version of the Trimmer with identical functionality.
 
 ### Melee Weapons
-- **SM_Wep_Bat_Metal_01**: A sturdy metal bat with high durability and moderate damage.
+- **SM_Wep_Bat_Metal_01**  
+  - Type: Melee  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.2  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Bat_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A sturdy metal bat with high durability and moderate damage.
 - **SM_Wep_Bat_Wood_01**: A wooden bat with balanced damage and speed.
 - **SM_Wep_Bat_Wood_02**: A slightly heavier wooden bat with increased damage.
 - **SM_Wep_Baton_01**: A lightweight baton ideal for quick strikes.
@@ -212,7 +253,19 @@ This document contains a comprehensive list of all weapons available in the game
 - **SM_Wep_Rifle_01**: A semi-automatic rifle with balanced stats.
 - **SM_Wep_Rifle_02**: A high-damage rifle with a slower fire rate.
 - **SM_Wep_Rifle_03**: A precision rifle with exceptional accuracy.
-- **SM_Wep_RocketLauncher_01**: A launcher that fires explosive rockets.
+- **SM_Wep_RocketLauncher_01**  
+  - Type: Ranged  
+  - Damage: 300  
+  - Magazine Size: 1  
+  - Fire Rate: 0.3  
+  - Reload Time: 3.5  
+  - Recoil Duration: 1.0  
+  - Recoil Curve: Exponential  
+  - Recoil Rotation Curve: Exponential  
+  - Muzzle Flash: Rocket_Flash_01  
+  - Fire Sound: Rocket_Fire_Sound_01  
+  - Reload Sound: Rocket_Reload_Sound_01  
+  - Description: A launcher that fires explosive rockets.
 - **SM_Wep_Shotgun_01**: A pump-action shotgun with high close-range damage.
 - **SM_Wep_SniperRifle_01**: A long-range rifle with high damage and precision.
 - **SM_Wep_SniperRifle_02**: An upgraded sniper rifle with improved stats.

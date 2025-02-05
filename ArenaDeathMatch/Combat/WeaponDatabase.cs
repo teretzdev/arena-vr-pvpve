@@ -137,6 +137,70 @@ namespace ArenaDeathMatch.Combat
                     reloadTime = 3.0f,
                     recoilDuration = 0.5f,
                     description = "A long-range rifle with high damage and precision."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.Trimmer,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Trimmer_01"),
+                    damage = 75f,
+                    magazineSize = 0,
+                    fireRate = 1.0f,
+                    reloadTime = 0f,
+                    recoilDuration = 0.4f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Trimmer_Sound_01"),
+                    reloadSound = null,
+                    description = "A melee weapon with spinning blades, effective against close-range enemies."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.CleanTrimmer,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Trimmer_Clean_01"),
+                    damage = 75f,
+                    magazineSize = 0,
+                    fireRate = 1.0f,
+                    reloadTime = 0f,
+                    recoilDuration = 0.4f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Trimmer_Sound_01"),
+                    reloadSound = null,
+                    description = "A cleaner version of the Trimmer with identical functionality."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.MetalBat,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Bat_Metal_01"),
+                    damage = 50f,
+                    magazineSize = 0,
+                    fireRate = 1.2f,
+                    reloadTime = 0f,
+                    recoilDuration = 0.3f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Bat_Swing_Sound_01"),
+                    reloadSound = null,
+                    description = "A sturdy metal bat with high durability and moderate damage."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.RocketLauncher,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_RocketLauncher_01"),
+                    damage = 300f,
+                    magazineSize = 1,
+                    fireRate = 0.3f,
+                    reloadTime = 3.5f,
+                    recoilDuration = 1.0f,
+                    recoilCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
+                    muzzleFlash = Resources.Load<ParticleSystem>("Particles/Weapons/Rocket_Flash_01"),
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Rocket_Fire_Sound_01"),
+                    reloadSound = Resources.Load<AudioClip>("Audio/Weapons/Rocket_Reload_Sound_01"),
+                    description = "A launcher that fires explosive rockets."
                 }
             };
         }
@@ -167,6 +231,10 @@ namespace ArenaDeathMatch.Combat
         Machete,
         Katana,
         AssaultRifle,
-        SniperRifle
+        SniperRifle,
+        Trimmer,
+        CleanTrimmer,
+        MetalBat,
+        RocketLauncher
     }
 }

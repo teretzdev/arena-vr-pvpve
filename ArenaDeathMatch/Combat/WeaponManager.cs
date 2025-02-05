@@ -10,7 +10,46 @@ namespace ArenaDeathMatch.Combat
 {
     public class WeaponManager : MonoBehaviour
     {
-        public static WeaponManager Instance { get; private set; }
+       
+            else if (type == WeaponType.Trimmer || type == WeaponType.CleanTrimmer)
+            {
+                MeleeWeapon trimmer = weaponObj.GetComponent<MeleeWeapon>();
+                if (trimmer == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize trimmer specific properties if needed
+                activeWeapons.Add(trimmer);
+                return trimmer;
+            }
+            else if (type == WeaponType.MetalBat)
+            {
+                MeleeWeapon metalBat = weaponObj.GetComponent<MeleeWeapon>();
+                if (metalBat == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize metal bat specific properties if needed
+                activeWeapons.Add(metalBat);
+                return metalBat;
+            }
+            else if (type == WeaponType.RocketLauncher)
+            {
+                RangedWeapon rocketLauncher = weaponObj.GetComponent<RangedWeapon>();
+                if (rocketLauncher == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize rocket launcher specific properties if needed
+                activeWeapons.Add(rocketLauncher);
+                return rocketLauncher;
+            } public static WeaponManager Instance { get; private set; }
 
         [Header("Weapon Configuration")]
         public WeaponDatabase weaponDatabase;
@@ -50,6 +89,12 @@ namespace ArenaDeathMatch.Combat
             {
                 weaponCache[weapon.type] = weapon;
             }
+
+            // Add new weapons to the weapon cache
+            weaponCache[WeaponType.Trimmer] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Trimmer);
+            weaponCache[WeaponType.CleanTrimmer] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanTrimmer);
+            weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
+            weaponCache[WeaponType.RocketLauncher] = weaponDatabase.weapons.Find(w => w.type == WeaponType.RocketLauncher);
 
             // Add new weapons to the weapon cache
             weaponCache[WeaponType.GasCan] = weaponDatabase.weapons.Find(w => w.type == WeaponType.GasCan);
