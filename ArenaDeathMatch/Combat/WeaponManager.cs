@@ -50,6 +50,15 @@ namespace ArenaDeathMatch.Combat
             {
                 weaponCache[weapon.type] = weapon;
             }
+
+            // Add new weapons to the weapon cache
+            weaponCache[WeaponType.GasCan] = weaponDatabase.weapons.Find(w => w.type == WeaponType.GasCan);
+            weaponCache[WeaponType.PropaneTank] = weaponDatabase.weapons.Find(w => w.type == WeaponType.PropaneTank);
+            weaponCache[WeaponType.Chainsaw] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Chainsaw);
+            weaponCache[WeaponType.Crossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Crossbow);
+            weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);
+            weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
+            weaponCache[WeaponType.WoodenBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.WoodenBat);
             
             bulletManager.Initialize(physicsSettings);
             impactManager.Initialize();
@@ -126,6 +135,58 @@ namespace ArenaDeathMatch.Combat
                 // Initialize melee weapon specific properties if needed
                 activeWeapons.Add(meleeWeapon);
                 return meleeWeapon;
+            }
+            else if (type == WeaponType.GasCan || type == WeaponType.PropaneTank)
+            {
+                VRWeapon explosiveWeapon = weaponObj.GetComponent<VRWeapon>();
+                if (explosiveWeapon == null)
+                {
+                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize explosive weapon specific properties if needed
+                activeWeapons.Add(explosiveWeapon);
+                return explosiveWeapon;
+            }
+            else if (type == WeaponType.Chainsaw)
+            {
+                MeleeWeapon chainsaw = weaponObj.GetComponent<MeleeWeapon>();
+                if (chainsaw == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize chainsaw specific properties if needed
+                activeWeapons.Add(chainsaw);
+                return chainsaw;
+            }
+            else if (type == WeaponType.Crossbow || type == WeaponType.CleanCrossbow)
+            {
+                RangedWeapon crossbow = weaponObj.GetComponent<RangedWeapon>();
+                if (crossbow == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize crossbow specific properties if needed
+                activeWeapons.Add(crossbow);
+                return crossbow;
+            }
+            else if (type == WeaponType.MetalBat || type == WeaponType.WoodenBat)
+            {
+                MeleeWeapon bat = weaponObj.GetComponent<MeleeWeapon>();
+                if (bat == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize bat specific properties if needed
+                activeWeapons.Add(bat);
+                return bat;
             }
             else
             {
@@ -429,6 +490,13 @@ namespace ArenaDeathMatch.Combat
             MagicWeapon, // Add MagicWeapon type
             ThunderGrenade, // Add ThunderGrenade type
             Shield,
+            GasCan,
+            PropaneTank,
+            Chainsaw,
+            Crossbow,
+            CleanCrossbow,
+            MetalBat,
+            WoodenBat,
             RangedWeapon,
             MeleeWeapon
         }
