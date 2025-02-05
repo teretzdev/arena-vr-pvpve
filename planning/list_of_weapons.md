@@ -27,6 +27,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: N/A  
   - Reload Time: N/A  
   - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Explosion_Sound_02  
+  - Reload Sound: None  
   - Description: A propane tank that creates a fiery explosion upon detonation.
 - **SM_Wep_ChainSaw_01**  
   - Type: Melee  
@@ -35,6 +40,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: 1.5  
   - Reload Time: N/A  
   - Recoil Duration: 0.5  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Chainsaw_Sound_01  
+  - Reload Sound: None  
   - Description: A melee weapon with high damage and a unique spinning blade effect.
 - **SM_Wep_CrossBow_01**  
   - Type: Ranged  
@@ -209,10 +219,58 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Sound: Bat_Swing_Sound_01  
   - Reload Sound: None  
   - Description: A sturdy metal bat with high durability and moderate damage.
-- **SM_Wep_Bat_Wood_01**: A wooden bat with balanced damage and speed.
-- **SM_Wep_Bat_Wood_02**: A slightly heavier wooden bat with increased damage.
-- **SM_Wep_Baton_01**: A lightweight baton ideal for quick strikes.
-- **SM_Wep_Baton_02**: A reinforced baton with improved durability.
+- **SM_Wep_Bat_Wood_01**  
+  - Type: Melee  
+  - Damage: 40  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.3  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Bat_Swing_Sound_02  
+  - Reload Sound: None  
+  - Description: A wooden bat with balanced damage and speed.
+- **SM_Wep_Bat_Wood_02**  
+  - Type: Melee  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.1  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Bat_Swing_Sound_03  
+  - Reload Sound: None  
+  - Description: A slightly heavier wooden bat with increased damage.
+- **SM_Wep_Baton_01**  
+  - Type: Melee  
+  - Damage: 30  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.8  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.1  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Baton_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A lightweight baton ideal for quick strikes.
+- **SM_Wep_Baton_02**  
+  - Type: Melee  
+  - Damage: 40  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.5  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Baton_Swing_Sound_02  
+  - Reload Sound: None  
+  - Description: A reinforced baton with improved durability.
 - **SM_Wep_Butcher_01**: A cleaver-style weapon with high damage and a gruesome appearance.
 - **SM_Wep_Cross_01**: A cross-shaped melee weapon with unique attack animations.
 - **SM_Wep_Crowbar_01**: A versatile tool that doubles as a melee weapon.

@@ -37,6 +37,11 @@ namespace ArenaDeathMatch.Combat
                     fireRate = 0f,
                     reloadTime = 0f,
                     recoilDuration = 0f,
+                    recoilCurve = null,
+                    recoilRotationCurve = null,
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Explosion_Sound_02"),
+                    reloadSound = null,
                     description = "A propane tank that can be detonated to cause a fiery explosion."
                 },
                 new WeaponData
@@ -47,7 +52,12 @@ namespace ArenaDeathMatch.Combat
                     magazineSize = 0,
                     fireRate = 0.5f,
                     reloadTime = 0f,
-                    recoilDuration = 0f,
+                    recoilDuration = 0.5f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = null,
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Chainsaw_Sound_01"),
+                    reloadSound = null,
                     description = "A powerful melee weapon that deals continuous damage when held against enemies."
                 },
                 new WeaponData
@@ -80,7 +90,12 @@ namespace ArenaDeathMatch.Combat
                     magazineSize = 0,
                     fireRate = 1.0f,
                     reloadTime = 0f,
-                    recoilDuration = 0f,
+                    recoilDuration = 0.3f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Bat_Swing_Sound_01"),
+                    reloadSound = null,
                     description = "A sturdy metal bat that delivers heavy blows to enemies."
                 },
                 new WeaponData
@@ -92,6 +107,11 @@ namespace ArenaDeathMatch.Combat
                     fireRate = 1.2f,
                     reloadTime = 0f,
                     recoilDuration = 0f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Bat_Swing_Sound_02"),
+                    reloadSound = null,
                     description = "A lightweight wooden bat, ideal for quick melee attacks."
                 },
                 new WeaponData

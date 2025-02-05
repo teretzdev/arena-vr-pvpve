@@ -104,12 +104,21 @@ namespace ArenaDeathMatch.Combat
             weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);
             weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
             weaponCache[WeaponType.WoodenBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.WoodenBat);
+            weaponCache[WeaponType.Machete] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Machete);
+            weaponCache[WeaponType.Katana] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Katana);
+            weaponCache[WeaponType.FireAxe] = weaponDatabase.weapons.Find(w => w.type == WeaponType.FireAxe);
+            weaponCache[WeaponType.PipeWrench] = weaponDatabase.weapons.Find(w => w.type == WeaponType.PipeWrench);
+            weaponCache[WeaponType.GolfClub] = weaponDatabase.weapons.Find(w => w.type == WeaponType.GolfClub);
+            weaponCache[WeaponType.Spear] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Spear);
             
             weaponCache[WeaponType.AssaultRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.AssaultRifle);
             weaponCache[WeaponType.SniperRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.SniperRifle);
             weaponCache[WeaponType.SubmachineGun] = weaponDatabase.weapons.Find(w => w.type == WeaponType.SubmachineGun);
             weaponCache[WeaponType.Nailgun] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Nailgun);
             weaponCache[WeaponType.RocketLauncher] = weaponDatabase.weapons.Find(w => w.type == WeaponType.RocketLauncher);
+            weaponCache[WeaponType.HuntingRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.HuntingRifle);
+            weaponCache[WeaponType.Crossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Crossbow);
+            weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);
             weaponCache[WeaponType.HuntingRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.HuntingRifle);
             weaponCache[WeaponType.Crossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Crossbow);
             weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);

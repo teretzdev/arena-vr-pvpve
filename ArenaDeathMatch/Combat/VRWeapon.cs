@@ -56,9 +56,17 @@ namespace ArenaDeathMatch.Combat
 
         private void SetupInteractions()
         {
-            interactable.OnTriggerDown.AddListener(Fire);
-            interactable.OnTriggerUp.AddListener(StopFiring);
-            interactable.OnGripDown.AddListener(Reload);
+            // Use VRIF's updated event system for interaction handling
+            interactable.TriggerDownEvent += Fire;
+            interactable.TriggerUpEvent += StopFiring;
+            interactable.GripDownEvent += Reload;
+
+            // Add Meta VR device-specific input handling
+            if (MetaVRDevice.IsConnected)
+            {
+                MetaVRDevice.OnTriggerPressed += Fire;
+                MetaVRDevice.OnGripPressed += Reload;
+            }
         }
 
         public void Fire()
@@ -109,6 +117,7 @@ namespace ArenaDeathMatch.Combat
 
         private void PlayMuzzleFlash()
         {
+            // Play muzzle flash effect if available
             if (muzzleFlash != null)
             {
                 muzzleFlash.Play();
@@ -148,12 +157,16 @@ namespace ArenaDeathMatch.Combat
 
         public void OnGrab(VRHand hand)
         {
+            // Log grab event and ensure compatibility with VRIF
             Debug.Log($"{gameObject.name} grabbed by {hand.name}");
+            grabbable.OnGrab(hand);
         }
 
         public void OnRelease(VRHand hand)
         {
+            // Log release event and ensure compatibility with VRIF
             Debug.Log($"{gameObject.name} released by {hand.name}");
+            grabbable.OnRelease(hand);
         }
 
         public bool CanGrab(VRHand hand)
@@ -163,11 +176,11 @@ namespace ArenaDeathMatch.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            // Handle interaction with Emerald AI NPCs
-            EmeraldAICharacter emeraldAI = other.GetComponent<EmeraldAICharacter>();
+            // Handle interaction with Emerald AI 2024 NPCs
+            EmeraldAISystem emeraldAI = other.GetComponent<EmeraldAISystem>();
             if (emeraldAI != null)
             {
-                emeraldAI.Damage(weaponData.damage, EmeraldAI.EmeraldAISystem.TargetType.Player);
+                emeraldAI.Damage(weaponData.damage, EmeraldAISystem.TargetType.Player, transform.position);
                 Debug.Log($"Dealt {weaponData.damage} damage to {emeraldAI.name}");
             }
         }
