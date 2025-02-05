@@ -92,6 +92,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: 0.5  
   - Reload Time: 2.0  
   - Recoil Duration: 0.3  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: Flare_Flash_01  
+  - Fire Sound: FlareGun_Fire_Sound_01  
+  - Reload Sound: FlareGun_Reload_Sound_01  
   - Description: A gun that shoots flares, useful for signaling or igniting flammable objects.
 - **SM_Wep_Flashbang_01**  
   - Type: Throwable  
@@ -301,24 +306,240 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Sound: Baton_Swing_Sound_02  
   - Reload Sound: None  
   - Description: A reinforced baton with improved durability.
-- **SM_Wep_Butcher_01**: A cleaver-style weapon with high damage and a gruesome appearance.
-- **SM_Wep_Cross_01**: A cross-shaped melee weapon with unique attack animations.
-- **SM_Wep_Crowbar_01**: A versatile tool that doubles as a melee weapon.
-- **SM_Wep_Crutch_01**: A makeshift weapon crafted from a crutch, offering moderate damage.
-- **SM_Wep_FireAxe_01**: A heavy axe designed for chopping through obstacles and enemies.
-- **SM_Wep_Hammer_01**: A basic hammer with balanced damage and speed.
-- **SM_Wep_Katana_01**: A sleek sword with high damage and fast attack speed.
-- **SM_Wep_Melee_GolfClub_01**: A golf club repurposed as a melee weapon.
-- **SM_Wep_Melee_HuntingKnife_01**: A sharp knife ideal for quick, precise attacks.
-- **SM_Wep_Melee_Machete_01**: A large blade with high damage and moderate speed.
-- **SM_Wep_Melee_Spear_Wood_01**: A wooden spear with long reach and moderate damage.
-- **SM_Wep_Pipe_01**: A metal pipe repurposed as a blunt weapon.
-- **SM_Wep_PipeWrench_01**: A heavy wrench with high damage and slow attack speed.
-- **SM_Wep_Plank_01**: A wooden plank with nails for added damage.
-- **SM_Wep_RebarClub_01**: A club reinforced with rebar for increased damage.
-- **SM_Wep_Spade_01**: A shovel that doubles as a melee weapon.
-- **SM_Wep_WoodAxe_01**: A lightweight axe with balanced damage and speed.
-- **SM_Wep_Wrench_01**: A standard wrench with moderate damage and durability.
+- **SM_Wep_Butcher_01**  
+  - Type: Melee  
+  - Damage: 60  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Butcher_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A cleaver-style weapon with high damage and a gruesome appearance.
+- **SM_Wep_Cross_01**  
+  - Type: Melee  
+  - Damage: 45  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.2  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Cross_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A cross-shaped melee weapon with unique attack animations.
+- **SM_Wep_Crowbar_01**  
+  - Type: Melee  
+  - Damage: 35  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.3  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Crowbar_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A versatile tool that doubles as a melee weapon.
+- **SM_Wep_Crutch_01**  
+  - Type: Melee  
+  - Damage: 30  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.5  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Crutch_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A makeshift weapon crafted from a crutch, offering moderate damage.
+- **SM_Wep_FireAxe_01**  
+  - Type: Melee  
+  - Damage: 70  
+  - Magazine Size: N/A  
+  - Fire Rate: 0.9  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.5  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: FireAxe_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A heavy axe designed for chopping through obstacles and enemies.
+- **SM_Wep_Hammer_01**  
+  - Type: Melee  
+  - Damage: 40  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Hammer_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A basic hammer with balanced damage and speed.
+- **SM_Wep_Katana_01**  
+  - Type: Melee  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.5  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Katana_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A sleek sword with high damage and fast attack speed.
+- **SM_Wep_Melee_GolfClub_01**  
+  - Type: Melee  
+  - Damage: 35  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.2  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: GolfClub_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A golf club repurposed as a melee weapon.
+- **SM_Wep_Melee_HuntingKnife_01**  
+  - Type: Melee  
+  - Damage: 25  
+  - Magazine Size: N/A  
+  - Fire Rate: 2.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.1  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Knife_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A sharp knife ideal for quick, precise attacks.
+- **SM_Wep_Melee_Machete_01**  
+  - Type: Melee  
+  - Damage: 45  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Machete_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A large blade with high damage and moderate speed.
+- **SM_Wep_Melee_Spear_Wood_01**  
+  - Type: Melee  
+  - Damage: 40  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.1  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Spear_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A wooden spear with long reach and moderate damage.
+- **SM_Wep_Pipe_01**  
+  - Type: Melee  
+  - Damage: 30  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.3  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Pipe_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A metal pipe repurposed as a blunt weapon.
+- **SM_Wep_PipeWrench_01**  
+  - Type: Melee  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: 0.8  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: PipeWrench_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A heavy wrench with high damage and slow attack speed.
+- **SM_Wep_Plank_01**  
+  - Type: Melee  
+  - Damage: 35  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.2  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Plank_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A wooden plank with nails for added damage.
+- **SM_Wep_RebarClub_01**  
+  - Type: Melee  
+  - Damage: 55  
+  - Magazine Size: N/A  
+  - Fire Rate: 0.9  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: RebarClub_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A club reinforced with rebar for increased damage.
+- **SM_Wep_Spade_01**  
+  - Type: Melee  
+  - Damage: 40  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Spade_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A shovel that doubles as a melee weapon.
+- **SM_Wep_WoodAxe_01**  
+  - Type: Melee  
+  - Damage: 45  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.1  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: WoodAxe_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A lightweight axe with balanced damage and speed.
+- **SM_Wep_Wrench_01**  
+  - Type: Melee  
+  - Damage: 35  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.2  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Wrench_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A standard wrench with moderate damage and durability.
 
 ### Guns
 - **SM_Wep_AssaultRifle_01**: A fully automatic rifle with high fire rate and moderate damage.
