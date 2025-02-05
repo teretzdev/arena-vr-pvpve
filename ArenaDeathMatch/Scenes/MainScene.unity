@@ -25,3 +25,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Father: 0
   m_RootOrder: 0
+
+
+
+####
+Part to replace:
+Assets/ArenaDeathMatch/Scenes/MainScene.unity
+
+
+
+####
+Replace with:
+Assets/ArenaDeathMatch/Scenes/MainScene.unity

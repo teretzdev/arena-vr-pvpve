@@ -2,6 +2,8 @@
 
 This document contains diagrams illustrating the interactions between the main components of the Arena DeathMatch system and the data flow among them. The diagrams are created using Mermaid syntax. To view the diagrams rendered, you can use any Markdown viewer that supports Mermaid (such as the VS Code Markdown Preview Mermaid extension).
 
+// File moved to 'Assets/ArenaDeathMatch/Documentation/SystemInteractionDiagrams.md' to suit Unity3D project structure.
+
 ---
 
 ## Overview

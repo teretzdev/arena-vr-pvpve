@@ -3,6 +3,7 @@ using UnityEngine;
 using Photon.Pun;
 
 namespace ArenaDeathMatch.Core
+// File moved to 'Assets/ArenaDeathMatch/Core/GameManager.cs' to suit Unity3D project structure.
 {
     /// <summary>
     /// Core game manager responsible for managing game flow, state transitions, and integrating networking via NetworkManager.
