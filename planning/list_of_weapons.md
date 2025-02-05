@@ -1,0 +1,369 @@
+# List of Weapons
+
+This document contains a comprehensive list of all weapons available in the game, along with their relevant details.
+
+---
+
+## Weapons
+
+### Misc Weapons
+- **SM_Wep_Bomb_GasCan_01**  
+  - Type: Throwable  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Explosion_Sound_01  
+  - Reload Sound: None  
+  - Description: A throwable gas canister that explodes on impact, dealing area damage.
+- **SM_Wep_Bomb_Propane_01**  
+  - Type: Throwable  
+  - Damage: 75  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Explosion_Sound_02  
+  - Reload Sound: None  
+  - Description: A propane tank that creates a fiery explosion upon detonation.
+- **SM_Wep_ChainSaw_01**  
+  - Type: Melee  
+  - Damage: 100  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.5  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.5  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Chainsaw_Sound_01  
+  - Reload Sound: None  
+  - Description: A melee weapon with high damage and a unique spinning blade effect.
+- **SM_Wep_CrossBow_01**  
+  - Type: Ranged  
+  - Damage: 50  
+  - Magazine Size: 1  
+  - Fire Rate: 0.8  
+  - Reload Time: 2.5  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Crossbow_Fire_Sound_01  
+  - Reload Sound: Crossbow_Reload_Sound_01  
+  - Description: A ranged weapon that fires bolts with precision and moderate damage.
+- **SM_Wep_CrossBow_Clean_01**  
+  - Type: Ranged  
+  - Damage: 50  
+  - Magazine Size: 1  
+  - Fire Rate: 0.8  
+  - Reload Time: 2.5  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Crossbow_Fire_Sound_02  
+  - Reload Sound: Crossbow_Reload_Sound_02  
+  - Description: A cleaner version of the CrossBow with identical functionality.
+- **SM_Wep_FlameThrower_01**  
+  - Type: Ranged  
+  - Damage: 10 (per second)  
+  - Magazine Size: 100  
+  - Fire Rate: 10  
+  - Reload Time: 3.0  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: Smooth  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: Flame_Flash_01  
+  - Fire Sound: FlameThrower_Fire_Sound_01  
+  - Reload Sound: FlameThrower_Reload_Sound_01  
+  - Description: A weapon that emits a stream of fire, dealing continuous damage over time.
+- **SM_Wep_FlareGun_01**  
+  - Type: Ranged  
+  - Damage: 25  
+  - Magazine Size: 1  
+  - Fire Rate: 0.5  
+  - Reload Time: 2.0  
+  - Recoil Duration: 0.3  
+  - Description: A gun that shoots flares, useful for signaling or igniting flammable objects.
+- **SM_Wep_Flashbang_01**  
+  - Type: Throwable  
+  - Damage: 0  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Flashbang_Explosion_Sound_01  
+  - Reload Sound: None  
+  - Description: A throwable device that temporarily blinds and disorients enemies.
+- **SM_Wep_Grenade_01**  
+  - Type: Throwable  
+  - Damage: 100  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Grenade_Explosion_Sound_01  
+  - Reload Sound: None  
+  - Description: A standard explosive grenade with a timed fuse.
+- **SM_Wep_Molotov_01**  
+  - Type: Throwable  
+  - Damage: 50 (initial) + 10 (per second)  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Molotov_Explosion_Sound_01  
+  - Reload Sound: None  
+  - Description: A throwable incendiary weapon that creates a pool of fire on impact.
+### SM_Wep_NailBomb_01
+- **Type**: Throwable  
+- **Damage**: 120  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: Explosion_Sound_01  
+- **Reload Sound**: None  
+
+### SM_Wep_PipeBomb_01
+- **Type**: Throwable  
+- **Damage**: 150  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: Explosion_Sound_02  
+- **Reload Sound**: None  
+
+### SM_Wep_Rocket_Fireworks_01
+- **Type**: Ranged  
+- **Damage**: 200  
+- **Magazine Size**: 1  
+- **Fire Rate**: 0.5  
+- **Reload Time**: 3.0  
+- **Recoil Duration**: 0.8  
+- **Recoil Curve**: Linear  
+- **Recoil Rotation Curve**: Exponential  
+- **Muzzle Flash**: Fireworks_Flash_01  
+- **Fire Sound**: Fireworks_Sound_01  
+- **Reload Sound**: Reload_Sound_01  
+### SM_Wep_Rocket_IED_01
+- **Type**: Throwable  
+- **Damage**: 250  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: Explosion_Sound_03  
+- **Reload Sound**: None  
+
+### SM_Wep_Sign_Shield_01
+- **Type**: Shield  
+- **Damage**: N/A  
+- **Magazine Size**: N/A  
+- **Fire Rate**: N/A  
+- **Reload Time**: N/A  
+- **Recoil Duration**: N/A  
+- **Recoil Curve**: None  
+- **Recoil Rotation Curve**: None  
+- **Muzzle Flash**: None  
+- **Fire Sound**: None  
+- **Reload Sound**: None  
+
+### SM_Wep_SpearGun_Spear_01
+- **Type**: Ranged  
+- **Damage**: 180  
+- **Magazine Size**: 1  
+- **Fire Rate**: 0.6  
+- **Reload Time**: 2.5  
+- **Recoil Duration**: 0.4  
+- **Recoil Curve**: Linear  
+- **Recoil Rotation Curve**: Linear  
+- **Muzzle Flash**: Spear_Flash_01  
+- **Fire Sound**: Spear_Sound_01  
+- **Reload Sound**: Reload_Sound_02  
+- **SM_Wep_Trimmer_01**  
+  - Type: Melee  
+  - Damage: 75  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Trimmer_Sound_01  
+  - Reload Sound: None  
+  - Description: A melee weapon with spinning blades, effective against close-range enemies.
+- **SM_Wep_Trimmer_Clean_01**  
+  - Type: Melee  
+  - Damage: 75  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.0  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Trimmer_Sound_01  
+  - Reload Sound: None  
+  - Description: A cleaner version of the Trimmer with identical functionality.
+
+### Melee Weapons
+- **SM_Wep_Bat_Metal_01**  
+  - Type: Melee  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.2  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Bat_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A sturdy metal bat with high durability and moderate damage.
+- **SM_Wep_Bat_Wood_01**  
+  - Type: Melee  
+  - Damage: 40  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.3  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Bat_Swing_Sound_02  
+  - Reload Sound: None  
+  - Description: A wooden bat with balanced damage and speed.
+- **SM_Wep_Bat_Wood_02**  
+  - Type: Melee  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.1  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Bat_Swing_Sound_03  
+  - Reload Sound: None  
+  - Description: A slightly heavier wooden bat with increased damage.
+- **SM_Wep_Baton_01**  
+  - Type: Melee  
+  - Damage: 30  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.8  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.1  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Baton_Swing_Sound_01  
+  - Reload Sound: None  
+  - Description: A lightweight baton ideal for quick strikes.
+- **SM_Wep_Baton_02**  
+  - Type: Melee  
+  - Damage: 40  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.5  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.2  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Baton_Swing_Sound_02  
+  - Reload Sound: None  
+  - Description: A reinforced baton with improved durability.
+- **SM_Wep_Butcher_01**: A cleaver-style weapon with high damage and a gruesome appearance.
+- **SM_Wep_Cross_01**: A cross-shaped melee weapon with unique attack animations.
+- **SM_Wep_Crowbar_01**: A versatile tool that doubles as a melee weapon.
+- **SM_Wep_Crutch_01**: A makeshift weapon crafted from a crutch, offering moderate damage.
+- **SM_Wep_FireAxe_01**: A heavy axe designed for chopping through obstacles and enemies.
+- **SM_Wep_Hammer_01**: A basic hammer with balanced damage and speed.
+- **SM_Wep_Katana_01**: A sleek sword with high damage and fast attack speed.
+- **SM_Wep_Melee_GolfClub_01**: A golf club repurposed as a melee weapon.
+- **SM_Wep_Melee_HuntingKnife_01**: A sharp knife ideal for quick, precise attacks.
+- **SM_Wep_Melee_Machete_01**: A large blade with high damage and moderate speed.
+- **SM_Wep_Melee_Spear_Wood_01**: A wooden spear with long reach and moderate damage.
+- **SM_Wep_Pipe_01**: A metal pipe repurposed as a blunt weapon.
+- **SM_Wep_PipeWrench_01**: A heavy wrench with high damage and slow attack speed.
+- **SM_Wep_Plank_01**: A wooden plank with nails for added damage.
+- **SM_Wep_RebarClub_01**: A club reinforced with rebar for increased damage.
+- **SM_Wep_Spade_01**: A shovel that doubles as a melee weapon.
+- **SM_Wep_WoodAxe_01**: A lightweight axe with balanced damage and speed.
+- **SM_Wep_Wrench_01**: A standard wrench with moderate damage and durability.
+
+### Guns
+- **SM_Wep_AssaultRifle_01**: A fully automatic rifle with high fire rate and moderate damage.
+- **SM_Wep_AssaultRifle_02**: A variant of the Assault Rifle with improved accuracy.
+- **SM_Wep_AssaultRifle_03**: A high-damage Assault Rifle with a slower fire rate.
+- **SM_Wep_HuntingRifle_01**: A bolt-action rifle with high precision and damage.
+- **SM_Wep_HuntingRifle_Clean_01**: A cleaner version of the Hunting Rifle with identical functionality.
+- **SM_Wep_Hybrid_01**: A hybrid weapon combining features of rifles and shotguns.
+- **SM_Wep_Hybrid_02**: An upgraded hybrid weapon with improved stats.
+- **SM_Wep_Hybrid_03**: A high-end hybrid weapon with exceptional performance.
+- **SM_Wep_MachineGun_01**: A heavy machine gun with a large magazine and high fire rate.
+- **SM_Wep_MachineGun_02**: A lighter machine gun with improved mobility.
+- **SM_Wep_Minigun_01**: A powerful minigun with an extremely high fire rate.
+- **SM_Wep_Minigun_Clean_01**: A cleaner version of the Minigun with identical functionality.
+- **SM_Wep_Nailgun_01**: A construction tool repurposed as a weapon, firing nails at high speed.
+- **SM_Wep_Nailgun_Clean_01**: A cleaner version of the Nailgun with identical functionality.
+- **SM_Wep_Pistol_01**: A standard semi-automatic pistol with moderate damage.
+- **SM_Wep_Revolver_01**: A high-damage revolver with a slow reload time.
+- **SM_Wep_Revolver_02**: An upgraded revolver with improved accuracy.
+- **SM_Wep_Rifle_01**: A semi-automatic rifle with balanced stats.
+- **SM_Wep_Rifle_02**: A high-damage rifle with a slower fire rate.
+- **SM_Wep_Rifle_03**: A precision rifle with exceptional accuracy.
+- **SM_Wep_RocketLauncher_01**  
+  - Type: Ranged  
+  - Damage: 300  
+  - Magazine Size: 1  
+  - Fire Rate: 0.3  
+  - Reload Time: 3.5  
+  - Recoil Duration: 1.0  
+  - Recoil Curve: Exponential  
+  - Recoil Rotation Curve: Exponential  
+  - Muzzle Flash: Rocket_Flash_01  
+  - Fire Sound: Rocket_Fire_Sound_01  
+  - Reload Sound: Rocket_Reload_Sound_01  
+  - Description: A launcher that fires explosive rockets.
+- **SM_Wep_Shotgun_01**: A pump-action shotgun with high close-range damage.
+- **SM_Wep_SniperRifle_01**: A long-range rifle with high damage and precision.
+- **SM_Wep_SniperRifle_02**: An upgraded sniper rifle with improved stats.
+- **SM_Wep_SniperRifle_Pneumatic_01**: A pneumatic sniper rifle with unique mechanics.
+- **SM_Wep_SpearGun_01**: A gun that fires spears with high accuracy.
+- **SM_Wep_SubMGun_01**: A compact submachine gun with a high fire rate.
+- **SM_Wep_SubMGun_02**: An upgraded submachine gun with improved stats.
+- **SM_Wep_SubMGun_03**: A high-end submachine gun with exceptional performance.
+- **SM_Wep_SubMGun_Clean_03**: A cleaner version of the SubMGun with identical functionality.
+
+---
+
+This list will be updated as new weapons are added to the game.

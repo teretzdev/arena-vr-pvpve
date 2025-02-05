@@ -10,7 +10,46 @@ namespace ArenaDeathMatch.Combat
 {
     public class WeaponManager : MonoBehaviour
     {
-        public static WeaponManager Instance { get; private set; }
+       
+            else if (type == WeaponType.Trimmer || type == WeaponType.CleanTrimmer)
+            {
+                MeleeWeapon trimmer = weaponObj.GetComponent<MeleeWeapon>();
+                if (trimmer == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize trimmer specific properties if needed
+                activeWeapons.Add(trimmer);
+                return trimmer;
+            }
+            else if (type == WeaponType.MetalBat)
+            {
+                MeleeWeapon metalBat = weaponObj.GetComponent<MeleeWeapon>();
+                if (metalBat == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize metal bat specific properties if needed
+                activeWeapons.Add(metalBat);
+                return metalBat;
+            }
+            else if (type == WeaponType.RocketLauncher)
+            {
+                RangedWeapon rocketLauncher = weaponObj.GetComponent<RangedWeapon>();
+                if (rocketLauncher == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize rocket launcher specific properties if needed
+                activeWeapons.Add(rocketLauncher);
+                return rocketLauncher;
+            } public static WeaponManager Instance { get; private set; }
 
         [Header("Weapon Configuration")]
         public WeaponDatabase weaponDatabase;
@@ -50,7 +89,48 @@ namespace ArenaDeathMatch.Combat
             {
                 weaponCache[weapon.type] = weapon;
             }
+
+            // Add new weapons to the weapon cache
+            weaponCache[WeaponType.Trimmer] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Trimmer);
+            weaponCache[WeaponType.CleanTrimmer] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanTrimmer);
+            weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
+            weaponCache[WeaponType.RocketLauncher] = weaponDatabase.weapons.Find(w => w.type == WeaponType.RocketLauncher);
+
+            // Add new weapons to the weapon cache
+            weaponCache[WeaponType.GasCan] = weaponDatabase.weapons.Find(w => w.type == WeaponType.GasCan);
+            weaponCache[WeaponType.PropaneTank] = weaponDatabase.weapons.Find(w => w.type == WeaponType.PropaneTank);
+            weaponCache[WeaponType.Chainsaw] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Chainsaw);
+            weaponCache[WeaponType.Crossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Crossbow);
+            weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);
+            weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
+            weaponCache[WeaponType.WoodenBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.WoodenBat);
+            weaponCache[WeaponType.Machete] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Machete);
+            weaponCache[WeaponType.Katana] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Katana);
+            weaponCache[WeaponType.FireAxe] = weaponDatabase.weapons.Find(w => w.type == WeaponType.FireAxe);
+            weaponCache[WeaponType.PipeWrench] = weaponDatabase.weapons.Find(w => w.type == WeaponType.PipeWrench);
+            weaponCache[WeaponType.GolfClub] = weaponDatabase.weapons.Find(w => w.type == WeaponType.GolfClub);
+            weaponCache[WeaponType.Spear] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Spear);
             
+            weaponCache[WeaponType.AssaultRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.AssaultRifle);
+            weaponCache[WeaponType.SniperRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.SniperRifle);
+            weaponCache[WeaponType.SubmachineGun] = weaponDatabase.weapons.Find(w => w.type == WeaponType.SubmachineGun);
+            weaponCache[WeaponType.Nailgun] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Nailgun);
+            weaponCache[WeaponType.RocketLauncher] = weaponDatabase.weapons.Find(w => w.type == WeaponType.RocketLauncher);
+            weaponCache[WeaponType.HuntingRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.HuntingRifle);
+            weaponCache[WeaponType.Crossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Crossbow);
+            weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);
+            weaponCache[WeaponType.HuntingRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.HuntingRifle);
+            weaponCache[WeaponType.Crossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Crossbow);
+            weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);
+            weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
+            weaponCache[WeaponType.WoodenBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.WoodenBat);
+            weaponCache[WeaponType.Machete] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Machete);
+            weaponCache[WeaponType.Katana] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Katana);
+            weaponCache[WeaponType.FireAxe] = weaponDatabase.weapons.Find(w => w.type == WeaponType.FireAxe);
+            weaponCache[WeaponType.PipeWrench] = weaponDatabase.weapons.Find(w => w.type == WeaponType.PipeWrench);
+            weaponCache[WeaponType.GolfClub] = weaponDatabase.weapons.Find(w => w.type == WeaponType.GolfClub);
+            weaponCache[WeaponType.Spear] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Spear);
+
             bulletManager.Initialize(physicsSettings);
             impactManager.Initialize();
         }
@@ -65,6 +145,12 @@ namespace ArenaDeathMatch.Combat
             if (type == WeaponType.MagicWeapon)
             {
                 MagicWeapon magicWeapon = weaponObj.GetComponent<MagicWeapon>();
+                if (magicWeapon == null)
+                {
+                    Debug.LogError($"MagicWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize magic weapon specific properties if needed
                 activeWeapons.Add(magicWeapon);
                 return magicWeapon;
@@ -72,6 +158,12 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.ThunderGrenade)
             {
                 ThunderGrenade specialWeapon = weaponObj.GetComponent<ThunderGrenade>();
+                if (specialWeapon == null)
+                {
+                    Debug.LogError($"ThunderGrenade component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize special weapon specific properties if needed
                 activeWeapons.Add(specialWeapon);
                 return specialWeapon;
@@ -79,6 +171,12 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.Shield)
             {
                 Shield shield = weaponObj.GetComponent<Shield>();
+                if (shield == null)
+                {
+                    Debug.LogError($"Shield component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize shield specific properties if needed
                 activeWeapons.Add(shield);
                 return shield;
@@ -86,6 +184,12 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.RangedWeapon)
             {
                 RangedWeapon rangedWeapon = weaponObj.GetComponent<RangedWeapon>();
+                if (rangedWeapon == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize ranged weapon specific properties if needed
                 activeWeapons.Add(rangedWeapon);
                 return rangedWeapon;
@@ -93,7 +197,132 @@ namespace ArenaDeathMatch.Combat
             else if (type == WeaponType.MeleeWeapon)
             {
                 MeleeWeapon meleeWeapon = weaponObj.GetComponent<MeleeWeapon>();
+                if (meleeWeapon == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 // Initialize melee weapon specific properties if needed
+                activeWeapons.Add(meleeWeapon);
+                return meleeWeapon;
+            }
+            else if (type == WeaponType.GasCan || type == WeaponType.PropaneTank)
+            {
+                VRWeapon explosiveWeapon = weaponObj.GetComponent<VRWeapon>();
+                if (explosiveWeapon == null)
+                {
+                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize explosive weapon specific properties if needed
+                activeWeapons.Add(explosiveWeapon);
+                return explosiveWeapon;
+            }
+            else if (type == WeaponType.Flashbang)
+            {
+                VRWeapon flashbang = weaponObj.GetComponent<VRWeapon>();
+                if (flashbang == null)
+                {
+                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize flashbang specific properties if needed
+                activeWeapons.Add(flashbang);
+                return flashbang;
+            }
+            else if (type == WeaponType.Chainsaw)
+            {
+                MeleeWeapon chainsaw = weaponObj.GetComponent<MeleeWeapon>();
+                if (chainsaw == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize chainsaw specific properties if needed
+                activeWeapons.Add(chainsaw);
+                return chainsaw;
+            }
+            else if (type == WeaponType.Molotov)
+            {
+                VRWeapon molotov = weaponObj.GetComponent<VRWeapon>();
+                if (molotov == null)
+                {
+                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize molotov specific properties if needed
+                activeWeapons.Add(molotov);
+                return molotov;
+            }
+            else if (type == WeaponType.Crossbow || type == WeaponType.CleanCrossbow)
+            {
+                RangedWeapon crossbow = weaponObj.GetComponent<RangedWeapon>();
+                if (crossbow == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize crossbow specific properties if needed
+                activeWeapons.Add(crossbow);
+                return crossbow;
+            }
+            else if (type == WeaponType.Flamethrower)
+            {
+                RangedWeapon flamethrower = weaponObj.GetComponent<RangedWeapon>();
+                if (flamethrower == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize flamethrower specific properties if needed
+                activeWeapons.Add(flamethrower);
+                return flamethrower;
+            }
+            else if (type == WeaponType.MetalBat || type == WeaponType.WoodenBat)
+            {
+                MeleeWeapon bat = weaponObj.GetComponent<MeleeWeapon>();
+                if (bat == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize bat specific properties if needed
+                activeWeapons.Add(bat);
+                return bat;
+            }
+            else if (type == WeaponType.AssaultRifle || type == WeaponType.SniperRifle || type == WeaponType.SubmachineGun ||
+                     type == WeaponType.Nailgun || type == WeaponType.RocketLauncher || type == WeaponType.HuntingRifle ||
+                     type == WeaponType.Crossbow || type == WeaponType.CleanCrossbow)
+            {
+                RangedWeapon rangedWeapon = weaponObj.GetComponent<RangedWeapon>();
+                if (rangedWeapon == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                activeWeapons.Add(rangedWeapon);
+                return rangedWeapon;
+            }
+            else if (type == WeaponType.MetalBat || type == WeaponType.WoodenBat || type == WeaponType.Machete ||
+                     type == WeaponType.Katana || type == WeaponType.FireAxe || type == WeaponType.PipeWrench ||
+                     type == WeaponType.GolfClub || type == WeaponType.Spear)
+            {
+                MeleeWeapon meleeWeapon = weaponObj.GetComponent<MeleeWeapon>();
+                if (meleeWeapon == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
                 activeWeapons.Add(meleeWeapon);
                 return meleeWeapon;
             }
@@ -394,7 +623,23 @@ namespace ArenaDeathMatch.Combat
             ThunderGrenade, // Add ThunderGrenade type
             Shield,
             RangedWeapon,
-            MeleeWeapon
+            MeleeWeapon,
+            AssaultRifle,
+            SniperRifle,
+            SubmachineGun,
+            Nailgun,
+            RocketLauncher,
+            HuntingRifle,
+            Crossbow,
+            CleanCrossbow,
+            MetalBat,
+            WoodenBat,
+            Machete,
+            Katana,
+            FireAxe,
+            PipeWrench,
+            GolfClub,
+            Spear
         }
 
         public struct DamageInfo

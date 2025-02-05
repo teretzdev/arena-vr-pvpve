@@ -1,4 +1,3 @@
-<code>
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -65,8 +64,17 @@ namespace ArenaDeathMatch.Utilities
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Name\tDefense\tWeight\tDurability\tRequired Level\tRarity");
             
-            // Assuming ArmorManager follows a similar singleton pattern as WeaponManager.
-            if (ArmorManager.Instance != null && ArmorManager.Instance.armorDatabase != null && ArmorManager.Instance.armorDatabase.armors != null)
+            if (ArmorManager.Instance == null)
+            {
+                Debug.LogError("ArmorManager.Instance is null. Unable to generate armor statistics.");
+                sb.AppendLine("No armor data available.");
+            }
+            else if (ArmorManager.Instance.armorDatabase == null || ArmorManager.Instance.armorDatabase.armors == null)
+            {
+                Debug.LogError("ArmorManager's armor database is null or uninitialized.");
+                sb.AppendLine("No armor data available.");
+            }
+            else
             {
                 foreach (ArmorData armor in ArmorManager.Instance.armorDatabase.armors)
                 {
@@ -79,10 +87,6 @@ namespace ArenaDeathMatch.Utilities
                         armor.rarity));
                 }
             }
-            else
-            {
-                sb.AppendLine("No armor data available.");
-            }
             return sb.ToString();
         }
 
@@ -92,8 +96,17 @@ namespace ArenaDeathMatch.Utilities
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Name\tType\tValue\tWeight\tStackable\tMax Stack");
             
-            // Assuming ItemManager follows a similar singleton pattern and provides access to item data.
-            if (ItemManager.Instance != null && ItemManager.Instance.itemDatabase != null && ItemManager.Instance.itemDatabase.items != null)
+            if (ItemManager.Instance == null)
+            {
+                Debug.LogError("ItemManager.Instance is null. Unable to generate item statistics.");
+                sb.AppendLine("No item data available.");
+            }
+            else if (ItemManager.Instance.itemDatabase == null || ItemManager.Instance.itemDatabase.items == null)
+            {
+                Debug.LogError("ItemManager's item database is null or uninitialized.");
+                sb.AppendLine("No item data available.");
+            }
+            else
             {
                 foreach (ItemData item in ItemManager.Instance.itemDatabase.items)
                 {
@@ -105,10 +118,6 @@ namespace ArenaDeathMatch.Utilities
                         item.stackable ? "Yes" : "No",
                         item.maxStack));
                 }
-            }
-            else
-            {
-                sb.AppendLine("No item data available.");
             }
             return sb.ToString();
         }
@@ -187,4 +196,3 @@ namespace ArenaDeathMatch.Utilities
         public float duration;
     }
 }
-</code>
