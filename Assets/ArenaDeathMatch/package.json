@@ -1,0 +1,34 @@
+{
+  "name": "com.teretzdev.arena-deathmatch",
+  "version": "1.0.0",
+  "displayName": "Arena Death Match",
+  "description": "A Unity package for the Arena Death Match plugin, integrating Adventure Creator for narrative and interactive storytelling.",
+  "unity": "2020.3",
+  "unityRelease": "18f1",
+  "author": {
+    "name": "TeretzDev",
+    "email": "support@teretzdev.com",
+    "url": "https://github.com/teretzdev/arena-vr-pvpve"
+  },
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.timeline": "1.4.8",
+    "com.adventurecreator.plugin": "1.74.2"
+  },
+  "keywords": [
+    "arena",
+    "deathmatch",
+    "adventure",
+    "creator",
+    "narrative",
+    "storytelling",
+    "unity"
+  ],
+  "license": "MIT",
+  "documentationUrl": "https://adventurecreator.org/files/Manual.pdf",
+  "changelogUrl": "https://github.com/teretzdev/arena-vr-pvpve/releases",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teretzdev/arena-vr-pvpve.git"
+  }
+}
