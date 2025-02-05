@@ -93,6 +93,50 @@ namespace ArenaDeathMatch.Combat
                     reloadTime = 0f,
                     recoilDuration = 0f,
                     description = "A lightweight wooden bat, ideal for quick melee attacks."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.Machete,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Melee_Machete_01"),
+                    damage = 40f,
+                    magazineSize = 0,
+                    fireRate = 1.0f,
+                    reloadTime = 0f,
+                    recoilDuration = 0f,
+                    description = "A large blade with high damage and moderate speed."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.Katana,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Katana_01"),
+                    damage = 50f,
+                    magazineSize = 0,
+                    fireRate = 1.5f,
+                    reloadTime = 0f,
+                    recoilDuration = 0f,
+                    description = "A sleek sword with high damage and fast attack speed."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.AssaultRifle,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_AssaultRifle_01"),
+                    damage = 35f,
+                    magazineSize = 30,
+                    fireRate = 0.1f,
+                    reloadTime = 2.5f,
+                    recoilDuration = 0.2f,
+                    description = "A fully automatic rifle with high fire rate and moderate damage."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.SniperRifle,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_SniperRifle_01"),
+                    damage = 90f,
+                    magazineSize = 5,
+                    fireRate = 1.5f,
+                    reloadTime = 3.0f,
+                    recoilDuration = 0.5f,
+                    description = "A long-range rifle with high damage and precision."
                 }
             };
         }
@@ -119,6 +163,10 @@ namespace ArenaDeathMatch.Combat
         Crossbow,
         CleanCrossbow,
         MetalBat,
-        WoodenBat
+        WoodenBat,
+        Machete,
+        Katana,
+        AssaultRifle,
+        SniperRifle
     }
 }

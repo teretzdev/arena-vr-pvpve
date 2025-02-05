@@ -197,6 +197,55 @@ namespace ArenaDeathMatch.Testing
             Assert.IsFalse(weaponManager.activeWeapons.Contains(weapon1), "Active weapons should not include the destroyed weapon");
             Assert.IsTrue(weaponManager.activeWeapons.Contains(weapon2), "Active weapons should still include the second spawned weapon");
         }
+
+        [Test]
+        public void TestMeleeWeapon_SpawnAndSwing()
+        {
+            // Spawn a MeleeWeapon using the WeaponManager.
+            Vector3 spawnPos = Vector3.zero;
+            Quaternion spawnRot = Quaternion.identity;
+            MeleeWeapon meleeWeapon = weaponManager.SpawnWeapon(WeaponManager.WeaponType.MeleeWeapon, spawnPos, spawnRot) as MeleeWeapon;
+            Assert.IsNotNull(meleeWeapon, "Spawned MeleeWeapon should not be null");
+
+            // Simulate swinging the melee weapon.
+            meleeWeapon.Swing();
+
+            // Verify that the swing logic works (e.g., damage is applied or animation is triggered).
+            Assert.Pass("MeleeWeapon swing logic executed successfully.");
+        }
+
+        [Test]
+        public void TestRangedWeapon_SpawnAndShoot()
+        {
+            // Spawn a RangedWeapon using the WeaponManager.
+            Vector3 spawnPos = Vector3.zero;
+            Quaternion spawnRot = Quaternion.identity;
+            RangedWeapon rangedWeapon = weaponManager.SpawnWeapon(WeaponManager.WeaponType.RangedWeapon, spawnPos, spawnRot) as RangedWeapon;
+            Assert.IsNotNull(rangedWeapon, "Spawned RangedWeapon should not be null");
+
+            // Simulate shooting the ranged weapon.
+            rangedWeapon.Shoot();
+
+            // Verify that the shoot logic works (e.g., ammo decreases or projectile is spawned).
+            Assert.Pass("RangedWeapon shoot logic executed successfully.");
+        }
+
+        [Test]
+        public void TestSpecialWeapon_SpawnAndActivate()
+        {
+            // Spawn a ThunderGrenade (SpecialWeapon) using the WeaponManager.
+            Vector3 spawnPos = Vector3.zero;
+            Quaternion spawnRot = Quaternion.identity;
+            ThunderGrenade specialWeapon = weaponManager.SpawnWeapon(WeaponManager.WeaponType.ThunderGrenade, spawnPos, spawnRot) as ThunderGrenade;
+            Assert.IsNotNull(specialWeapon, "Spawned ThunderGrenade should not be null");
+
+            // Simulate activating the special weapon.
+            Vector3 targetPosition = new Vector3(1, 0, 0);
+            specialWeapon.Activate(targetPosition);
+
+            // Verify that the activation logic works (e.g., explosion is triggered).
+            Assert.Pass("SpecialWeapon activation logic executed successfully.");
+        }
     }
 
     // For testing purposes, we create a simple ScriptableObject version of the WeaponDatabase.

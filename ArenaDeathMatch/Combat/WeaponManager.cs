@@ -60,6 +60,23 @@ namespace ArenaDeathMatch.Combat
             weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
             weaponCache[WeaponType.WoodenBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.WoodenBat);
             
+            weaponCache[WeaponType.AssaultRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.AssaultRifle);
+            weaponCache[WeaponType.SniperRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.SniperRifle);
+            weaponCache[WeaponType.SubmachineGun] = weaponDatabase.weapons.Find(w => w.type == WeaponType.SubmachineGun);
+            weaponCache[WeaponType.Nailgun] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Nailgun);
+            weaponCache[WeaponType.RocketLauncher] = weaponDatabase.weapons.Find(w => w.type == WeaponType.RocketLauncher);
+            weaponCache[WeaponType.HuntingRifle] = weaponDatabase.weapons.Find(w => w.type == WeaponType.HuntingRifle);
+            weaponCache[WeaponType.Crossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Crossbow);
+            weaponCache[WeaponType.CleanCrossbow] = weaponDatabase.weapons.Find(w => w.type == WeaponType.CleanCrossbow);
+            weaponCache[WeaponType.MetalBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.MetalBat);
+            weaponCache[WeaponType.WoodenBat] = weaponDatabase.weapons.Find(w => w.type == WeaponType.WoodenBat);
+            weaponCache[WeaponType.Machete] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Machete);
+            weaponCache[WeaponType.Katana] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Katana);
+            weaponCache[WeaponType.FireAxe] = weaponDatabase.weapons.Find(w => w.type == WeaponType.FireAxe);
+            weaponCache[WeaponType.PipeWrench] = weaponDatabase.weapons.Find(w => w.type == WeaponType.PipeWrench);
+            weaponCache[WeaponType.GolfClub] = weaponDatabase.weapons.Find(w => w.type == WeaponType.GolfClub);
+            weaponCache[WeaponType.Spear] = weaponDatabase.weapons.Find(w => w.type == WeaponType.Spear);
+
             bulletManager.Initialize(physicsSettings);
             impactManager.Initialize();
         }
@@ -188,15 +205,37 @@ namespace ArenaDeathMatch.Combat
                 activeWeapons.Add(bat);
                 return bat;
             }
-            else
+            else if (type == WeaponType.AssaultRifle || type == WeaponType.SniperRifle || type == WeaponType.SubmachineGun ||
+                     type == WeaponType.Nailgun || type == WeaponType.RocketLauncher || type == WeaponType.HuntingRifle ||
+                     type == WeaponType.Crossbow || type == WeaponType.CleanCrossbow)
             {
-                VRWeapon weapon = weaponObj.GetComponent<VRWeapon>();
-                if (weapon == null)
+                RangedWeapon rangedWeapon = weaponObj.GetComponent<RangedWeapon>();
+                if (rangedWeapon == null)
                 {
-                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
                     Destroy(weaponObj);
                     return null;
                 }
+                activeWeapons.Add(rangedWeapon);
+                return rangedWeapon;
+            }
+            else if (type == WeaponType.MetalBat || type == WeaponType.WoodenBat || type == WeaponType.Machete ||
+                     type == WeaponType.Katana || type == WeaponType.FireAxe || type == WeaponType.PipeWrench ||
+                     type == WeaponType.GolfClub || type == WeaponType.Spear)
+            {
+                MeleeWeapon meleeWeapon = weaponObj.GetComponent<MeleeWeapon>();
+                if (meleeWeapon == null)
+                {
+                    Debug.LogError($"MeleeWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                activeWeapons.Add(meleeWeapon);
+                return meleeWeapon;
+            }
+            else
+            {
+                VRWeapon weapon = weaponObj.GetComponent<VRWeapon>();
                 weapon.Initialize(data);
                 activeWeapons.Add(weapon);
                 return weapon;
@@ -490,15 +529,24 @@ namespace ArenaDeathMatch.Combat
             MagicWeapon, // Add MagicWeapon type
             ThunderGrenade, // Add ThunderGrenade type
             Shield,
-            GasCan,
-            PropaneTank,
-            Chainsaw,
+            RangedWeapon,
+            MeleeWeapon,
+            AssaultRifle,
+            SniperRifle,
+            SubmachineGun,
+            Nailgun,
+            RocketLauncher,
+            HuntingRifle,
             Crossbow,
             CleanCrossbow,
             MetalBat,
             WoodenBat,
-            RangedWeapon,
-            MeleeWeapon
+            Machete,
+            Katana,
+            FireAxe,
+            PipeWrench,
+            GolfClub,
+            Spear
         }
 
         public struct DamageInfo
