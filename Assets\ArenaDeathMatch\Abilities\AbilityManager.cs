@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ArenaDeathMatch.Abilities
+names/ArenaDeathMat/Abilities
 {
     // AbilityManager is responsible for managing all abilities in the game and
     // providing access to their data for generating statistical tables.

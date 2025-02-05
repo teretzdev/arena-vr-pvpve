@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using ArenaDeathMatch.Utilities;
+us/ArenaDeathMatch.Utilities;
 
-namespace ArenaDeathMatch.Combat
+namespace ArenaDeathMatch/Combat/
 {
     // ArmorManager is responsible for managing all armor pieces and 
     // providing access to their data for the statistical tables generator.

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ArenaDeathMatch.Combat
+names/ArenaDeathMatch/Combat/
 {
     public class WeaponManager : MonoBehaviour
     {
