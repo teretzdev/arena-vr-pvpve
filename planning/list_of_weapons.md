@@ -7,16 +7,86 @@ This document contains a comprehensive list of all weapons available in the game
 ## Weapons
 
 ### Misc Weapons
-- **SM_Wep_Bomb_GasCan_01**: A throwable gas canister that explodes on impact, dealing area damage.
-- **SM_Wep_Bomb_Propane_01**: A propane tank that creates a fiery explosion upon detonation.
-- **SM_Wep_ChainSaw_01**: A melee weapon with high damage and a unique spinning blade effect.
-- **SM_Wep_CrossBow_01**: A ranged weapon that fires bolts with precision and moderate damage.
-- **SM_Wep_CrossBow_Clean_01**: A cleaner version of the CrossBow with identical functionality.
-- **SM_Wep_FlameThrower_01**: A weapon that emits a stream of fire, dealing continuous damage over time.
-- **SM_Wep_FlareGun_01**: A gun that shoots flares, useful for signaling or igniting flammable objects.
-- **SM_Wep_Flashbang_01**: A throwable device that temporarily blinds and disorients enemies.
-- **SM_Wep_Grenade_01**: A standard explosive grenade with a timed fuse.
-- **SM_Wep_Molotov_01**: A throwable incendiary weapon that creates a pool of fire on impact.
+- **SM_Wep_Bomb_GasCan_01**  
+  - Type: Throwable  
+  - Damage: 50  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A throwable gas canister that explodes on impact, dealing area damage.
+- **SM_Wep_Bomb_Propane_01**  
+  - Type: Throwable  
+  - Damage: 75  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A propane tank that creates a fiery explosion upon detonation.
+- **SM_Wep_ChainSaw_01**  
+  - Type: Melee  
+  - Damage: 100  
+  - Magazine Size: N/A  
+  - Fire Rate: 1.5  
+  - Reload Time: N/A  
+  - Recoil Duration: 0.5  
+  - Description: A melee weapon with high damage and a unique spinning blade effect.
+- **SM_Wep_CrossBow_01**  
+  - Type: Ranged  
+  - Damage: 50  
+  - Magazine Size: 1  
+  - Fire Rate: 0.8  
+  - Reload Time: 2.5  
+  - Recoil Duration: 0.3  
+  - Description: A ranged weapon that fires bolts with precision and moderate damage.
+- **SM_Wep_CrossBow_Clean_01**  
+  - Type: Ranged  
+  - Damage: 50  
+  - Magazine Size: 1  
+  - Fire Rate: 0.8  
+  - Reload Time: 2.5  
+  - Recoil Duration: 0.3  
+  - Description: A cleaner version of the CrossBow with identical functionality.
+- **SM_Wep_FlameThrower_01**  
+  - Type: Ranged  
+  - Damage: 10 (per second)  
+  - Magazine Size: 100  
+  - Fire Rate: 10  
+  - Reload Time: 3.0  
+  - Recoil Duration: 0.2  
+  - Description: A weapon that emits a stream of fire, dealing continuous damage over time.
+- **SM_Wep_FlareGun_01**  
+  - Type: Ranged  
+  - Damage: 25  
+  - Magazine Size: 1  
+  - Fire Rate: 0.5  
+  - Reload Time: 2.0  
+  - Recoil Duration: 0.3  
+  - Description: A gun that shoots flares, useful for signaling or igniting flammable objects.
+- **SM_Wep_Flashbang_01**  
+  - Type: Throwable  
+  - Damage: 0  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A throwable device that temporarily blinds and disorients enemies.
+- **SM_Wep_Grenade_01**  
+  - Type: Throwable  
+  - Damage: 100  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A standard explosive grenade with a timed fuse.
+- **SM_Wep_Molotov_01**  
+  - Type: Throwable  
+  - Damage: 50 (initial) + 10 (per second)  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A throwable incendiary weapon that creates a pool of fire on impact.
 - **SM_Wep_NailBomb_01**: A bomb that releases shrapnel, causing damage over a wide area.
 - **SM_Wep_PipeBomb_01**: A makeshift explosive device with high damage potential.
 - **SM_Wep_Rocket_Fireworks_01**: A rocket launcher that fires colorful, explosive fireworks.
