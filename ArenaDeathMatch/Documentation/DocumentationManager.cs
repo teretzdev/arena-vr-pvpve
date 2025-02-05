@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace ArenaDeathMatch.Documentation
+// File moved to 'Assets/ArenaDeathMatch/Documentation/DocumentationManager.cs' to suit Unity3D project structure.
 {
     /// <summary>
     /// Main documentation manager handling all documentation generation and organization.

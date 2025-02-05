@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArenaDeathMatch.Testing
+// File moved to 'Assets/ArenaDeathMatch/Testing/TestingManager.cs' to suit Unity3D project structure.
 {
     public class TestingManager : MonoBehaviour
     {
@@ -102,7 +103,7 @@ namespace ArenaDeathMatch.Testing
                 public override void Setup() { Debug.Log("Setting up StatisticalTablesTestCase."); }
                 public override void Execute() {
                     string report = ArenaDeathMatch.Utilities.StatisticalTablesGenerator.GenerateStatisticsReport();
-                    Debug.Log("Statistical Tables Report:\\n" + report);
+                    Debug.Log("Statistical Tables Report:\\\n" + report);
                 }
                 public override void Teardown() { Debug.Log("Tearing down StatisticalTablesTestCase."); }
             }

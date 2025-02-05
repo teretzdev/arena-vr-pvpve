@@ -177,3 +177,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_Script: {fileID: 11500001, guid: "uibutton-guid", type: 3}
   m_Name: ""
+
+
+Assets/ArenaDeathMatch/UI/Prefabs/Screens/StatisticsScreen.prefab

@@ -6,6 +6,7 @@ using ArenaDeathMatch.Items;
 using ArenaDeathMatch.Abilities;
 
 namespace ArenaDeathMatch.Utilities
+// File moved to 'Assets/ArenaDeathMatch/Utilities/StatisticalTablesGenerator.cs' to suit Unity3D project structure.
 {
     // StatisticalTablesGenerator is responsible for collecting data from various game managers
     // (Weapons, Armors, Items, Abilities) and generating human‐readable statistical tables summarizing their attributes.

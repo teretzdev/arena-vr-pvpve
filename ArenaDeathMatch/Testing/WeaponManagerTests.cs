@@ -7,6 +7,7 @@ using ArenaDeathMatch.Combat;
 using ArenaDeathMatch.Testing;
 
 namespace ArenaDeathMatch.Testing
+// File moved to 'Assets/ArenaDeathMatch/Testing/WeaponManagerTests.cs' to suit Unity3D project structure.
 {
     public class WeaponManagerTests
     {
