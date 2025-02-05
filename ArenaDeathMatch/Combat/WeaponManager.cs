@@ -220,6 +220,19 @@ namespace ArenaDeathMatch.Combat
                 activeWeapons.Add(explosiveWeapon);
                 return explosiveWeapon;
             }
+            else if (type == WeaponType.Flashbang)
+            {
+                VRWeapon flashbang = weaponObj.GetComponent<VRWeapon>();
+                if (flashbang == null)
+                {
+                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize flashbang specific properties if needed
+                activeWeapons.Add(flashbang);
+                return flashbang;
+            }
             else if (type == WeaponType.Chainsaw)
             {
                 MeleeWeapon chainsaw = weaponObj.GetComponent<MeleeWeapon>();
@@ -233,6 +246,19 @@ namespace ArenaDeathMatch.Combat
                 activeWeapons.Add(chainsaw);
                 return chainsaw;
             }
+            else if (type == WeaponType.Molotov)
+            {
+                VRWeapon molotov = weaponObj.GetComponent<VRWeapon>();
+                if (molotov == null)
+                {
+                    Debug.LogError($"VRWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize molotov specific properties if needed
+                activeWeapons.Add(molotov);
+                return molotov;
+            }
             else if (type == WeaponType.Crossbow || type == WeaponType.CleanCrossbow)
             {
                 RangedWeapon crossbow = weaponObj.GetComponent<RangedWeapon>();
@@ -245,6 +271,19 @@ namespace ArenaDeathMatch.Combat
                 // Initialize crossbow specific properties if needed
                 activeWeapons.Add(crossbow);
                 return crossbow;
+            }
+            else if (type == WeaponType.Flamethrower)
+            {
+                RangedWeapon flamethrower = weaponObj.GetComponent<RangedWeapon>();
+                if (flamethrower == null)
+                {
+                    Debug.LogError($"RangedWeapon component missing on prefab for {type}");
+                    Destroy(weaponObj);
+                    return null;
+                }
+                // Initialize flamethrower specific properties if needed
+                activeWeapons.Add(flamethrower);
+                return flamethrower;
             }
             else if (type == WeaponType.MetalBat || type == WeaponType.WoodenBat)
             {

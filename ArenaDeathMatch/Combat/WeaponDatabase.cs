@@ -69,6 +69,11 @@ namespace ArenaDeathMatch.Combat
                     fireRate = 1.5f,
                     reloadTime = 2.0f,
                     recoilDuration = 0.3f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = null,
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Crossbow_Fire_Sound_01"),
+                    reloadSound = Resources.Load<AudioClip>("Audio/Weapons/Crossbow_Reload_Sound_01"),
                     description = "A precision weapon that fires bolts with high accuracy and damage."
                 },
                 new WeaponData
@@ -80,6 +85,11 @@ namespace ArenaDeathMatch.Combat
                     fireRate = 1.4f,
                     reloadTime = 1.8f,
                     recoilDuration = 0.3f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = null,
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Crossbow_Fire_Sound_02"),
+                    reloadSound = Resources.Load<AudioClip>("Audio/Weapons/Crossbow_Reload_Sound_02"),
                     description = "A cleaner, more efficient version of the standard crossbow with slightly improved stats."
                 },
                 new WeaponData
@@ -156,6 +166,11 @@ namespace ArenaDeathMatch.Combat
                     fireRate = 1.5f,
                     reloadTime = 3.0f,
                     recoilDuration = 0.5f,
+                    recoilCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
+                    muzzleFlash = Resources.Load<ParticleSystem>("Particles/Weapons/Sniper_Flash_01"),
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Sniper_Fire_Sound_01"),
+                    reloadSound = Resources.Load<AudioClip>("Audio/Weapons/Sniper_Reload_Sound_01"),
                     description = "A long-range rifle with high damage and precision."
                 },
                 new WeaponData
@@ -208,19 +223,67 @@ namespace ArenaDeathMatch.Combat
                 },
                 new WeaponData
                 {
-                    type = WeaponType.RocketLauncher,
-                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_RocketLauncher_01"),
-                    damage = 300f,
-                    magazineSize = 1,
-                    fireRate = 0.3f,
-                    reloadTime = 3.5f,
-                    recoilDuration = 1.0f,
-                    recoilCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
-                    recoilRotationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
-                    muzzleFlash = Resources.Load<ParticleSystem>("Particles/Weapons/Rocket_Flash_01"),
-                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Rocket_Fire_Sound_01"),
-                    reloadSound = Resources.Load<AudioClip>("Audio/Weapons/Rocket_Reload_Sound_01"),
-                    description = "A launcher that fires explosive rockets."
+                    type = WeaponType.Flashbang,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Flashbang_01"),
+                    damage = 0f,
+                    magazineSize = 0,
+                    fireRate = 0f,
+                    reloadTime = 0f,
+                    recoilDuration = 0f,
+                    recoilCurve = null,
+                    recoilRotationCurve = null,
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Flashbang_Explosion_Sound_01"),
+                    reloadSound = null,
+                    description = "A throwable device that temporarily blinds and disorients enemies."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.Molotov,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Molotov_01"),
+                    damage = 50f,
+                    magazineSize = 0,
+                    fireRate = 0f,
+                    reloadTime = 0f,
+                    recoilDuration = 0f,
+                    recoilCurve = null,
+                    recoilRotationCurve = null,
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Molotov_Explosion_Sound_01"),
+                    reloadSound = null,
+                    description = "A throwable incendiary weapon that creates a pool of fire on impact."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.Flamethrower,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_FlameThrower_01"),
+                    damage = 10f,
+                    magazineSize = 100,
+                    fireRate = 10f,
+                    reloadTime = 3.0f,
+                    recoilDuration = 0.2f,
+                    recoilCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f),
+                    recoilRotationCurve = null,
+                    muzzleFlash = Resources.Load<ParticleSystem>("Particles/Weapons/Flame_Flash_01"),
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/FlameThrower_Fire_Sound_01"),
+                    reloadSound = Resources.Load<AudioClip>("Audio/Weapons/FlameThrower_Reload_Sound_01"),
+                    description = "A weapon that emits a stream of fire, dealing continuous damage over time."
+                },
+                new WeaponData
+                {
+                    type = WeaponType.Flashbang,
+                    prefab = Resources.Load<GameObject>("Prefabs/Weapons/SM_Wep_Flashbang_01"),
+                    damage = 0f,
+                    magazineSize = 0,
+                    fireRate = 0f,
+                    reloadTime = 0f,
+                    recoilDuration = 0f,
+                    recoilCurve = null,
+                    recoilRotationCurve = null,
+                    muzzleFlash = null,
+                    fireSound = Resources.Load<AudioClip>("Audio/Weapons/Flashbang_Explosion_Sound_01"),
+                    reloadSound = null,
+                    description = "A throwable device that temporarily blinds and disorients enemies."
                 }
             };
         }

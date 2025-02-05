@@ -53,6 +53,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: 0.8  
   - Reload Time: 2.5  
   - Recoil Duration: 0.3  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Crossbow_Fire_Sound_01  
+  - Reload Sound: Crossbow_Reload_Sound_01  
   - Description: A ranged weapon that fires bolts with precision and moderate damage.
 - **SM_Wep_CrossBow_Clean_01**  
   - Type: Ranged  
@@ -61,6 +66,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: 0.8  
   - Reload Time: 2.5  
   - Recoil Duration: 0.3  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Crossbow_Fire_Sound_02  
+  - Reload Sound: Crossbow_Reload_Sound_02  
   - Description: A cleaner version of the CrossBow with identical functionality.
 - **SM_Wep_FlameThrower_01**  
   - Type: Ranged  
@@ -69,6 +79,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: 10  
   - Reload Time: 3.0  
   - Recoil Duration: 0.2  
+  - Recoil Curve: Smooth  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: Flame_Flash_01  
+  - Fire Sound: FlameThrower_Fire_Sound_01  
+  - Reload Sound: FlameThrower_Reload_Sound_01  
   - Description: A weapon that emits a stream of fire, dealing continuous damage over time.
 - **SM_Wep_FlareGun_01**  
   - Type: Ranged  
@@ -85,6 +100,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: N/A  
   - Reload Time: N/A  
   - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Flashbang_Explosion_Sound_01  
+  - Reload Sound: None  
   - Description: A throwable device that temporarily blinds and disorients enemies.
 - **SM_Wep_Grenade_01**  
   - Type: Throwable  
@@ -93,6 +113,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: N/A  
   - Reload Time: N/A  
   - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Grenade_Explosion_Sound_01  
+  - Reload Sound: None  
   - Description: A standard explosive grenade with a timed fuse.
 - **SM_Wep_Molotov_01**  
   - Type: Throwable  
@@ -101,6 +126,11 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Rate: N/A  
   - Reload Time: N/A  
   - Recoil Duration: N/A  
+  - Recoil Curve: None  
+  - Recoil Rotation Curve: None  
+  - Muzzle Flash: None  
+  - Fire Sound: Molotov_Explosion_Sound_01  
+  - Reload Sound: None  
   - Description: A throwable incendiary weapon that creates a pool of fire on impact.
 ### SM_Wep_NailBomb_01
 - **Type**: Throwable  
