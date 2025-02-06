@@ -62,18 +62,4 @@ namespace ArenaDeathMatch.Abilities
     {
         public List<AbilityData> abilities;
     }
-
-    // AbilityData represents the data structure for an ability.
-    [System.Serializable]
-    public class AbilityData
-    {
-        public string name;
-        public string type;
-        public float damage;
-        public float manaCost;
-        public float cooldown;
-        public float range;
-        public float areaOfEffect;
-        public float duration;
-    }
 }

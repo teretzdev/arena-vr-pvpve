@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+us/ArenaDeathMatch.Utilities;
 
 namespace ArenaDeathMatch.Combat
 {
@@ -61,17 +62,5 @@ namespace ArenaDeathMatch.Combat
     public class ArmorDatabase
     {
         public List<ArmorData> armors;
-    }
-
-    // ArmorData represents the data structure for an armor piece.
-    [System.Serializable]
-    public class ArmorData
-    {
-        public string name;
-        public float defenseRating;
-        public float weight;
-        public float durability;
-        public int requiredLevel;
-        public string rarity;
     }
 }
