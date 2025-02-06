@@ -144,6 +144,7 @@ This document contains a comprehensive list of all weapons available in the game
 - **Muzzle Flash**: None  
 - **Fire Sound**: Explosion_Sound_01  
 - **Reload Sound**: None  
+- **Description**: A homemade explosive device packed with nails for added shrapnel damage.
 
 ### SM_Wep_PipeBomb_01
 - **Type**: Throwable  
@@ -157,6 +158,7 @@ This document contains a comprehensive list of all weapons available in the game
 - **Muzzle Flash**: None  
 - **Fire Sound**: Explosion_Sound_02  
 - **Reload Sound**: None  
+- **Description**: A powerful improvised explosive device with a significant blast radius.
 
 ### SM_Wep_Rocket_Fireworks_01
 - **Type**: Ranged  
@@ -170,6 +172,7 @@ This document contains a comprehensive list of all weapons available in the game
 - **Muzzle Flash**: Fireworks_Flash_01  
 - **Fire Sound**: Fireworks_Sound_01  
 - **Reload Sound**: Reload_Sound_01  
+- **Description**: A rocket launcher that fires modified fireworks causing explosive damage upon impact.
 ### SM_Wep_Rocket_IED_01
 - **Type**: Throwable  
 - **Damage**: 250  
@@ -182,6 +185,7 @@ This document contains a comprehensive list of all weapons available in the game
 - **Muzzle Flash**: None  
 - **Fire Sound**: Explosion_Sound_03  
 - **Reload Sound**: None  
+- **Description**: An improvised explosive device launched as a rocket for devastating effect.
 
 ### SM_Wep_Sign_Shield_01
 - **Type**: Shield  
@@ -195,6 +199,7 @@ This document contains a comprehensive list of all weapons available in the game
 - **Muzzle Flash**: None  
 - **Fire Sound**: None  
 - **Reload Sound**: None  
+- **Description**: A makeshift shield crafted from a metal sign, used for blocking attacks.
 
 ### SM_Wep_SpearGun_Spear_01
 - **Type**: Ranged  
@@ -208,6 +213,7 @@ This document contains a comprehensive list of all weapons available in the game
 - **Muzzle Flash**: Spear_Flash_01  
 - **Fire Sound**: Spear_Sound_01  
 - **Reload Sound**: Reload_Sound_02  
+- **Description**: A weapon that fires spears at high velocity, effective against armored targets.
 - **SM_Wep_Trimmer_01**  
   - Type: Melee  
   - Damage: 75  
