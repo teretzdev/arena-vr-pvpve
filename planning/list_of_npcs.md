@@ -107,7 +107,9 @@ This document contains a comprehensive list of all non-player characters (NPCs) 
 - **Dialogue Tree**: Threats and Spells
 - **Behavior**: Aggressive
 - **Respawn Time**: 15 minutes
-- **Description**: A powerful sorcerer who uses dark magic to attack players and summon minions.
+- **VR Interaction Methods**: Voice commands to taunt or initiate combat.
+- **Proximity Reactions**: Summons minions and casts spells when the player enters its range.
+- **Description**: A powerful sorcerer who uses dark magic to attack players and summon minions. In VR, the sorcerer's spell effects and voice interactions create an immersive battle experience.
 
 ---
 
@@ -120,7 +122,9 @@ This document contains a comprehensive list of all non-player characters (NPCs) 
 - **Dialogue Tree**: Rest and Rumors
 - **Behavior**: Passive
 - **Respawn Time**: Does not respawn
-- **Description**: A friendly innkeeper who provides a safe place for players to rest and gather information.
+- **VR Interaction Methods**: Voice commands to request a room or gather information.
+- **Proximity Reactions**: Welcomes the player warmly and offers services when approached.
+- **Description**: A friendly innkeeper who provides a safe place for players to rest and gather information. In VR, the innkeeper's gestures and voice responses enhance the sense of hospitality.
 
 ---
 

@@ -43,4 +43,49 @@
 ProjectSettings/ProjectSettings.asset -text
 Library/* -text
 Temp/* -text
+Build/* -text# Normalize line endings for text files
+* text=auto
+
+# Treat binary files as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp4 binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.ttf binary
+*.otf binary
+*.fbx binary
+*.obj binary
+*.unity binary
+*.prefab binary
+*.mat binary
+*.asset binary
+*.dll binary
+*.exe binary
+*.zip binary
+*.rar binary
+
+# Handle long file paths on Windows
+* -text eol=lf
+
+# Unity-specific settings
+*.cs text diff=csharp
+*.shader text
+*.meta text
+*.asmdef text
+*.json text
+*.xml text
+*.yml text
+*.yaml text
+*.md text
+*.txt text
+*.csv text
+
+# Ignore changes in certain files
+ProjectSettings/ProjectSettings.asset -text
+Library/* -text
+Temp/* -text
 Build/* -text

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ArenaDeathMatch.Combat;
-using ArenaDeathMatch.Combat;
 
 namespace ArenaDeathMatch.Combat
 {
@@ -10,6 +9,7 @@ namespace ArenaDeathMatch.Combat
         public static WeaponManager Instance { get; private set; }
 
         [Header("Weapon Configuration")]
+        // Reference to the WeaponDatabase containing all weapon data
         public WeaponDatabase weaponDatabase;
         public Transform weaponContainer;
 

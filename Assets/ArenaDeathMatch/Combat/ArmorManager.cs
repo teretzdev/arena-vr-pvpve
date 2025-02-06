@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-us/ArenaDeathMatch.Utilities;
+using ArenaDeathMatch.Utilities;
+using ArenaDeathMatch.Combat;
 
 namespace ArenaDeathMatch.Combat
 {
