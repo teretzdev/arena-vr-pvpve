@@ -1,0 +1,87 @@
+{
+  "Prefab": {
+    "name": "FlareGun",
+    "components": [
+      {
+        "type": "Transform",
+        "position": { "x": 0, "y": 0, "z": 0 },
+        "rotation": { "x": 0, "y": 0, "z": 0 },
+        "scale": { "x": 1, "y": 1, "z": 1 }
+      },
+      {
+        "type": "MeshFilter",
+        "mesh": "SM_Wep_FlareGun_01"
+      },
+      {
+        "type": "MeshRenderer",
+        "materials": [
+          "FlareGun_Body_Material",
+          "FlareGun_Grip_Material"
+        ]
+      },
+      {
+        "type": "Rigidbody",
+        "mass": 1.5,
+        "drag": 0.1,
+        "angularDrag": 0.05,
+        "useGravity": true,
+        "isKinematic": false
+      },
+      {
+        "type": "BoxCollider",
+        "center": { "x": 0, "y": 0, "z": 0 },
+        "size": { "x": 0.3, "y": 0.2, "z": 0.8 }
+      },
+      {
+        "type": "Animator",
+        "controller": "FlareGun_AnimatorController"
+      },
+      {
+        "type": "VRWeapon",
+        "weaponType": "FlareGun",
+        "damage": 25,
+        "magazineSize": 1,
+        "fireRate": 0.5,
+        "reloadTime": 2.0,
+        "recoilDuration": 0.3,
+        "scripts": [
+          {
+            "name": "FlareGunScript",
+            "properties": {
+              "flarePrefab": "FlareProjectile.prefab",
+              "fireSound": "FlareGun_Fire_Sound",
+              "reloadSound": "FlareGun_Reload_Sound",
+              "ignitionRadius": 5.0,
+              "signalDuration": 10.0
+            }
+          }
+        ]
+      }
+    ],
+    "children": [
+      {
+        "name": "Muzzle",
+        "components": [
+          {
+            "type": "Transform",
+            "position": { "x": 0, "y": 0, "z": 0.4 },
+            "rotation": { "x": 0, "y": 0, "z": 0 },
+            "scale": { "x": 1, "y": 1, "z": 1 }
+          },
+          {
+            "type": "ParticleSystem",
+            "properties": {
+              "startColor": { "r": 1, "g": 0.5, "b": 0, "a": 1 },
+              "startSize": 0.1,
+              "startLifetime": 0.2,
+              "emissionRate": 50,
+              "shape": "Cone",
+              "coneAngle": 25,
+              "coneRadius": 0.05
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

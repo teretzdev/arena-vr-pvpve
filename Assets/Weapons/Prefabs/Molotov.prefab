@@ -1,0 +1,110 @@
+using UnityEngine;
+
+public class Molotov : MonoBehaviour
+{
+    [Header("Molotov Settings")]
+    public GameObject firePoolPrefab; // Prefab for the fire pool
+    public float explosionRadius = 3f; // Radius of the fire pool
+    public float damagePerSecond = 10f; // Damage dealt by the fire pool
+    public float fireDuration = 5f; // Duration of the fire pool
+    public ParticleSystem fireEffect; // Fire particle effect
+    public AudioClip explosionSound; // Sound effect for explosion
+    public LayerMask damageableLayers; // Layers that can be damaged
+
+    private bool isIgnited = false; // Tracks if the Molotov is ignited
+    private Rigidbody rb; // Rigidbody for physics interactions
+    private AudioSource audioSource; // Audio source for sound effects
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        // Check for ignition input (VR interaction or button press)
+        if (!isIgnited && Input.GetButtonDown("Ignite"))
+        {
+            Ignite();
+        }
+    }
+
+    private void Ignite()
+    {
+        isIgnited = true;
+        fireEffect.Play(); // Start fire particle effect
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (isIgnited)
+        {
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        // Play explosion sound
+        if (explosionSound != null)
+        {
+            audioSource.PlayOneShot(explosionSound);
+        }
+
+        // Instantiate fire pool
+        GameObject firePool = Instantiate(firePoolPrefab, transform.position, Quaternion.identity);
+        FirePool poolScript = firePool.GetComponent<FirePool>();
+        if (poolScript != null)
+        {
+            poolScript.Initialize(explosionRadius, damagePerSecond, fireDuration, damageableLayers);
+        }
+
+        // Destroy the Molotov object
+        Destroy(gameObject);
+    }
+}
+
+public class FirePool : MonoBehaviour
+{
+    private float radius;
+    private float damage;
+    private float duration;
+    private LayerMask layers;
+
+    public void Initialize(float radius, float damage, float duration, LayerMask layers)
+    {
+        this.radius = radius;
+        this.damage = damage;
+        this.duration = duration;
+        this.layers = layers;
+
+        // Start the fire pool effect
+        StartCoroutine(FireEffect());
+    }
+
+    private IEnumerator FireEffect()
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            // Deal damage to objects within the radius
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius, layers);
+            foreach (Collider collider in hitColliders)
+            {
+                Health health = collider.GetComponent<Health>();
+                if (health != null)
+                {
+                    health.TakeDamage(damage * Time.deltaTime);
+                }
+            }
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Destroy the fire pool after the duration
+        Destroy(gameObject);
+    }
+}

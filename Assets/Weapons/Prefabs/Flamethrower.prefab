@@ -1,0 +1,131 @@
+using UnityEngine;
+
+namespace ArenaDeathMatch.Weapons
+{
+    [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(ParticleSystem))]
+    [RequireComponent(typeof(Collider))]
+    public class Flamethrower : MonoBehaviour
+    {
+        [Header("Flamethrower Settings")]
+        public float damagePerSecond = 10f;
+        public float range = 5f;
+        public float fuelCapacity = 100f;
+        public float fuelConsumptionRate = 10f;
+        public float reloadTime = 3f;
+
+        [Header("References")]
+        public ParticleSystem flameParticleSystem;
+        public AudioClip flameSound;
+        public AudioClip reloadSound;
+        public Transform flameOrigin;
+        public LayerMask damageableLayers;
+
+        private AudioSource audioSource;
+        private float currentFuel;
+        private bool isFiring;
+        private bool isReloading;
+
+        private void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+            currentFuel = fuelCapacity;
+            isFiring = false;
+            isReloading = false;
+        }
+
+        private void Update()
+        {
+            if (isReloading) return;
+
+            if (isFiring && currentFuel > 0)
+            {
+                FireFlamethrower();
+            }
+            else
+            {
+                StopFlamethrower();
+            }
+
+            if (Input.GetButtonDown("Fire1") && currentFuel > 0)
+            {
+                StartFiring();
+            }
+            else if (Input.GetButtonUp("Fire1"))
+            {
+                StopFiring();
+            }
+
+            if (Input.GetButtonDown("Reload"))
+            {
+                StartCoroutine(Reload());
+            }
+        }
+
+        private void StartFiring()
+        {
+            isFiring = true;
+            flameParticleSystem.Play();
+            audioSource.clip = flameSound;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+
+        private void StopFiring()
+        {
+            isFiring = false;
+            flameParticleSystem.Stop();
+            audioSource.Stop();
+        }
+
+        private void FireFlamethrower()
+        {
+            currentFuel -= fuelConsumptionRate * Time.deltaTime;
+            if (currentFuel <= 0)
+            {
+                currentFuel = 0;
+                StopFiring();
+            }
+
+            RaycastHit[] hits = Physics.SphereCastAll(flameOrigin.position, range, flameOrigin.forward, range, damageableLayers);
+            foreach (var hit in hits)
+            {
+                if (hit.collider.TryGetComponent(out IDamageable damageable))
+                {
+                    damageable.TakeDamage(damagePerSecond * Time.deltaTime);
+                }
+            }
+        }
+
+        private void StopFlamethrower()
+        {
+            if (flameParticleSystem.isPlaying)
+            {
+                flameParticleSystem.Stop();
+            }
+        }
+
+        private IEnumerator Reload()
+        {
+            isReloading = true;
+            audioSource.PlayOneShot(reloadSound);
+            yield return new WaitForSeconds(reloadTime);
+            currentFuel = fuelCapacity;
+            isReloading = false;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (flameOrigin != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(flameOrigin.position, range);
+            }
+        }
+    }
+
+    public interface IDamageable
+    {
+        void TakeDamage(float damage);
+    }
+}

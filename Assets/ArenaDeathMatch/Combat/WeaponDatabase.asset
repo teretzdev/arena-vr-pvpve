@@ -83,3 +83,73 @@ MonoBehaviour:
       fireRate: 0.3
       reloadTime: 2.0
       recoilDuration: 0.4
+    - type: GasCan
+      prefab: {fileID: 0, guid: 11111111111111111111111111111111, type: 2}
+      damage: 50
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: PropaneBomb
+      prefab: {fileID: 0, guid: 22222222222222222222222222222222, type: 2}
+      damage: 75
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: Chainsaw
+      prefab: {fileID: 0, guid: 33333333333333333333333333333333, type: 2}
+      damage: 100
+      magazineSize: 0
+      fireRate: 1.5
+      reloadTime: 0.0
+      recoilDuration: 0.5
+    - type: Crossbow
+      prefab: {fileID: 0, guid: 44444444444444444444444444444444, type: 2}
+      damage: 50
+      magazineSize: 1
+      fireRate: 0.8
+      reloadTime: 2.5
+      recoilDuration: 0.3
+    - type: Flamethrower
+      prefab: {fileID: 0, guid: 55555555555555555555555555555555, type: 2}
+      damage: 10
+      magazineSize: 100
+      fireRate: 10.0
+      reloadTime: 3.0
+      recoilDuration: 0.2
+    - type: FlareGun
+      prefab: {fileID: 0, guid: 66666666666666666666666666666666, type: 2}
+      damage: 25
+      magazineSize: 1
+      fireRate: 0.5
+      reloadTime: 2.0
+      recoilDuration: 0.3
+    - type: Flashbang
+      prefab: {fileID: 0, guid: 77777777777777777777777777777777, type: 2}
+      damage: 0
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: Grenade
+      prefab: {fileID: 0, guid: 88888888888888888888888888888888, type: 2}
+      damage: 100
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: Molotov
+      prefab: {fileID: 0, guid: 99999999999999999999999999999999, type: 2}
+      damage: 50
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: NailBomb
+      prefab: {fileID: 0, guid: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, type: 2}
+      damage: 120
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0

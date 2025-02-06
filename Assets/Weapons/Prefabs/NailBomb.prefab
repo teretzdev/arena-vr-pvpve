@@ -1,0 +1,102 @@
+{
+  "Prefab": {
+    "Name": "NailBomb",
+    "Components": [
+      {
+        "Type": "Transform",
+        "Position": { "x": 0, "y": 0, "z": 0 },
+        "Rotation": { "x": 0, "y": 0, "z": 0 },
+        "Scale": { "x": 1, "y": 1, "z": 1 }
+      },
+      {
+        "Type": "MeshFilter",
+        "Mesh": "SM_Wep_NailBomb_01"
+      },
+      {
+        "Type": "MeshRenderer",
+        "Materials": [
+          "NailBomb_Body_Material",
+          "NailBomb_Nails_Material"
+        ]
+      },
+      {
+        "Type": "SphereCollider",
+        "Radius": 0.3,
+        "IsTrigger": false
+      },
+      {
+        "Type": "Rigidbody",
+        "Mass": 1.0,
+        "Drag": 0.1,
+        "AngularDrag": 0.05,
+        "UseGravity": true,
+        "IsKinematic": false
+      },
+      {
+        "Type": "VRWeapon",
+        "WeaponType": "Throwable",
+        "Damage": 120,
+        "ThrowForce": 15.0
+      },
+      {
+        "Type": "NailBombScript",
+        "ExplosionRadius": 5.0,
+        "ExplosionForce": 500.0,
+        "ShrapnelDamage": 120,
+        "FuseTime": 3.0,
+        "ShrapnelCount": 20
+      },
+      {
+        "Type": "AudioSource",
+        "AudioClips": {
+          "ArmSound": "NailBomb_Arm_Sound",
+          "ThrowSound": "NailBomb_Throw_Sound",
+          "ExplosionSound": "Explosion_Sound_01"
+        },
+        "SpatialBlend": 1.0,
+        "Volume": 0.8
+      },
+      {
+        "Type": "ParticleSystem",
+        "Name": "ExplosionEffect",
+        "Duration": 1.0,
+        "StartLifetime": 0.5,
+        "StartSize": 2.0,
+        "StartColor": { "r": 1, "g": 0.5, "b": 0, "a": 1 },
+        "EmissionRate": 100,
+        "Shape": "Sphere",
+        "Radius": 1.0
+      }
+    ],
+    "Children": [
+      {
+        "Name": "Shrapnel",
+        "Prefab": "ShrapnelPiece",
+        "Count": 20,
+        "Components": [
+          {
+            "Type": "MeshFilter",
+            "Mesh": "Shrapnel_Mesh"
+          },
+          {
+            "Type": "MeshRenderer",
+            "Material": "Shrapnel_Material"
+          },
+          {
+            "Type": "Rigidbody",
+            "Mass": 0.1,
+            "Drag": 0.05,
+            "AngularDrag": 0.02,
+            "UseGravity": true,
+            "IsKinematic": false
+          },
+          {
+            "Type": "SphereCollider",
+            "Radius": 0.05,
+            "IsTrigger": false
+          }
+        ]
+      }
+    ]
+  }
+}

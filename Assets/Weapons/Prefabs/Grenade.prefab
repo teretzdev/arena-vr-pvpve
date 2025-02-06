@@ -1,0 +1,107 @@
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(VRWeapon))]
+public class Grenade : MonoBehaviour
+{
+    [Header("Grenade Settings")]
+    public float explosionDelay = 3.0f; // Time before the grenade explodes
+    public float explosionRadius = 5.0f; // Radius of the explosion
+    public float explosionForce = 700.0f; // Force of the explosion
+    public int damage = 100; // Damage dealt by the grenade
+
+    [Header("References")]
+    public GameObject explosionEffect; // Prefab for the explosion effect
+    public AudioClip explosionSound; // Sound to play on explosion
+    public AudioClip pinPullSound; // Sound to play when the pin is pulled
+    public Transform pin; // Reference to the grenade's pin
+
+    private bool isPinPulled = false; // Tracks if the pin has been pulled
+    private bool isThrown = false; // Tracks if the grenade has been thrown
+    private Rigidbody rb; // Rigidbody for physics interactions
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true; // Initially, the grenade is not affected by physics
+    }
+
+    private void Update()
+    {
+        // Check if the grenade has been thrown and the pin is pulled
+        if (isPinPulled && isThrown)
+        {
+            StartCoroutine(StartExplosionCountdown());
+        }
+    }
+
+    public void PullPin()
+    {
+        if (!isPinPulled)
+        {
+            isPinPulled = true;
+            pin.gameObject.SetActive(false); // Hide the pin
+            AudioSource.PlayClipAtPoint(pinPullSound, transform.position);
+        }
+    }
+
+    public void Throw(Vector3 force)
+    {
+        if (isPinPulled)
+        {
+            isThrown = true;
+            rb.isKinematic = false; // Enable physics
+            rb.AddForce(force, ForceMode.Impulse); // Apply throwing force
+        }
+    }
+
+    private IEnumerator StartExplosionCountdown()
+    {
+        yield return new WaitForSeconds(explosionDelay);
+        Explode();
+    }
+
+    private void Explode()
+    {
+        // Instantiate explosion effect
+        if (explosionEffect != null)
+        {
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        }
+
+        // Play explosion sound
+        if (explosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        }
+
+        // Apply explosion force to nearby objects
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider nearbyObject in colliders)
+        {
+            Rigidbody nearbyRb = nearbyObject.GetComponent<Rigidbody>();
+            if (nearbyRb != null)
+            {
+                nearbyRb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+            }
+
+            // Apply damage to objects with a health component
+            Health health = nearbyObject.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
+        }
+
+        // Destroy the grenade object
+        Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Draw the explosion radius in the editor
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
+}

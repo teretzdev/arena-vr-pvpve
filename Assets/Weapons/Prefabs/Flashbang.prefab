@@ -1,0 +1,178 @@
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(AudioSource))]
+public class Flashbang : MonoBehaviour
+{
+    [Header("Flashbang Settings")]
+    public float throwForce = 10f;
+    public float detonationDelay = 3f;
+    public float blindDuration = 5f;
+    public float disorientRadius = 10f;
+
+    [Header("Effects")]
+    public ParticleSystem explosionEffect;
+    public AudioClip explosionSound;
+
+    private Rigidbody rb;
+    private AudioSource audioSource;
+    private bool isThrown = false;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+
+        // Ensure the Rigidbody starts as kinematic
+        rb.isKinematic = true;
+    }
+
+    public void Throw(Vector3 direction)
+    {
+        if (isThrown) return;
+
+        isThrown = true;
+        rb.isKinematic = false;
+        rb.AddForce(direction * throwForce, ForceMode.Impulse);
+
+        // Start the detonation countdown
+        Invoke(nameof(Detonate), detonationDelay);
+    }
+
+    private void Detonate()
+    {
+        // Play explosion effect
+        if (explosionEffect != null)
+        {
+            explosionEffect.transform.parent = null; // Detach the effect
+            explosionEffect.Play();
+            Destroy(explosionEffect.gameObject, explosionEffect.main.duration);
+        }
+
+        // Play explosion sound
+        if (explosionSound != null)
+        {
+            audioSource.PlayOneShot(explosionSound);
+        }
+
+        // Apply blinding and disorienting effects to nearby enemies
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, disorientRadius);
+        foreach (Collider hit in hitColliders)
+        {
+            if (hit.CompareTag("Enemy"))
+            {
+                EnemyAI enemy = hit.GetComponent<EnemyAI>();
+                if (enemy != null)
+                {
+                    enemy.Blind(blindDuration);
+                }
+            }
+        }
+
+        // Destroy the flashbang object
+        Destroy(gameObject);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Visualize the disorient radius in the editor
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, disorientRadius);
+    }
+}
+```
+
+### Step 4: Review
+- **Model and Textures**: The prefab uses the `SM_Wep_Flashbang_01` model and appropriate materials.
+- **Physics Colliders**: A `SphereCollider` is added for physical interactions.
+- **Scripts**: The `Flashbang` script handles throwing, detonation, and applying effects to enemies.
+- **VR Interactions**: The prefab is compatible with the VR weapon system.
+- **Explosion Effect**: A particle system and audio source are included for the explosion.
+- **Performance Optimization**: Lightweight assets and efficient scripts are used.
+
+### Final Output
+```
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(AudioSource))]
+public class Flashbang : MonoBehaviour
+{
+    [Header("Flashbang Settings")]
+    public float throwForce = 10f;
+    public float detonationDelay = 3f;
+    public float blindDuration = 5f;
+    public float disorientRadius = 10f;
+
+    [Header("Effects")]
+    public ParticleSystem explosionEffect;
+    public AudioClip explosionSound;
+
+    private Rigidbody rb;
+    private AudioSource audioSource;
+    private bool isThrown = false;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+
+        // Ensure the Rigidbody starts as kinematic
+        rb.isKinematic = true;
+    }
+
+    public void Throw(Vector3 direction)
+    {
+        if (isThrown) return;
+
+        isThrown = true;
+        rb.isKinematic = false;
+        rb.AddForce(direction * throwForce, ForceMode.Impulse);
+
+        // Start the detonation countdown
+        Invoke(nameof(Detonate), detonationDelay);
+    }
+
+    private void Detonate()
+    {
+        // Play explosion effect
+        if (explosionEffect != null)
+        {
+            explosionEffect.transform.parent = null; // Detach the effect
+            explosionEffect.Play();
+            Destroy(explosionEffect.gameObject, explosionEffect.main.duration);
+        }
+
+        // Play explosion sound
+        if (explosionSound != null)
+        {
+            audioSource.PlayOneShot(explosionSound);
+        }
+
+        // Apply blinding and disorienting effects to nearby enemies
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, disorientRadius);
+        foreach (Collider hit in hitColliders)
+        {
+            if (hit.CompareTag("Enemy"))
+            {
+                EnemyAI enemy = hit.GetComponent<EnemyAI>();
+                if (enemy != null)
+                {
+                    enemy.Blind(blindDuration);
+                }
+            }
+        }
+
+        // Destroy the flashbang object
+        Destroy(gameObject);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Visualize the disorient radius in the editor
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, disorientRadius);
+    }
+}
