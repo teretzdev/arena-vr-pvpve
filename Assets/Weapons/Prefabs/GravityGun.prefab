@@ -1,0 +1,70 @@
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(AudioSource))]
+public class GravityGun : MonoBehaviour
+{
+    [Header("Gravity Gun Settings")]
+    public float pullForce = 10f; // Force to pull objects toward the gun
+    public float fireForce = 20f; // Force to fire objects away
+    public Transform firePoint; // Point from which objects are fired
+    public LayerMask interactableLayer; // Layer for interactable objects
+
+    private Rigidbody heldObject;
+    private AudioSource audioSource;
+
+    [Header("Audio Clips")]
+    public AudioClip grabSound;
+    public AudioClip fireSound;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1")) // Replace with VR input if necessary
+        {
+            if (heldObject == null)
+            {
+                TryGrabObject();
+            }
+            else
+            {
+                FireObject();
+            }
+        }
+    }
+
+    private void TryGrabObject()
+    {
+        Ray ray = new Ray(firePoint.position, firePoint.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, 10f, interactableLayer))
+        {
+            Rigidbody targetRigidbody = hit.collider.GetComponent<Rigidbody>();
+            if (targetRigidbody != null)
+            {
+                heldObject = targetRigidbody;
+                heldObject.isKinematic = true;
+                heldObject.transform.SetParent(firePoint);
+                audioSource.PlayOneShot(grabSound);
+            }
+        }
+    }
+
+    private void FireObject()
+    {
+        if (heldObject != null)
+        {
+            heldObject.isKinematic = false;
+            heldObject.transform.SetParent(null);
+            heldObject.AddForce(firePoint.forward * fireForce, ForceMode.Impulse);
+            audioSource.PlayOneShot(fireSound);
+            heldObject = null;
+        }
+    }
+}

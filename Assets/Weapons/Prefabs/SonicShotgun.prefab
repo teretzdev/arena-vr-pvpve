@@ -1,0 +1,121 @@
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(ParticleSystem))]
+public class SonicShotgun : MonoBehaviour
+{
+    [Header("Weapon Settings")]
+    public int maxAmmo = 6;
+    public float fireRate = 1.0f;
+    public float reloadTime = 2.0f;
+
+    [Header("Effects")]
+    public AudioClip fireSound;
+    public AudioClip reloadSound;
+    public ParticleSystem muzzleFlash;
+    public HapticFeedback hapticFeedback;
+
+    private int currentAmmo;
+    private bool isReloading = false;
+    private AudioSource audioSource;
+    private XRGrabInteractable grabInteractable;
+
+    private void Awake()
+    {
+        // Initialize components
+        audioSource = GetComponent<AudioSource>();
+        grabInteractable = GetComponent<XRGrabInteractable>();
+
+        // Set initial ammo
+        currentAmmo = maxAmmo;
+
+        // Bind interaction events
+        grabInteractable.activated.AddListener(OnFire);
+        grabInteractable.selectExited.AddListener(OnDrop);
+    }
+
+    private void OnFire(ActivateEventArgs args)
+    {
+        if (isReloading || currentAmmo <= 0)
+        {
+            Debug.Log("Cannot fire: Reloading or out of ammo.");
+            return;
+        }
+
+        // Fire the weapon
+        FireWeapon();
+    }
+
+    private void FireWeapon()
+    {
+        // Play muzzle flash
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Play();
+        }
+
+        // Play fire sound
+        if (fireSound != null)
+        {
+            audioSource.PlayOneShot(fireSound);
+        }
+
+        // Trigger haptic feedback
+        if (hapticFeedback != null)
+        {
+            hapticFeedback.TriggerHapticFeedback();
+        }
+
+        // Decrease ammo count
+        currentAmmo--;
+        Debug.Log($"Fired! Ammo remaining: {currentAmmo}");
+
+        // Check if out of ammo
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(ReloadWeapon());
+        }
+    }
+
+    private IEnumerator ReloadWeapon()
+    {
+        isReloading = true;
+        Debug.Log("Reloading...");
+
+        // Play reload sound
+        if (reloadSound != null)
+        {
+            audioSource.PlayOneShot(reloadSound);
+        }
+
+        // Wait for reload time
+        yield return new WaitForSeconds(reloadTime);
+
+        // Reset ammo
+        currentAmmo = maxAmmo;
+        isReloading = false;
+        Debug.Log("Reload complete!");
+    }
+
+    private void OnDrop(SelectExitEventArgs args)
+    {
+        Debug.Log("Weapon dropped.");
+    }
+}
+
+[System.Serializable]
+public class HapticFeedback
+{
+    public float intensity = 0.5f;
+    public float duration = 0.2f;
+
+    public void TriggerHapticFeedback()
+    {
+        // Implement haptic feedback logic here
+        Debug.Log($"Haptic feedback triggered: Intensity={intensity}, Duration={duration}");
+    }
+}

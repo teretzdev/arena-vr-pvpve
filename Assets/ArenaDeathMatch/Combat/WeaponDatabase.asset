@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1234567890abcdef1234567890abcdef, type: 3}
+  m_Name: WeaponDatabase
+  m_EditorClassIdentifier: ArenaDeathMatch.Combat.WeaponDatabase
+  weapons:
+    - type: LaserRifle
+      prefab: {fileID: 0, guid: 1204d87, type: 2}
+      damage: 35
+      magazineSize: 30
+      fireRate: 0.2
+      reloadTime: 2.5
+      recoilDuration: 0.3
+    - type: PlasmaPistol
+      prefab: {fileID: 0, guid: 234567890abcdef1234567890abcdef12, type: 2}
+      damage: 25
+      magazineSize: 15
+      fireRate: 0.5
+      reloadTime: 1.8
+      recoilDuration: 0.2
+    - type: GravityGun
+      prefab: {fileID: 0, guid: 34567890abcdef1234567890abcdef123, type: 2}
+      damage: 50
+      magazineSize: 1
+      fireRate: 1.0
+      reloadTime: 3.0
+      recoilDuration: 0.5
+    - type: SonicShotgun
+      prefab: {fileID: 0, guid: 4567890abcdef1234567890abcdef1234, type: 2}
+      damage: 70
+      magazineSize: 8
+      fireRate: 1.2
+      reloadTime: 2.8
+      recoilDuration: 0.6
+    - type: EnergySword
+      prefab: {fileID: 0, guid: 567890abcdef1234567890abcdef12345, type: 2}
+      damage: 100
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: EMPGrenade
+      prefab: {fileID: 0, guid: 67890abcdef1234567890abcdef123456, type: 2}
+      damage: 0
+      magazineSize: 1
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: PhotonCannon
+      prefab: {fileID: 0, guid: 7890abcdef1234567890abcdef1234567, type: 2}
+      damage: 120
+      magazineSize: 5
+      fireRate: 0.8
+      reloadTime: 3.5
+      recoilDuration: 0.7
+    - type: NanoBlade
+      prefab: {fileID: 0, guid: 890abcdef1234567890abcdef12345678, type: 2}
+      damage: 90
+      magazineSize: 0
+      fireRate: 0.0
+      reloadTime: 0.0
+      recoilDuration: 0.0
+    - type: Railgun
+      prefab: {fileID: 0, guid: 90abcdef1234567890abcdef123456789, type: 2}
+      damage: 150
+      magazineSize: 1
+      fireRate: 1.5
+      reloadTime: 4.0
+      recoilDuration: 1.0
+    - type: IceLauncher
+      prefab: {fileID: 0, guid: abcdef1234567890abcdef1234567890a, type: 2}
+      damage: 40
+      magazineSize: 10
+      fireRate: 0.3
+      reloadTime: 2.0
+      recoilDuration: 0.4

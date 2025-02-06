@@ -1,0 +1,74 @@
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(ParticleSystem))]
+public class EnergySword : MonoBehaviour
+{
+    [Header("Audio Settings")]
+    public AudioClip swingSound;
+    public AudioClip impactSound;
+
+    [Header("Particle Effects")]
+    public ParticleSystem impactEffect;
+
+    [Header("Haptic Feedback")]
+    public float hapticIntensity = 0.5f;
+    public float hapticDuration = 0.2f;
+
+    private AudioSource audioSource;
+    private XRGrabInteractable grabInteractable;
+
+    private void Awake()
+    {
+        // Initialize components
+        audioSource = GetComponent<AudioSource>();
+        grabInteractable = GetComponent<XRGrabInteractable>();
+
+        // Configure XRGrabInteractable events
+        grabInteractable.activated.AddListener(OnSwing);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Play impact sound
+        if (impactSound != null)
+        {
+            audioSource.PlayOneShot(impactSound);
+        }
+
+        // Trigger particle effect
+        if (impactEffect != null)
+        {
+            impactEffect.transform.position = collision.contacts[0].point;
+            impactEffect.Play();
+        }
+
+        // Trigger haptic feedback
+        TriggerHapticFeedback();
+    }
+
+    private void OnSwing(ActivateEventArgs args)
+    {
+        // Play swing sound
+        if (swingSound != null)
+        {
+            audioSource.PlayOneShot(swingSound);
+        }
+    }
+
+    private void TriggerHapticFeedback()
+    {
+        if (grabInteractable.interactorsSelecting.Count > 0)
+        {
+            XRBaseController controller = grabInteractable.interactorsSelecting[0] as XRBaseController;
+            if (controller != null)
+            {
+                controller.SendHapticImpulse(hapticIntensity, hapticDuration);
+            }
+        }
+    }
+}

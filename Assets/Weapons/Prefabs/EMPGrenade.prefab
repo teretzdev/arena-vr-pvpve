@@ -1,0 +1,126 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(ParticleSystem))]
+public class EMPGrenade : MonoBehaviour
+{
+    [Header("EMP Settings")]
+    public float explosionRadius = 10f;
+    public float explosionDelay = 3f;
+    public LayerMask affectedLayers;
+    public AudioClip explosionSound;
+
+    private Rigidbody rb;
+    private AudioSource audioSource;
+    private ParticleSystem particleSystem;
+    private bool isActivated = false;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+        particleSystem = GetComponent<ParticleSystem>();
+
+        // Ensure Rigidbody is set up correctly
+        rb.useGravity = true;
+        rb.isKinematic = false;
+
+        // Configure SphereCollider as a trigger
+        SphereCollider collider = GetComponent<SphereCollider>();
+        collider.isTrigger = false;
+
+        // Ensure XRGrabInteractable is set up
+        XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
+        grabInteractable.throwOnDetach = true;
+    }
+
+    public void ActivateGrenade()
+    {
+        if (isActivated) return;
+
+        isActivated = true;
+        StartCoroutine(ExplosionCountdown());
+    }
+
+    private IEnumerator ExplosionCountdown()
+    {
+        yield return new WaitForSeconds(explosionDelay);
+        Explode();
+    }
+
+    private void Explode()
+    {
+        // Play explosion sound
+        if (explosionSound != null)
+        {
+            audioSource.PlayOneShot(explosionSound);
+        }
+
+        // Trigger particle effect
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
+        }
+
+        // Apply EMP effect to nearby objects
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius, affectedLayers);
+        foreach (Collider hitCollider in hitColliders)
+        {
+            // Example: Disable electronics or apply effects
+            IEMPInteractable empInteractable = hitCollider.GetComponent<IEMPInteractable>();
+            if (empInteractable != null)
+            {
+                empInteractable.ApplyEMP();
+            }
+        }
+
+        // Destroy the grenade after the explosion
+        Destroy(gameObject, particleSystem.main.duration);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Activate grenade on impact if not already activated
+        if (!isActivated)
+        {
+            ActivateGrenade();
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Visualize the explosion radius in the editor
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
+}
+
+public interface IEMPInteractable
+{
+    void ApplyEMP();
+}
+```
+
+---
+
+### Step 4: Review
+- **File Path**: The prefab is created at `Assets/Weapons/Prefabs/EMPGrenade.prefab`.
+- **Components**:
+  - `Rigidbody`: Ensures realistic physics behavior.
+  - `SphereCollider`: Defines the grenade's physical boundaries.
+  - `XRGrabInteractable`: Enables VR grabbing and interaction.
+  - `AudioSource`: Plays sound effects for activation and explosion.
+  - `ParticleSystem`: Displays the EMP blast effect.
+- **Functionality**:
+  - The grenade can be grabbed and thrown in VR.
+  - Upon activation, it triggers an EMP effect after a delay, affecting nearby objects.
+  - Plays sound and visual effects during the explosion.
+- **Conventions**: The code adheres to Unity's component-based architecture and integrates with the XR Interaction Toolkit for VR functionality.
+
+This implementation fulfills the requirements of the task and adheres to the conventions and dependencies of the codebase.

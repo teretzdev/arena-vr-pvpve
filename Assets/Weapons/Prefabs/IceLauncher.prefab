@@ -1,0 +1,116 @@
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(ParticleSystem))]
+public class IceLauncher : MonoBehaviour
+{
+    [Header("Weapon Settings")]
+    public int maxAmmo = 10;
+    public float fireRate = 1.0f;
+    public float reloadTime = 2.0f;
+    public GameObject iceProjectilePrefab;
+    public Transform firePoint;
+
+    [Header("Audio Settings")]
+    public AudioClip fireSound;
+    public AudioClip reloadSound;
+
+    [Header("Particle Effects")]
+    public ParticleSystem muzzleFlash;
+
+    private int currentAmmo;
+    private bool isReloading = false;
+    private AudioSource audioSource;
+    private XRGrabInteractable grabInteractable;
+
+    private void Awake()
+    {
+        // Initialize components
+        audioSource = GetComponent<AudioSource>();
+        grabInteractable = GetComponent<XRGrabInteractable>();
+
+        // Set initial ammo
+        currentAmmo = maxAmmo;
+
+        // Add interaction events
+        grabInteractable.activated.AddListener(OnFire);
+    }
+
+    private void OnDestroy()
+    {
+        // Remove interaction events
+        grabInteractable.activated.RemoveListener(OnFire);
+    }
+
+    private void OnFire(ActivateEventArgs args)
+    {
+        if (isReloading || currentAmmo <= 0)
+        {
+            Debug.Log("Cannot fire: Reloading or out of ammo.");
+            return;
+        }
+
+        // Fire the weapon
+        Fire();
+    }
+
+    private void Fire()
+    {
+        // Reduce ammo
+        currentAmmo--;
+
+        // Play fire sound
+        if (fireSound != null)
+        {
+            audioSource.PlayOneShot(fireSound);
+        }
+
+        // Trigger muzzle flash
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Play();
+        }
+
+        // Spawn ice projectile
+        if (iceProjectilePrefab != null && firePoint != null)
+        {
+            GameObject projectile = Instantiate(iceProjectilePrefab, firePoint.position, firePoint.rotation);
+            Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+            if (projectileRb != null)
+            {
+                projectileRb.velocity = firePoint.forward * 20f; // Adjust projectile speed as needed
+            }
+
+            // Destroy projectile after a certain time
+            Destroy(projectile, 5f);
+        }
+
+        // Check if out of ammo
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+        }
+    }
+
+    private System.Collections.IEnumerator Reload()
+    {
+        isReloading = true;
+
+        // Play reload sound
+        if (reloadSound != null)
+        {
+            audioSource.PlayOneShot(reloadSound);
+        }
+
+        // Wait for reload time
+        yield return new WaitForSeconds(reloadTime);
+
+        // Reset ammo
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
+}

@@ -1,0 +1,123 @@
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(ParticleSystem))]
+public class PhotonCannon : MonoBehaviour
+{
+    [Header("Weapon Settings")]
+    public int maxAmmo = 10;
+    public float fireRate = 0.5f;
+    public float reloadTime = 2.0f;
+    public float recoilForce = 5.0f;
+
+    [Header("Effects")]
+    public ParticleSystem muzzleFlash;
+    public AudioClip fireSound;
+    public AudioClip reloadSound;
+    public HapticCapabilities hapticFeedback;
+
+    private int currentAmmo;
+    private bool isReloading = false;
+    private AudioSource audioSource;
+    private Rigidbody rb;
+    private XRGrabInteractable grabInteractable;
+
+    private void Awake()
+    {
+        // Initialize components
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.isKinematic = true;
+
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        audioSource = GetComponent<AudioSource>();
+
+        // Initialize ammo
+        currentAmmo = maxAmmo;
+
+        // Assign interaction events
+        grabInteractable.activated.AddListener(OnFire);
+        grabInteractable.selectExited.AddListener(OnDrop);
+    }
+
+    private void OnFire(ActivateEventArgs args)
+    {
+        if (isReloading || currentAmmo <= 0)
+        {
+            Debug.Log("Cannot fire: Reloading or out of ammo.");
+            return;
+        }
+
+        // Fire the weapon
+        FireWeapon();
+    }
+
+    private void FireWeapon()
+    {
+        // Play muzzle flash
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Play();
+        }
+
+        // Play fire sound
+        if (fireSound != null)
+        {
+            audioSource.PlayOneShot(fireSound);
+        }
+
+        // Apply recoil force
+        if (rb != null)
+        {
+            rb.AddForce(-transform.forward * recoilForce, ForceMode.Impulse);
+        }
+
+        // Provide haptic feedback
+        if (hapticFeedback.supportsImpulse)
+        {
+            XRController controller = grabInteractable.interactorsSelecting[0] as XRController;
+            controller?.SendHapticImpulse(0.5f, 0.1f);
+        }
+
+        // Decrease ammo
+        currentAmmo--;
+        Debug.Log($"Photon Cannon fired. Remaining ammo: {currentAmmo}");
+
+        // Check if out of ammo
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(ReloadWeapon());
+        }
+    }
+
+    private IEnumerator ReloadWeapon()
+    {
+        isReloading = true;
+        Debug.Log("Reloading...");
+
+        // Play reload sound
+        if (reloadSound != null)
+        {
+            audioSource.PlayOneShot(reloadSound);
+        }
+
+        // Wait for reload time
+        yield return new WaitForSeconds(reloadTime);
+
+        // Refill ammo
+        currentAmmo = maxAmmo;
+        isReloading = false;
+        Debug.Log("Reload complete.");
+    }
+
+    private void OnDrop(SelectExitEventArgs args)
+    {
+        // Reset physics when dropped
+        rb.isKinematic = false;
+        rb.useGravity = true;
+    }
+}
