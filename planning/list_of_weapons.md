@@ -483,18 +483,162 @@ This document contains a comprehensive list of all weapons available in the game
   - Description: A standard wrench with moderate damage and durability, suitable for quick and reliable attacks.
 
 ### Guns
-- **SM_Wep_AssaultRifle_01**: A fully automatic rifle with high fire rate and moderate damage.
-- **SM_Wep_AssaultRifle_02**: A variant of the Assault Rifle with improved accuracy.
-- **SM_Wep_AssaultRifle_03**: A high-damage Assault Rifle with a slower fire rate.
-- **SM_Wep_HuntingRifle_01**: A bolt-action rifle with high precision and damage.
-- **SM_Wep_HuntingRifle_Clean_01**: A cleaner version of the Hunting Rifle with identical functionality.
-- **SM_Wep_Hybrid_01**: A hybrid weapon combining features of rifles and shotguns.
-- **SM_Wep_Hybrid_02**: An upgraded hybrid weapon with improved stats.
-- **SM_Wep_Hybrid_03**: A high-end hybrid weapon with exceptional performance.
-- **SM_Wep_MachineGun_01**: A heavy machine gun with a large magazine and high fire rate.
-- **SM_Wep_MachineGun_02**: A lighter machine gun with improved mobility.
-- **SM_Wep_Minigun_01**: A powerful minigun with an extremely high fire rate.
-- **SM_Wep_Minigun_Clean_01**: A cleaner version of the Minigun with identical functionality.
+- **SM_Wep_AssaultRifle_01**  
+  - Type: Ranged  
+  - Damage: 35  
+  - Magazine Size: 30  
+  - Fire Rate: 10  
+  - Reload Time: 2.5  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: Smooth  
+  - Muzzle Flash: Rifle_Flash_01  
+  - Fire Sound: AssaultRifle_Fire_Sound_01  
+  - Reload Sound: AssaultRifle_Reload_Sound_01  
+  - Description: A fully automatic rifle with high fire rate and moderate damage.
+- **SM_Wep_AssaultRifle_02**  
+  - Type: Ranged  
+  - Damage: 30  
+  - Magazine Size: 30  
+  - Fire Rate: 8  
+  - Reload Time: 2.3  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: Smooth  
+  - Recoil Rotation Curve: Linear  
+  - Muzzle Flash: Rifle_Flash_02  
+  - Fire Sound: AssaultRifle_Fire_Sound_02  
+  - Reload Sound: AssaultRifle_Reload_Sound_02  
+  - Description: A variant of the Assault Rifle with improved accuracy.
+- **SM_Wep_AssaultRifle_03**  
+  - Type: Ranged  
+  - Damage: 50  
+  - Magazine Size: 20  
+  - Fire Rate: 5  
+  - Reload Time: 3.0  
+  - Recoil Duration: 0.5  
+  - Recoil Curve: Exponential  
+  - Recoil Rotation Curve: Exponential  
+  - Muzzle Flash: Rifle_Flash_03  
+  - Fire Sound: AssaultRifle_Fire_Sound_03  
+  - Reload Sound: AssaultRifle_Reload_Sound_03  
+  - Description: A high-damage Assault Rifle with a slower fire rate.
+- **SM_Wep_HuntingRifle_01**  
+  - Type: Ranged  
+  - Damage: 80  
+  - Magazine Size: 5  
+  - Fire Rate: 1  
+  - Reload Time: 3.5  
+  - Recoil Duration: 0.6  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: Smooth  
+  - Muzzle Flash: Rifle_Flash_04  
+  - Fire Sound: HuntingRifle_Fire_Sound_01  
+  - Reload Sound: HuntingRifle_Reload_Sound_01  
+  - Description: A bolt-action rifle with high precision and damage.
+- **SM_Wep_HuntingRifle_Clean_01**  
+  - Type: Ranged  
+  - Damage: 80  
+  - Magazine Size: 5  
+  - Fire Rate: 1  
+  - Reload Time: 3.5  
+  - Recoil Duration: 0.6  
+  - Recoil Curve: Linear  
+  - Recoil Rotation Curve: Smooth  
+  - Muzzle Flash: Rifle_Flash_04  
+  - Fire Sound: HuntingRifle_Fire_Sound_02  
+  - Reload Sound: HuntingRifle_Reload_Sound_02  
+  - Description: A cleaner version of the Hunting Rifle with identical functionality.
+- **SM_Wep_Hybrid_01**  
+  - Type: Hybrid  
+  - Damage: 40  
+  - Magazine Size: 10  
+  - Fire Rate: 2  
+  - Reload Time: 3.0  
+  - Recoil Duration: 0.5  
+  - Recoil Curve: Smooth  
+  - Recoil Rotation Curve: Linear  
+  - Muzzle Flash: Hybrid_Flash_01  
+  - Fire Sound: Hybrid_Fire_Sound_01  
+  - Reload Sound: Hybrid_Reload_Sound_01  
+  - Description: A hybrid weapon combining features of rifles and shotguns.
+- **SM_Wep_Hybrid_02**  
+  - Type: Hybrid  
+  - Damage: 50  
+  - Magazine Size: 12  
+  - Fire Rate: 2.5  
+  - Reload Time: 2.8  
+  - Recoil Duration: 0.4  
+  - Recoil Curve: Smooth  
+  - Recoil Rotation Curve: Linear  
+  - Muzzle Flash: Hybrid_Flash_02  
+  - Fire Sound: Hybrid_Fire_Sound_02  
+  - Reload Sound: Hybrid_Reload_Sound_02  
+  - Description: An upgraded hybrid weapon with improved stats.
+- **SM_Wep_Hybrid_03**  
+  - Type: Hybrid  
+  - Damage: 60  
+  - Magazine Size: 15  
+  - Fire Rate: 3  
+  - Reload Time: 2.5  
+  - Recoil Duration: 0.3  
+  - Recoil Curve: Smooth  
+  - Recoil Rotation Curve: Linear  
+  - Muzzle Flash: Hybrid_Flash_03  
+  - Fire Sound: Hybrid_Fire_Sound_03  
+  - Reload Sound: Hybrid_Reload_Sound_03  
+  - Description: A high-end hybrid weapon with exceptional performance.
+- **SM_Wep_MachineGun_01**  
+  - Type: Ranged  
+  - Damage: 25  
+  - Magazine Size: 100  
+  - Fire Rate: 12  
+  - Reload Time: 5.0  
+  - Recoil Duration: 0.7  
+  - Recoil Curve: Exponential  
+  - Recoil Rotation Curve: Smooth  
+  - Muzzle Flash: MachineGun_Flash_01  
+  - Fire Sound: MachineGun_Fire_Sound_01  
+  - Reload Sound: MachineGun_Reload_Sound_01  
+  - Description: A heavy machine gun with a large magazine and high fire rate.
+- **SM_Wep_MachineGun_02**  
+  - Type: Ranged  
+  - Damage: 20  
+  - Magazine Size: 80  
+  - Fire Rate: 10  
+  - Reload Time: 4.0  
+  - Recoil Duration: 0.5  
+  - Recoil Curve: Smooth  
+  - Recoil Rotation Curve: Linear  
+  - Muzzle Flash: MachineGun_Flash_02  
+  - Fire Sound: MachineGun_Fire_Sound_02  
+  - Reload Sound: MachineGun_Reload_Sound_02  
+  - Description: A lighter machine gun with improved mobility.
+- **SM_Wep_Minigun_01**  
+  - Type: Ranged  
+  - Damage: 15  
+  - Magazine Size: 200  
+  - Fire Rate: 20  
+  - Reload Time: 6.0  
+  - Recoil Duration: 0.8  
+  - Recoil Curve: Exponential  
+  - Recoil Rotation Curve: Smooth  
+  - Muzzle Flash: Minigun_Flash_01  
+  - Fire Sound: Minigun_Fire_Sound_01  
+  - Reload Sound: Minigun_Reload_Sound_01  
+  - Description: A powerful minigun with an extremely high fire rate.
+- **SM_Wep_Minigun_Clean_01**  
+  - Type: Ranged  
+  - Damage: 15  
+  - Magazine Size: 200  
+  - Fire Rate: 20  
+  - Reload Time: 6.0  
+  - Recoil Duration: 0.8  
+  - Recoil Curve: Exponential  
+  - Recoil Rotation Curve: Smooth  
+  - Muzzle Flash: Minigun_Flash_01  
+  - Fire Sound: Minigun_Fire_Sound_02  
+  - Reload Sound: Minigun_Reload_Sound_02  
+  - Description: A cleaner version of the Minigun with identical functionality.
 - **SM_Wep_Nailgun_01**: A construction tool repurposed as a weapon, firing nails at high speed.
 - **SM_Wep_Nailgun_Clean_01**: A cleaner version of the Nailgun with identical functionality.
 - **SM_Wep_Pistol_01**: A standard semi-automatic pistol with moderate damage.
