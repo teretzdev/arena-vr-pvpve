@@ -33,19 +33,7 @@ namespace ArenaDeathMatch.Networking
 
         private void Start()
         {
-            ConnectToServer();
-        }
-
-        /// <summary>
-        /// Initiates connection to the Photon server.
-        /// </summary>
-        public void ConnectToServer()
-        {
-            if (!PhotonNetwork.IsConnected && !PhotonNetwork.IsConnecting)
-            {
-                PhotonNetwork.GameVersion = gameVersion;
-                InitializePhotonConnection();
-            }
+            InitializePhotonConnection();
         }
 
         /// <summary>
@@ -53,8 +41,12 @@ namespace ArenaDeathMatch.Networking
         /// </summary>
         private void InitializePhotonConnection()
         {
-            PhotonNetwork.ConnectUsingSettings();
-            Debug.Log("Initializing Photon Connection: Connecting to Photon server with game version " + gameVersion);
+            if (!PhotonNetwork.IsConnected && !PhotonNetwork.IsConnecting)
+            {
+                PhotonNetwork.GameVersion = gameVersion;
+                PhotonNetwork.ConnectUsingSettings();
+                Debug.Log("Initializing Photon Connection: Connecting to Photon server with game version " + gameVersion);
+            }
         }
         
         /// <summary>

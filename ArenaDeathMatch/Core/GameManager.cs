@@ -28,7 +28,8 @@ namespace ArenaDeathMatch.Core
         private void Awake()
         {
             Instance = this;
-            InitializeGame();
+            InitializeManagers();
+            InitializeNetworking();
         }
 
         #region Game Management
@@ -44,22 +45,13 @@ namespace ArenaDeathMatch.Core
             public DifficultyLevel difficulty = DifficultyLevel.Normal;
         }
 
-        /// <summary>
-        /// Initializes game components including managers, events, and network connection.
-        /// </summary>
-        private void InitializeGame()
-        {
-            InitializeManagers();
-            eventSystem.Initialize();
-            InitializeNetworking();
-        }
-
         private void InitializeManagers()
         {
             stateManager.Initialize();
             roundManager.Initialize(gameSettings);
             scoreManager.Initialize();
             matchmaking.Initialize(gameSettings.maxPlayers);
+            eventSystem.Initialize();
         }
 
         private void InitializeNetworking()

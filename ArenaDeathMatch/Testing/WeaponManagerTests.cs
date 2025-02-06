@@ -79,9 +79,21 @@ namespace ArenaDeathMatch.Testing
             Assert.IsNotNull(weapon, "Spawned weapon should not be null");
 
             int initialAmmo = weapon.currentAmmo;
+
             // Call Fire and check if ammo decreases
             weapon.Fire();
             Assert.AreEqual(initialAmmo - 1, weapon.currentAmmo, "Ammo should decrease by one after firing");
+
+            // Fire until ammo is depleted
+            for (int i = 0; i < initialAmmo; i++)
+            {
+                weapon.Fire();
+            }
+            Assert.AreEqual(0, weapon.currentAmmo, "Ammo should be zero after firing all rounds");
+
+            // Check that firing with zero ammo logs the correct message
+            LogAssert.Expect(LogType.Log, $"{weapon.type} is out of ammo!");
+            weapon.Fire();
         }
 
         [UnityTest]
@@ -100,12 +112,13 @@ namespace ArenaDeathMatch.Testing
             }
             Assert.AreEqual(0, weapon.currentAmmo, "Ammo should be zero after firing all rounds");
 
-            // Call Reload; assuming the Reload() method is implemented as per diff.
+            // Call Reload and verify ammo restoration
             weapon.Reload();
-            // Wait for longer than reloadTime (plus a small delta to allow coroutine to complete).
             yield return new WaitForSeconds(weaponManager.weaponDatabase.weapons[0].reloadTime + 0.2f);
-
             Assert.AreEqual(weaponManager.weaponDatabase.weapons[0].magazineSize, weapon.currentAmmo, "Ammo should be restored to magazine size after reloading");
+
+            // Check that reloading logs the correct message
+            LogAssert.Expect(LogType.Log, $"{weapon.type} reloaded. Ammo: {weapon.currentAmmo}");
         }
 
         [Test]
@@ -117,19 +130,22 @@ namespace ArenaDeathMatch.Testing
             VRWeapon weapon1 = weaponManager.SpawnWeapon(WeaponManager.WeaponType.Pistol, spawnPos, spawnRot) as VRWeapon;
             Assert.IsNotNull(weapon1, "First spawned weapon should not be null");
 
-            // Spawn second weapon (simulate switching by spawning another weapon of same type for test purposes).
+            // Spawn second weapon.
             Vector3 spawnPos2 = new Vector3(1, 0, 0);
             VRWeapon weapon2 = weaponManager.SpawnWeapon(WeaponManager.WeaponType.Pistol, spawnPos2, spawnRot) as VRWeapon;
             Assert.IsNotNull(weapon2, "Second spawned weapon should not be null");
 
             // Check that the activeWeapons list contains both weapons.
-            Assert.IsTrue(weaponManager.activeWeapons.Contains(weapon1), "Active weapons should include the first spawned weapon");
-            Assert.IsTrue(weaponManager.activeWeapons.Contains(weapon2), "Active weapons should include the second spawned weapon");
+            Assert.Contains(weapon1, weaponManager.activeWeapons, "Active weapons should include the first spawned weapon");
+            Assert.Contains(weapon2, weaponManager.activeWeapons, "Active weapons should include the second spawned weapon");
 
             // Simulate switching by destroying the first weapon.
             weaponManager.DestroyWeapon(weapon1);
             Assert.IsFalse(weaponManager.activeWeapons.Contains(weapon1), "Active weapons should not include the destroyed weapon");
-            Assert.IsTrue(weaponManager.activeWeapons.Contains(weapon2), "Active weapons should still include the second spawned weapon");
+            Assert.Contains(weapon2, weaponManager.activeWeapons, "Active weapons should still include the second spawned weapon");
+
+            // Verify that destroying a weapon logs the correct message
+            LogAssert.Expect(LogType.Log, $"Destroyed weapon: {weapon1.type}");
         }
     }
 

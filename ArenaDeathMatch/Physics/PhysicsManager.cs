@@ -61,7 +61,9 @@ namespace ArenaDeathMatch.Physics
             SetGravity();
             SetContactOffset();
             ConfigureCollisionLayers();
-            Debug.Log("PhysicsManager: All physics settings have been initialized.");
+            Debug.Log("PhysicsManager: Gravity set to " + customGravity + 
+                      ", Contact Offset set to " + contactOffset + 
+                      ", and collision layers configured.");
         }
 
         /// <summary>
@@ -196,6 +198,47 @@ namespace ArenaDeathMatch.Physics
                               " set to ignore: " + collision.ignoreCollision);
                 }
             }
+        }
+
+        /// <summary>
+        /// Resets all physics settings to Unity's default values.
+        /// </summary>
+        public void ResetPhysicsSettings()
+        {
+            Physics.gravity = new Vector3(0f, -9.81f, 0f);
+            Physics.defaultContactOffset = 0.01f;
+
+            if (layerCollisions != null)
+            {
+                foreach (LayerCollision collision in layerCollisions)
+                {
+                    Physics.IgnoreLayerCollision(collision.layer1, collision.layer2, false);
+                }
+            }
+
+            Debug.Log("PhysicsManager: Physics settings have been reset to default values.");
+        }
+
+        /// <summary>
+        /// Updates the global gravity vector dynamically.
+        /// </summary>
+        /// <param name="newGravity">The new gravity vector to apply.</param>
+        public void UpdateGravity(Vector3 newGravity)
+        {
+            customGravity = newGravity;
+            SetGravity();
+            Debug.Log("PhysicsManager: Gravity updated to " + newGravity);
+        }
+
+        /// <summary>
+        /// Updates the default contact offset dynamically.
+        /// </summary>
+        /// <param name="newContactOffset">The new contact offset to apply.</param>
+        public void UpdateContactOffset(float newContactOffset)
+        {
+            contactOffset = newContactOffset;
+            SetContactOffset();
+            Debug.Log("PhysicsManager: Contact offset updated to " + newContactOffset);
         }
     }
 }

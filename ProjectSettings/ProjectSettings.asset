@@ -10,10 +10,13 @@ AdventureCreatorProjectSettings:
   cutsceneCreation: true
   interactiveStorytelling: true
   scriptingRuntimeVersion: "4.x Equivalent"
-  apiCompatibilityLevel: ".NET_4_6"
+  apiCompatibilityLevel: ".NET_Standard_2_0"
   localization:
     enabled: true
     defaultLanguage: "English"
   vrSupport:
     enabled: true
     sdk: "Oculus"
+    settings:
+      stereoRenderingMode: "SinglePass"
+      enableDynamicResolution: true

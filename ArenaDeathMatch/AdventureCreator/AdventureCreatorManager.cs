@@ -61,13 +61,13 @@ namespace ArenaDeathMatch.AdventureCreator
         private void AdjustDialogueForVR()
         {
             Debug.Log("[AdventureCreatorManager] Adjusting dialogue UI for VR.");
-            // TODO: Adapt dialogue UI positions, scales, and canvas settings for VR display.
+            // Placeholder: Adapt dialogue UI positions, scales, and canvas settings for VR display.
         }
         
         private void AdjustCutsceneForVR()
         {
             Debug.Log("[AdventureCreatorManager] Adjusting cutscene playback for VR.");
-            // TODO: Modify camera movements and UI elements to ensure cutscenes display correctly in VR.
+            // Placeholder: Modify camera movements and UI elements to ensure cutscenes display correctly in VR.
         }
     }
 }

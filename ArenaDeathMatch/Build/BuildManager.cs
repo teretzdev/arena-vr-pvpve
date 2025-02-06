@@ -59,8 +59,10 @@ namespace ArenaDeathMatch.Build
                         BuildManager.Instance.buildSettings.buildConstants = new Dictionary<string, string>();
                     }
                     BuildManager.Instance.buildSettings.buildConstants["VRSupport"] = "Enabled";
-                    BuildManager.Instance.buildSettings.buildConstants["VRSDK"] = BuildManager.Instance.buildSettings.vrSDK;
-                    Debug.Log("[BuildManager] VR support configured for Oculus Quest.");
+                    BuildManager.Instance.buildSettings.buildConstants["VRSDK"] = "Oculus";
+                    PlayerSettings.virtualRealitySupported = true;
+                    PlayerSettings.SetVirtualRealitySDKs(BuildTargetGroup.Android, new[] { "Oculus" });
+                    Debug.Log("[BuildManager] VR support configured for Oculus Quest with Oculus SDK.");
                 }
             }
 

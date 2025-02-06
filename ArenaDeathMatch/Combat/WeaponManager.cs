@@ -258,6 +258,24 @@ namespace ArenaDeathMatch.Combat
                             });
                             Debug.Log("[VRWeapon] Melee weapon collision processed.");
                         }
+
+                        private void OnCollisionEnter(Collision collision)
+                        {
+                            if (type == WeaponType.MeleeWeapon)
+                            {
+                                if (collision.collider.TryGetComponent<IDamageable>(out IDamageable damageable))
+                                {
+                                    damageable.TakeDamage(new DamageInfo
+                                    {
+                                        amount = data.damage,
+                                        point = collision.contacts[0].point,
+                                        normal = collision.contacts[0].normal,
+                                        source = transform.position
+                                    });
+                                    Debug.Log("[VRWeapon] Melee weapon collision processed.");
+                                }
+                            }
+                        }
                     }
                 }
             }

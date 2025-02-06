@@ -38,12 +38,12 @@ namespace ArenaDeathMatch.UI
             screenHistory = new Stack<UIScreen>();
             RegisterScreens();
             // Adapt mainCanvas for VR: set canvas to World Space and adjust scale and position
-            if(mainCanvas != null)
+            if (mainCanvas != null)
             {
                 mainCanvas.renderMode = RenderMode.WorldSpace;
                 mainCanvas.worldCamera = Camera.main;
-                mainCanvas.transform.position = new Vector3(0f, 1.5f, 2f);
-                mainCanvas.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                mainCanvas.transform.position = new Vector3(0f, 1.8f, 2.5f); // Adjusted for better VR visibility
+                mainCanvas.transform.localScale = new Vector3(0.015f, 0.015f, 0.015f); // Slightly larger scale for VR
             }
             menuController.Initialize();
             hudController.Initialize();
@@ -67,10 +67,11 @@ namespace ArenaDeathMatch.UI
             {
                 AdventureCreatorUI.Initialize();
                 AdventureCreatorUI.SubscribeEvents();
+                Debug.Log("Adventure Creator UI successfully initialized and events subscribed.");
             }
             else
             {
-                Debug.LogWarning("AdventureCreatorUI is not available. Please ensure the Adventure Creator plugin is properly installed and compatible with Unity 6.");
+                Debug.LogWarning("AdventureCreatorUI is not available. Ensure the Adventure Creator plugin is installed and configured.");
             }
         }
         

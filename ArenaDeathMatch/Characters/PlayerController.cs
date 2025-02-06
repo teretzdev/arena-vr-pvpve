@@ -73,7 +73,8 @@ namespace ArenaDeathMatch.Characters
             dialogueAction?.Enable();
             interactiveAction?.Enable();
             cutsceneAction?.Enable();
-            if (enableVRInput) {
+            if (enableVRInput)
+            {
                 meleeAction?.Enable();
                 rangedAction?.Enable();
             }
@@ -85,7 +86,8 @@ namespace ArenaDeathMatch.Characters
             dialogueAction?.Disable();
             interactiveAction?.Disable();
             cutsceneAction?.Disable();
-            if (enableVRInput) {
+            if (enableVRInput)
+            {
                 meleeAction?.Disable();
                 rangedAction?.Disable();
             }
@@ -94,6 +96,10 @@ namespace ArenaDeathMatch.Characters
         private void Update()
         {
             ProcessMovement();
+            if (enableVRInput)
+            {
+                ProcessVRCombat();
+            }
         }
 
         /// <summary>
@@ -165,26 +171,28 @@ namespace ArenaDeathMatch.Characters
         private void ProcessVRCombat()
         {
             if (!enableVRInput) return;
-            ProcessMeleeAttack();
-            ProcessRangedAttack();
+
+            if (meleeAction != null && meleeAction.triggered)
+            {
+                ProcessMeleeAttack();
+            }
+
+            if (rangedAction != null && rangedAction.triggered)
+            {
+                ProcessRangedAttack();
+            }
         }
         
         private void ProcessMeleeAttack()
         {
-            if (meleeAction != null && meleeAction.triggered)
-            {
-                Debug.Log("[PlayerController] VR Melee attack triggered using Emerald AI 2024 combat methods.");
-                // TODO: Integrate Emerald AI melee combat interaction here.
-            }
+            Debug.Log("[PlayerController] VR Melee attack triggered using VR gestures.");
+            // TODO: Add VR-specific melee combat logic here, such as detecting collisions with AI agents.
         }
         
         private void ProcessRangedAttack()
         {
-            if (rangedAction != null && rangedAction.triggered)
-            {
-                Debug.Log("[PlayerController] VR Ranged attack triggered using Emerald AI 2024 combat methods.");
-                // TODO: Integrate Emerald AI ranged combat interaction here.
-            }
+            Debug.Log("[PlayerController] VR Ranged attack triggered using VR gestures.");
+            // TODO: Add VR-specific ranged combat logic here, such as spawning projectiles and applying damage to targets.
         }
         
         private void OnCutscenePerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)

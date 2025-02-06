@@ -153,6 +153,10 @@ namespace ArenaDeathMatch.VR
         {
             Debug.Log("[VRManager] Initializing VR input systems for Oculus and VRIF...");
             // VR input initialization code (e.g., mapping VR controllers to input actions) goes here.
+
+            // Example: Map Oculus controller buttons to actions
+            Debug.Log("[VRManager] Mapping Oculus controller buttons to input actions...");
+            // Placeholder for actual input mapping logic
         }
     }
 
