@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using ArenaDeathMatch.Combat;
 
 namespace ArenaDeathMatch.Combat
 {
@@ -94,18 +95,6 @@ namespace ArenaDeathMatch.Combat
         #endregion
 
         #region Data Structures
-
-        [System.Serializable]
-        public class WeaponData
-        {
-            public WeaponType type;
-            public GameObject prefab;
-            public float damage;
-            public int magazineSize;
-            public float fireRate;
-            public float reloadTime;
-            public float recoilDuration;
-        }
 
         public enum WeaponType
         {
