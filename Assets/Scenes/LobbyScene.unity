@@ -1,0 +1,78 @@
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class LobbySceneCreator
+{
+    [MenuItem("Tools/Create Lobby Scene")]
+    public static void CreateLobbyScene()
+    {
+        // Create a new scene
+        var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
+
+        // Add a Canvas for UI
+        var canvas = new GameObject("Canvas");
+        var canvasComponent = canvas.AddComponent<Canvas>();
+        canvasComponent.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.AddComponent<CanvasScaler>();
+        canvas.AddComponent<GraphicRaycaster>();
+
+        // Add a Panel to the Canvas
+        var panel = new GameObject("Panel");
+        panel.transform.SetParent(canvas.transform, false);
+        var panelImage = panel.AddComponent<Image>();
+        panelImage.color = new Color(0, 0, 0, 0.5f); // Semi-transparent black
+
+        // Add a Text element for instructions
+        var text = new GameObject("Instructions");
+        text.transform.SetParent(panel.transform, false);
+        var textComponent = text.AddComponent<Text>();
+        textComponent.text = "Prepare for the game. Press 'Start Game' to enter the Arena.";
+        textComponent.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        textComponent.alignment = TextAnchor.MiddleCenter;
+        textComponent.color = Color.white;
+        textComponent.rectTransform.sizeDelta = new Vector2(400, 100);
+        textComponent.rectTransform.anchoredPosition = new Vector2(0, 50);
+
+        // Add a Button to start the game
+        var button = new GameObject("StartGameButton");
+        button.transform.SetParent(panel.transform, false);
+        var buttonComponent = button.AddComponent<Button>();
+        var buttonImage = button.AddComponent<Image>();
+        buttonImage.color = Color.green;
+
+        // Add Text to the Button
+        var buttonText = new GameObject("Text");
+        buttonText.transform.SetParent(button.transform, false);
+        var buttonTextComponent = buttonText.AddComponent<Text>();
+        buttonTextComponent.text = "Start Game";
+        buttonTextComponent.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        buttonTextComponent.alignment = TextAnchor.MiddleCenter;
+        buttonTextComponent.color = Color.black;
+        buttonTextComponent.rectTransform.sizeDelta = new Vector2(160, 30);
+
+        // Configure Button action
+        buttonComponent.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("ArenaScene");
+        });
+
+        // Add a PortalMarker prefab
+        var portalMarkerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/PortalMarker.prefab");
+        if (portalMarkerPrefab != null)
+        {
+            var portalMarker = Object.Instantiate(portalMarkerPrefab);
+            portalMarker.name = "PortalMarker";
+            portalMarker.transform.position = new Vector3(0, 0, 5); // Place it in front of the player
+        }
+        else
+        {
+            Debug.LogError("PortalMarker prefab not found at Assets/Prefabs/PortalMarker.prefab");
+        }
+
+        // Save the scene
+        EditorSceneManager.SaveScene(scene, "Assets/Scenes/LobbyScene.unity");
+        Debug.Log("LobbyScene.unity has been created and saved at Assets/Scenes/");
+    }
+}

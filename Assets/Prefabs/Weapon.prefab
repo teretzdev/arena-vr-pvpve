@@ -1,0 +1,92 @@
+using UnityEditor;
+using UnityEngine;
+
+namespace ArenaDeathMatch.PrefabCreation
+{
+    /// <summary>
+    /// Creates the Weapon prefab with all necessary components and functionality.
+    /// </summary>
+    public class WeaponPrefabCreator : MonoBehaviour
+    {
+        [MenuItem("Tools/Create Weapon Prefab")]
+        public static void CreateWeaponPrefab()
+        {
+            // Create a new GameObject for the weapon
+            GameObject weapon = new GameObject("Weapon");
+
+            // Add a 3D model (e.g., a cube as a placeholder)
+            GameObject model = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            model.name = "WeaponModel";
+            model.transform.SetParent(weapon.transform);
+            model.transform.localPosition = Vector3.zero;
+
+            // Add Rigidbody for physics
+            Rigidbody rb = weapon.AddComponent<Rigidbody>();
+            rb.mass = 1f;
+            rb.drag = 0.5f;
+            rb.angularDrag = 0.05f;
+
+            // Add Collider for collision detection
+            BoxCollider collider = weapon.AddComponent<BoxCollider>();
+            collider.isTrigger = false;
+
+            // Add AudioSource for sound effects
+            AudioSource audioSource = weapon.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+
+            // Add WeaponController script
+            WeaponController weaponController = weapon.AddComponent<WeaponController>();
+            weaponController.damage = 50f;
+            weaponController.fireRate = 0.5f;
+            weaponController.reloadTime = 2f;
+
+            // Create a Prefab in the specified directory
+            string prefabPath = "Assets/Prefabs/Weapon.prefab";
+            PrefabUtility.SaveAsPrefabAsset(weapon, prefabPath);
+
+            // Destroy the temporary GameObject
+            DestroyImmediate(weapon);
+
+            Debug.Log("Weapon prefab created successfully at " + prefabPath);
+        }
+    }
+
+    /// <summary>
+    /// Handles weapon functionality such as firing and reloading.
+    /// </summary>
+    public class WeaponController : MonoBehaviour
+    {
+        [Header("Weapon Stats")]
+        public float damage;
+        public float fireRate;
+        public float reloadTime;
+
+        private float nextFireTime;
+
+        /// <summary>
+        /// Fires the weapon if the cooldown has elapsed.
+        /// </summary>
+        public void Fire()
+        {
+            if (Time.time >= nextFireTime)
+            {
+                Debug.Log("Weapon fired! Damage: " + damage);
+                nextFireTime = Time.time + fireRate;
+                // Add firing logic here (e.g., instantiate bullets, play sound)
+            }
+            else
+            {
+                Debug.Log("Weapon is on cooldown.");
+            }
+        }
+
+        /// <summary>
+        /// Reloads the weapon.
+        /// </summary>
+        public void Reload()
+        {
+            Debug.Log("Weapon reloading...");
+            // Add reload logic here (e.g., reset ammo count, play reload animation)
+        }
+    }
+}

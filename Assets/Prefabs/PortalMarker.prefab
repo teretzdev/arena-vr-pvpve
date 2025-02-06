@@ -1,0 +1,41 @@
+using UnityEngine;
+
+namespace ArenaVR
+{
+    [RequireComponent(typeof(BoxCollider))]
+    public class SceneTransition : MonoBehaviour
+    {
+        [Header("Scene Transition Settings")]
+        [Tooltip("Name of the target scene to load.")]
+        public string targetSceneName;
+
+        private void Awake()
+        {
+            // Ensure the collider is set as a trigger
+            BoxCollider collider = GetComponent<BoxCollider>();
+            collider.isTrigger = true;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            // Check if the player enters the portal
+            if (other.CompareTag("Player"))
+            {
+                LoadTargetScene();
+            }
+        }
+
+        private void LoadTargetScene()
+        {
+            if (!string.IsNullOrEmpty(targetSceneName))
+            {
+                Debug.Log($"Loading scene: {targetSceneName}");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(targetSceneName);
+            }
+            else
+            {
+                Debug.LogError("Target scene name is not set!");
+            }
+        }
+    }
+}

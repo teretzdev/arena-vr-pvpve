@@ -1,0 +1,142 @@
+using UnityEngine;
+
+namespace ArenaDeathMatch.Enemies
+{
+    /// <summary>
+    /// Script to create and save the EnemyCharacter prefab.
+    /// </summary>
+    public class EnemyCharacterPrefabCreator : MonoBehaviour
+    {
+        [ContextMenu("Create EnemyCharacter Prefab")]
+        public void CreateEnemyCharacterPrefab()
+        {
+            // Create a new GameObject for the enemy
+            GameObject enemy = new GameObject("EnemyCharacter");
+
+            // Add a Capsule as the visual representation
+            GameObject model = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+            model.name = "EnemyModel";
+            model.transform.SetParent(enemy.transform);
+            model.transform.localPosition = Vector3.zero;
+
+            // Add a Rigidbody for physics
+            Rigidbody rb = enemy.AddComponent<Rigidbody>();
+            rb.mass = 50f;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+            // Add a CapsuleCollider for collision detection
+            CapsuleCollider collider = enemy.AddComponent<CapsuleCollider>();
+            collider.center = Vector3.zero;
+            collider.height = 2f;
+            collider.radius = 0.5f;
+
+            // Add an Animator for animations
+            Animator animator = enemy.AddComponent<Animator>();
+            animator.applyRootMotion = false;
+
+            // Add a HealthSystem script to manage health
+            HealthSystem healthSystem = enemy.AddComponent<HealthSystem>();
+            healthSystem.maxHealth = 100;
+
+            // Add an AIController script for enemy behavior
+            AIController aiController = enemy.AddComponent<AIController>();
+            aiController.patrolSpeed = 2f;
+            aiController.chaseSpeed = 4f;
+            aiController.attackRange = 1.5f;
+
+            // Save the prefab to the specified directory
+            string prefabPath = "Assets/Prefabs/EnemyCharacter.prefab";
+            UnityEditor.PrefabUtility.SaveAsPrefabAsset(enemy, prefabPath);
+
+            // Destroy the temporary GameObject
+            DestroyImmediate(enemy);
+
+            Debug.Log("EnemyCharacter prefab created and saved at: " + prefabPath);
+        }
+    }
+
+    /// <summary>
+    /// Basic health system for the enemy.
+    /// </summary>
+    public class HealthSystem : MonoBehaviour
+    {
+        public int maxHealth = 100;
+        private int currentHealth;
+
+        private void Awake()
+        {
+            currentHealth = maxHealth;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            Debug.Log($"{gameObject.name} has died.");
+            Destroy(gameObject);
+        }
+    }
+
+    /// <summary>
+    /// Basic AI controller for enemy behavior.
+    /// </summary>
+    public class AIController : MonoBehaviour
+    {
+        public float patrolSpeed = 2f;
+        public float chaseSpeed = 4f;
+        public float attackRange = 1.5f;
+
+        private Transform player;
+        private bool isChasing;
+
+        private void Start()
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
+        private void Update()
+        {
+            if (player == null) return;
+
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+            if (distanceToPlayer <= attackRange)
+            {
+                AttackPlayer();
+            }
+            else if (distanceToPlayer <= 10f)
+            {
+                ChasePlayer();
+            }
+            else
+            {
+                Patrol();
+            }
+        }
+
+        private void Patrol()
+        {
+            isChasing = false;
+            transform.Translate(Vector3.forward * patrolSpeed * Time.deltaTime);
+        }
+
+        private void ChasePlayer()
+        {
+            isChasing = true;
+            transform.LookAt(player);
+            transform.Translate(Vector3.forward * chaseSpeed * Time.deltaTime);
+        }
+
+        private void AttackPlayer()
+        {
+            Debug.Log($"{gameObject.name} is attacking the player!");
+        }
+    }
+}
