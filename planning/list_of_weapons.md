@@ -307,18 +307,102 @@ This document contains a comprehensive list of all weapons available in the game
   - Fire Sound: Baton_Swing_Sound_02  
   - Reload Sound: None  
   - Description: A reinforced baton with improved durability.
-- **SM_Wep_Butcher_01**: A cleaver-style weapon with high damage and a gruesome appearance.
-- **SM_Wep_Cross_01**: A cross-shaped melee weapon with unique attack animations.
-- **SM_Wep_Crowbar_01**: A versatile tool that doubles as a melee weapon.
-- **SM_Wep_Crutch_01**: A makeshift weapon crafted from a crutch, offering moderate damage.
-- **SM_Wep_FireAxe_01**: A heavy axe designed for chopping through obstacles and enemies.
-- **SM_Wep_Hammer_01**: A basic hammer with balanced damage and speed.
-- **SM_Wep_Katana_01**: A sleek sword with high damage and fast attack speed.
-- **SM_Wep_Melee_GolfClub_01**: A golf club repurposed as a melee weapon.
-- **SM_Wep_Melee_HuntingKnife_01**: A sharp knife ideal for quick, precise attacks.
-- **SM_Wep_Melee_Machete_01**: A large blade with high damage and moderate speed.
-- **SM_Wep_Melee_Spear_Wood_01**: A wooden spear with long reach and moderate damage.
-- **SM_Wep_Pipe_01**: A metal pipe repurposed as a blunt weapon.
+- **SM_Wep_Butcher_01**  
+  - Type: Melee  
+  - Damage: High  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A cleaver-style weapon with high damage and a gruesome appearance.
+- **SM_Wep_Cross_01**  
+  - Type: Melee  
+  - Damage: Moderate  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A cross-shaped melee weapon with unique attack animations.
+- **SM_Wep_Crowbar_01**  
+  - Type: Melee  
+  - Damage: Moderate  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A versatile tool that doubles as a melee weapon.
+- **SM_Wep_Crutch_01**  
+  - Type: Melee  
+  - Damage: Moderate  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A makeshift weapon crafted from a crutch, offering moderate damage.
+- **SM_Wep_FireAxe_01**  
+  - Type: Melee  
+  - Damage: High  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A heavy axe designed for chopping through obstacles and enemies.
+- **SM_Wep_Hammer_01**  
+  - Type: Melee  
+  - Damage: Balanced  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A basic hammer with balanced damage and speed.
+- **SM_Wep_Katana_01**  
+  - Type: Melee  
+  - Damage: High  
+  - Magazine Size: N/A  
+  - Fire Rate: Fast  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A sleek sword with high damage and fast attack speed.
+- **SM_Wep_Melee_GolfClub_01**  
+  - Type: Melee  
+  - Damage: Moderate  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A golf club repurposed as a melee weapon.
+- **SM_Wep_Melee_HuntingKnife_01**  
+  - Type: Melee  
+  - Damage: Precise  
+  - Magazine Size: N/A  
+  - Fire Rate: Fast  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A sharp knife ideal for quick, precise attacks.
+- **SM_Wep_Melee_Machete_01**  
+  - Type: Melee  
+  - Damage: High  
+  - Magazine Size: N/A  
+  - Fire Rate: Moderate  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A large blade with high damage and moderate speed.
+- **SM_Wep_Melee_Spear_Wood_01**  
+  - Type: Melee  
+  - Damage: Moderate  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A wooden spear with long reach and moderate damage.
+- **SM_Wep_Pipe_01**  
+  - Type: Melee  
+  - Damage: Moderate  
+  - Magazine Size: N/A  
+  - Fire Rate: N/A  
+  - Reload Time: N/A  
+  - Recoil Duration: N/A  
+  - Description: A metal pipe repurposed as a blunt weapon.
 - **SM_Wep_PipeWrench_01**: A heavy wrench with high damage and slow attack speed.
 - **SM_Wep_Plank_01**: A wooden plank with nails for added damage.
 - **SM_Wep_RebarClub_01**: A club reinforced with rebar for increased damage.
