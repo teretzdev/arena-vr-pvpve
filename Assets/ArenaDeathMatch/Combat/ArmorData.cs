@@ -25,7 +25,6 @@ namespace ArenaDeathMatch.Combat
         public AudioClip equipSound; // The sound effect played when the armor is equipped
     }
 }
-```
 
 ### Step 4: Review
 - **Namespace**: The class is defined within the `ArenaDeathMatch.Combat` namespace, as required.
