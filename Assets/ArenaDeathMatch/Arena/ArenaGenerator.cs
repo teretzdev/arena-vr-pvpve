@@ -6,8 +6,8 @@ namespace ArenaDeathMatch.Arena
     public class ArenaGenerator : MonoBehaviour
     {
         [Header("Arena Settings")]
-        public Vector2 arenaSize = new Vector2(20, 20); // Width and length of the arena
-        public float wallHeight = 5.0f; // Height of the arena walls
+        public Vector2 arenaSize = new Vector2(25, 25); // Width and length of the arena
+        public float wallHeight = 6.0f; // Height of the arena walls
         public GameObject floorPrefab; // Prefab for the arena floor
         public GameObject wallPrefab; // Prefab for the arena walls
 
