@@ -13,7 +13,10 @@
   "dependencies": {
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.4.8",
-    "com.adventurecreator.plugin": "1.74.2"
+    "com.adventurecreator.plugin": "1.74.2",
+    "com.bng.vrif": "latest",
+    "com.unity.xr.interaction.toolkit": "latest",
+    "com.emeraldai.2024": "latest"
   },
   "keywords": [
     "arena",
