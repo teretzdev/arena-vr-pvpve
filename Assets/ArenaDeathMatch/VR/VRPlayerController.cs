@@ -33,11 +33,19 @@ namespace ArenaDeathMatch.VR
             if (characterController == null)
             {
                 characterController = GetComponent<CharacterController>();
+                if (characterController == null)
+                {
+                    Debug.LogError("CharacterController is not assigned or found on the GameObject.");
+                }
             }
 
             if (bngPlayerController == null)
             {
                 bngPlayerController = GetComponent<BNGPlayerController>();
+                if (bngPlayerController == null)
+                {
+                    Debug.LogError("BNGPlayerController is not assigned or found on the GameObject.");
+                }
             }
 
             if (leftHandInteractor == null || rightHandInteractor == null)
@@ -113,7 +121,7 @@ namespace ArenaDeathMatch.VR
             GameObject projectile = Instantiate(projectilePrefab, rangedWeaponSpawnPoint.position, rangedWeaponSpawnPoint.rotation);
             if (projectile.TryGetComponent(out Rigidbody rb))
             {
-                rb.velocity = rangedWeaponSpawnPoint.forward * 20f; // Adjust projectile speed as needed
+                rb.velocity = rangedWeaponSpawnPoint.forward * rangedDamage; // Adjust projectile speed dynamically based on rangedDamage
             }
         }
 
@@ -278,7 +286,7 @@ namespace ArenaDeathMatch.VR
             GameObject projectile = Instantiate(projectilePrefab, rangedWeaponSpawnPoint.position, rangedWeaponSpawnPoint.rotation);
             if (projectile.TryGetComponent(out Rigidbody rb))
             {
-                rb.velocity = rangedWeaponSpawnPoint.forward * 20f; // Adjust projectile speed as needed
+                rb.velocity = rangedWeaponSpawnPoint.forward * rangedDamage; // Adjust projectile speed dynamically based on rangedDamage
             }
         }
 

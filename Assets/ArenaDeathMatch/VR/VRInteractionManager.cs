@@ -65,6 +65,16 @@ namespace ArenaDeathMatch.VR
             {
                 TryDropObject(rightHandInteractor);
             }
+
+            // Check for use item input
+            if (bngPlayerController.GetButtonDown("AButton"))
+            {
+                UseItemInHand(leftHandInteractor);
+            }
+            else if (bngPlayerController.GetButtonDown("BButton"))
+            {
+                UseItemInHand(rightHandInteractor);
+            }
         }
 
         private void TryGrabObject(XRDirectInteractor interactor)
@@ -130,6 +140,18 @@ namespace ArenaDeathMatch.VR
             {
                 Debug.LogError($"The object {item.name} does not implement the IUsable interface.");
             }
+        }
+
+        private void UseItemInHand(XRDirectInteractor interactor)
+        {
+            if (interactor == null || !interactor.hasSelection)
+            {
+                Debug.LogError("Interactor is null or has no selected object. Cannot use item.");
+                return;
+            }
+
+            GameObject selectedObject = interactor.selectTarget.gameObject;
+            UseItem(selectedObject);
         }
 
         public void InteractWithEnvironment(GameObject target)

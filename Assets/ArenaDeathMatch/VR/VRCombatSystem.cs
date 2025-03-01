@@ -14,16 +14,23 @@ namespace ArenaDeathMatch.VR
         public float meleeRange = 2.0f;
         public float meleeDamage = 25.0f;
         public LayerMask meleeTargetLayer;
+        public float meleeCooldown = 1.0f;
+        public ParticleSystem meleeEffect;
+        public AudioClip meleeSound;
 
         [Header("Ranged Combat Settings")]
         public Transform rangedWeaponSpawnPoint;
         public GameObject projectilePrefab;
         public float projectileSpeed = 20.0f;
+        public float rangedCooldown = 1.5f;
+        public AudioClip rangedSound;
 
         [Header("Magic Combat Settings")]
         public Transform magicSpawnPoint;
         public AbilityData magicAbility;
         public float magicCooldown = 5.0f;
+        public ParticleSystem magicReadyEffect;
+        public AudioClip magicSound;
 
         [Header("References")]
         public BNGPlayerController bngPlayerController;
@@ -31,6 +38,8 @@ namespace ArenaDeathMatch.VR
         public XRDirectInteractor rightHandInteractor;
 
         private float lastMagicUseTime;
+        private float lastMeleeUseTime;
+        private float lastRangedUseTime;
 
         private void Start()
         {
@@ -68,14 +77,25 @@ namespace ArenaDeathMatch.VR
 
         private void HandleMeleeCombat()
         {
-            if (bngPlayerController.GetButtonDown("RightTrigger"))
+            if (bngPlayerController.GetButtonDown("RightTrigger") && Time.time >= lastMeleeUseTime + meleeCooldown)
             {
                 PerformMeleeAttack();
+                lastMeleeUseTime = Time.time;
             }
         }
 
         private void PerformMeleeAttack()
         {
+            if (meleeEffect != null)
+            {
+                meleeEffect.Play();
+            }
+
+            if (meleeSound != null)
+            {
+                AudioSource.PlayClipAtPoint(meleeSound, transform.position);
+            }
+
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, meleeRange, meleeTargetLayer);
             foreach (var hitCollider in hitColliders)
             {
@@ -89,9 +109,10 @@ namespace ArenaDeathMatch.VR
 
         private void HandleRangedCombat()
         {
-            if (bngPlayerController.GetButtonDown("LeftTrigger"))
+            if (bngPlayerController.GetButtonDown("LeftTrigger") && Time.time >= lastRangedUseTime + rangedCooldown)
             {
                 PerformRangedAttack();
+                lastRangedUseTime = Time.time;
             }
         }
 
@@ -101,6 +122,11 @@ namespace ArenaDeathMatch.VR
             {
                 Debug.LogError("Projectile prefab or spawn point is not assigned.");
                 return;
+            }
+
+            if (rangedSound != null)
+            {
+                AudioSource.PlayClipAtPoint(rangedSound, rangedWeaponSpawnPoint.position);
             }
 
             GameObject projectile = Instantiate(projectilePrefab, rangedWeaponSpawnPoint.position, rangedWeaponSpawnPoint.rotation);
@@ -118,6 +144,14 @@ namespace ArenaDeathMatch.VR
                 PerformMagicAttack();
                 lastMagicUseTime = Time.time;
             }
+
+            if (magicReadyEffect != null && Time.time >= lastMagicUseTime + magicCooldown)
+            {
+                if (!magicReadyEffect.isPlaying)
+                {
+                    magicReadyEffect.Play();
+                }
+            }
         }
 
         private void PerformMagicAttack()
@@ -126,6 +160,11 @@ namespace ArenaDeathMatch.VR
             {
                 Debug.LogError("Magic ability or spawn point is not assigned.");
                 return;
+            }
+
+            if (magicSound != null)
+            {
+                AudioSource.PlayClipAtPoint(magicSound, magicSpawnPoint.position);
             }
 
             GameObject magicEffect = Instantiate(magicAbility.visualEffect, magicSpawnPoint.position, magicSpawnPoint.rotation);

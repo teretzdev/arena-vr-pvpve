@@ -15,7 +15,7 @@ namespace ArenaDeathMatch.VR
         public XRDirectInteractor rightHandInteractor;
 
         [Header("References")]
-        public BNGPlayerController bngPlayerController;
+        public BNGPlayerController bngPlayerController; // Reference to the VRIF player controller
 
         private bool isMenuVisible = false;
 
@@ -29,6 +29,10 @@ namespace ArenaDeathMatch.VR
                     Debug.LogError("BNGPlayerController is not assigned or found on the GameObject.");
                 }
             }
+
+            // Ensure the holographic menu is hidden at the start
+            SetMenuVisibility(false);
+        }
 
             if (holographicMenu == null)
             {
@@ -208,7 +212,7 @@ namespace ArenaDeathMatch.VR
         public XRDirectInteractor rightHandInteractor;
 
         [Header("References")]
-        public BNGPlayerController bngPlayerController;
+        public BNGPlayerController bngPlayerController; // Reference to the VRIF player controller
 
         private bool isMenuVisible = false;
 

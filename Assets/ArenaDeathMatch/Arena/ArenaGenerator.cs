@@ -6,18 +6,19 @@ namespace ArenaDeathMatch.Arena
     public class ArenaGenerator : MonoBehaviour
     {
         [Header("Arena Settings")]
-        public Vector2 arenaSize = new Vector2(25, 25); // Width and length of the arena
-        public float wallHeight = 6.0f; // Height of the arena walls
+        public Vector2 arenaSize = new Vector2(30, 30); // Width and length of the arena
+        public float wallHeight = 8.0f; // Height of the arena walls
         public GameObject floorPrefab; // Prefab for the arena floor
         public GameObject wallPrefab; // Prefab for the arena walls
+        public Material wallMaterial; // Material for the arena walls
 
         [Header("Obstacle Settings")]
         public GameObject[] obstaclePrefabs; // Array of obstacle prefabs
-        public int obstacleCount = 10; // Number of obstacles to place in the arena
+        public int obstacleCount = 15; // Number of obstacles to place in the arena
 
         [Header("Decoration Settings")]
         public GameObject[] decorationPrefabs; // Array of decoration prefabs
-        public int decorationCount = 5; // Number of decorations to place in the arena
+        public int decorationCount = 8; // Number of decorations to place in the arena
 
         private List<GameObject> spawnedObjects = new List<GameObject>(); // Track spawned objects for cleanup
 
@@ -66,7 +67,7 @@ namespace ArenaDeathMatch.Arena
 
             GameObject floor = Instantiate(floorPrefab, transform);
             floor.transform.localScale = new Vector3(arenaSize.x, 1, arenaSize.y);
-            floor.transform.position = new Vector3(0, 0, 0);
+            floor.transform.position = new Vector3(0, -0.5f, 0); // Slightly lower the floor for better visual alignment
             spawnedObjects.Add(floor);
         }
 
@@ -101,6 +102,14 @@ namespace ArenaDeathMatch.Arena
                 GameObject wall = Instantiate(wallPrefab, transform);
                 wall.transform.localScale = wallScales[i];
                 wall.transform.position = wallPositions[i];
+                if (wallMaterial != null)
+                {
+                    Renderer wallRenderer = wall.GetComponent<Renderer>();
+                    if (wallRenderer != null)
+                    {
+                        wallRenderer.material = wallMaterial;
+                    }
+                }
                 spawnedObjects.Add(wall);
             }
         }
@@ -192,11 +201,11 @@ namespace ArenaDeathMatch.Arena
 
         [Header("Obstacle Settings")]
         public GameObject[] obstaclePrefabs; // Array of obstacle prefabs
-        public int obstacleCount = 10; // Number of obstacles to place in the arena
+        public int obstacleCount = 15; // Number of obstacles to place in the arena
 
         [Header("Decoration Settings")]
         public GameObject[] decorationPrefabs; // Array of decoration prefabs
-        public int decorationCount = 5; // Number of decorations to place in the arena
+        public int decorationCount = 8; // Number of decorations to place in the arena
 
         private List<GameObject> spawnedObjects = new List<GameObject>(); // Track spawned objects for cleanup
 
@@ -236,7 +245,7 @@ namespace ArenaDeathMatch.Arena
 
             GameObject floor = Instantiate(floorPrefab, transform);
             floor.transform.localScale = new Vector3(arenaSize.x, 1, arenaSize.y);
-            floor.transform.position = new Vector3(0, 0, 0);
+            floor.transform.position = new Vector3(0, -0.5f, 0); // Slightly lower the floor for better visual alignment
             spawnedObjects.Add(floor);
         }
 
