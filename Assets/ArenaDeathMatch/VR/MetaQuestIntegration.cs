@@ -17,6 +17,7 @@ namespace ArenaDeathMatch.VR
         [Header("Controller Input Mapping")]
         public XRController leftController; // Reference to the left controller
         public XRController rightController; // Reference to the right controller
+        public bool enableControllerHaptics = true; // Enable or disable haptic feedback for controllers
 
         [Header("Performance Optimization")]
         public bool enableDynamicResolution = true; // Enable or disable dynamic resolution scaling
@@ -74,6 +75,11 @@ namespace ArenaDeathMatch.VR
             leftController.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool leftPrimaryButton);
             rightController.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool rightPrimaryButton);
 
+            if (enableControllerHaptics)
+            {
+                leftController.SendHapticImpulse(0.5f, 0.1f); // Example haptic feedback
+                rightController.SendHapticImpulse(0.5f, 0.1f); // Example haptic feedback
+            }
             Debug.Log($"Controller input mapping initialized. Left Primary Button: {leftPrimaryButton}, Right Primary Button: {rightPrimaryButton}");
         }
 

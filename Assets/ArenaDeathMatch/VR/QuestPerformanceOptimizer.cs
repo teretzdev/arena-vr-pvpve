@@ -11,7 +11,7 @@ namespace ArenaDeathMatch.VR
         [Tooltip("Enable or disable dynamic resolution scaling.")]
         public bool enableDynamicResolution = true;
         [Tooltip("Target resolution scale for dynamic resolution.")]
-        [Range(0.5f, 1.0f)]
+        [Range(0.5f, 1.5f)]
         public float targetResolutionScale = 1.0f;
 
         [Header("Foveated Rendering Settings")]

@@ -68,7 +68,7 @@ namespace ArenaDeathMatch.VR
                 return;
             }
 
-            inputAxis = bngPlayerController.GetAxis2D("LeftThumbstick");
+            inputAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
             Vector3 moveDirection = new Vector3(inputAxis.x, 0, inputAxis.y);
             moveDirection = transform.TransformDirection(moveDirection);
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
@@ -90,7 +90,7 @@ namespace ArenaDeathMatch.VR
                 return;
             }
 
-            float rotationInput = bngPlayerController.GetAxis2D("RightThumbstick").x;
+            float rotationInput = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x;
             transform.Rotate(Vector3.up, rotationInput * rotationSpeed * Time.deltaTime);
 
             // Adjust rotation for Meta Quest controllers
