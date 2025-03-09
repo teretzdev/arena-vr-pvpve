@@ -72,6 +72,15 @@ namespace ArenaDeathMatch.VR
             Vector3 moveDirection = new Vector3(inputAxis.x, 0, inputAxis.y);
             moveDirection = transform.TransformDirection(moveDirection);
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+            // Adjust movement for Meta Quest controllers
+            if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick) != Vector2.zero)
+            {
+                Vector2 questInput = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+                Vector3 questMoveDirection = new Vector3(questInput.x, 0, questInput.y);
+                questMoveDirection = transform.TransformDirection(questMoveDirection);
+                characterController.Move(questMoveDirection * moveSpeed * Time.deltaTime);
+            }
         }
 
         private void HandleRotation()
@@ -83,6 +92,13 @@ namespace ArenaDeathMatch.VR
 
             float rotationInput = bngPlayerController.GetAxis2D("RightThumbstick").x;
             transform.Rotate(Vector3.up, rotationInput * rotationSpeed * Time.deltaTime);
+
+            // Adjust rotation for Meta Quest controllers
+            if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick) != Vector2.zero)
+            {
+                float questRotationInput = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x;
+                transform.Rotate(Vector3.up, questRotationInput * rotationSpeed * Time.deltaTime);
+            }
         }
 
         private void HandleTeleportation()

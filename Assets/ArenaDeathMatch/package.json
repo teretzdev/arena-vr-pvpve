@@ -16,7 +16,8 @@
     "com.adventurecreator.plugin": "1.74.2",
     "com.bng.vrif": "latest",
     "com.unity.xr.interaction.toolkit": "latest",
-    "com.emeraldai.2024": "latest"
+    "com.emeraldai.2024": "latest",
+    "com.meta.quest": "latest"
   },
   "keywords": [
     "arena",
